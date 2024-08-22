@@ -17,3 +17,5 @@ Set up local repository:
 
 Nick and Rob will put some options here about automatically backing up the media and content folders
   
+Future possibilities:
+https://forum.getkirby.com/t/working-with-git-on-kirby-projects-doubts/7281/2

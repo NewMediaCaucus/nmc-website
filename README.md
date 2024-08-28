@@ -1,5 +1,8 @@
 # nmc-website
 
+1. [Important File Locations](#important-file-locations)
+2. [Workflow Proposal](#workflow-proposal)
+
 ## Important File Locations
 
 - Content

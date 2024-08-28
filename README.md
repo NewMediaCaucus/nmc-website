@@ -1,4 +1,20 @@
 # nmc-website
+
+## Important File Locations
+
+- Content
+  - style.css
+- Kirby
+  - Leave this alone unless updating the Kirby CMS
+- Media
+  - Leave this alone too, contents are auto-generated
+- Site
+   - Blueprints
+     - Controls how the panel operates
+   - Snippets
+     - PHP code snippets
+   - Templates
+     - PHP page templates 
  
 ## Workflow Proposal
 

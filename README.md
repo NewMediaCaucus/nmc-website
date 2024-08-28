@@ -7,6 +7,7 @@
 
 - Content
   - style.css
+  - site.txt
 - Kirby
   - Leave this alone unless updating the Kirby CMS
 - Media

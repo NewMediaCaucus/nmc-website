@@ -1,4 +1,13 @@
 
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  /* true sizing including padding */
+  box-sizing: border-box;
+}
+
 html {
   /* establish baseline font size, rems refer to this */
   font-size: 100%;
@@ -6,4 +15,28 @@ html {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
+}
+
+main {
+  background-color: bisque;
+  padding: 20px;
+}
+
+nav {
+  background-color: aquamarine;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+footer {
+  background-color: lightblue;
+  padding: 20px;
+}
+
+.blurb {
+  display: block;
+  margin-bottom: 2rem;
 }

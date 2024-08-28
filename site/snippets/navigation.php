@@ -1,12 +1,11 @@
 
 <!-- dynamically assemble menu -->
 
-
 <nav class="navigation">
 
 <a class="logo" href="<?= $site->url() ?>"><?= $site->title() ?></a>
 
-<span class="blurb">Artist, educator, engineer, tall.</span>
+<span class="blurb">Blurb about NMC</span>
 
 <ul>
     <!-- grab all primary pages that have numbers in the title -->

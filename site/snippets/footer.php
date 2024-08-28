@@ -1,3 +1,3 @@
 <footer class="footer">
-<span>&#129299;</span>
+<span>I am the footer</span>
 </footer>

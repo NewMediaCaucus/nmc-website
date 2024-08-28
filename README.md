@@ -25,7 +25,7 @@ Kirby relies on four main folders: kirby, media, site, and content. In order to 
 
 The dev team should install:
 - Github Desktop
-- A coding IDE (win: Visual Studio Code)
+- Coding IDE (win: Visual Studio Code)
 - Local Apache server (win: xampp)
 - FTP (win: winscp)
 

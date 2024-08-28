@@ -1,9 +1,15 @@
-<!-- see site/snippets for more detail -->
+<!-- top section -->
+<?php snippet('header') ?>
 
-<?php snippet('page-header') ?>
+<!-- nav section -->
+<?php snippet('navigation') ?>
 
-<!-- grab title field from txt file -->
-<h1><?= $page->title() ?></h1>
+<!-- content section -->
+<main>
+  <!-- Grab title text from txt field -->
+  <?= $page->title() ?>
+  <?= $page->text() ?>
+</main>
 
-</body> 
-</html>
+<!-- bottom section -->
+<?php snippet('footer') ?>

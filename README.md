@@ -2,6 +2,7 @@
 
 1. [Important File Locations](#important-file-locations)
 2. [Workflow Proposal](#workflow-proposal)
+3. [Further Reading](#further-reading)
 
 ## Important File Locations
 
@@ -35,10 +36,12 @@ Set up local repository:
 - Changes focus on site operation and style, not content
 - All changes should have detailed notes
 
-Nick and Rob will put some options here about automatically backing up the media and content folders
-  
-Future possibilities:
-https://forum.getkirby.com/t/working-with-git-on-kirby-projects-doubts/7281/2
+Still needed: solution to back up content and media folders.
+
+## Further Reading
+
+1. (Git extension to manage larger file types)[https://git-lfs.com/]
+2. (Discussion about images in git repos)[https://softwareengineering.stackexchange.com/questions/80962/should-images-be-stored-in-a-git-repository]
 
 ## dun goofed
 

@@ -40,8 +40,8 @@ Still needed: solution to back up content and media folders.
 
 ## Further Reading
 
-1. (Git extension to manage larger file types)[https://git-lfs.com/]
-2. (Discussion about images in git repos)[https://softwareengineering.stackexchange.com/questions/80962/should-images-be-stored-in-a-git-repository]
+1. [Git extension to manage larger file types](https://git-lfs.com/)
+2. [Discussion about images in git repos](https://softwareengineering.stackexchange.com/questions/80962/should-images-be-stored-in-a-git-repository)
 
 ## dun goofed
 

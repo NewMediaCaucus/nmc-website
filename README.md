@@ -3,6 +3,7 @@
 1. [Important File Locations](#important-file-locations)
 2. [Workflow Proposal](#workflow-proposal)
 3. [Further Reading](#further-reading)
+4. [Dun Goofed](#dun-goofed)
 
 ## Important File Locations
 

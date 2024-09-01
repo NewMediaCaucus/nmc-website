@@ -55,7 +55,8 @@ To view the state of the project at a previous point on the main branch:
 4. When done, click "Detatched HEAD" and switch back to the main branch
 
 To view the state of a branch other than main:
-1. ???
+1. Switch branches from "main" to something else
+2. Pick a commit the checkout if you want something older
 
 ## dun goofed
 

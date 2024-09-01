@@ -42,6 +42,7 @@ Still needed: solution to back up content and media folders.
 ## Further Reading
 
 1. [Git large file storage info](https://docs.github.com/en/repositories/working-with-files/managing-large-files/collaboration-with-git-large-file-storage)
+2. [Checking out a previous commit](https://docs.github.com/en/desktop/managing-commits/checking-out-a-commit-in-github-desktop)
 
 ## dun goofed
 

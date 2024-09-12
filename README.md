@@ -44,6 +44,7 @@ Still needed: solution to back up content and media folders.
 
 1. [Git large file storage info](https://docs.github.com/en/repositories/working-with-files/managing-large-files/collaboration-with-git-large-file-storage)
 2. [Checking out a previous commit](https://docs.github.com/en/desktop/managing-commits/checking-out-a-commit-in-github-desktop)
+3. [Resetting the panel](https://forum.getkirby.com/t/problems-with-panel-access/24815/2)
 
 ## Rolling Back
 Take all this with a grain of salt - I'm new here and this should be confirmed by folks with more git knowledge

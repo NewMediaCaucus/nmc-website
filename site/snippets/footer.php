@@ -1,3 +1,4 @@
 <footer class="footer">
-<span>I am the footer</span>
+<!-- nav section -->
+<?php snippet('navigation') ?>
 </footer>

@@ -5,13 +5,13 @@
 <?php snippet('navigation') ?>
 
 <!-- content section -->
-<main class="all_opps">
+<main class="opportunities">
     <!-- grab title from opportunities.txt -->
-    <h3><?= $page->title() ?></h3>
-    <ul class="one_opp">
+    <h1><?= $page->title() ?></h1>
+    <ul class="opportunities-list">
         <!-- grab all children folders and list them -->
         <?php foreach ($page->children()->listed() as $opportunity): ?>
-        <li class="one_opp">
+        <li class="opportunity">
             <a href="<?= $opportunity->url() ?>">
                 <ul>
                     <!-- grab first image in project folder (alphabetically) -->

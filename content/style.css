@@ -1,3 +1,41 @@
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 200 to 1000 */
+
+.nunito-sans-headers {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+
+.atkinson-hyperlegible-regular {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.atkinson-hyperlegible-bold {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.atkinson-hyperlegible-regular-italic {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.atkinson-hyperlegible-bold-italic {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
 
 *,
 *:after,
@@ -11,50 +49,95 @@
 html {
   /* establish baseline font size, rems refer to this */
   font-size: 100%;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Atkinson Hyperlegible", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
 }
 
+body {
+  background-color: white;
+  margin: auto;
+}
+
+h1 {
+  /* color: #f2f2f2; */
+  font-size: 2em;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.8em;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 1.4em;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+p {
+  color: black;
+  line-height: 1.4;
+  font-size: 1.1em;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+ul {
+  line-height: 1.4;
+}
+
+
 main {
-  background-color: bisque;
-  padding: 2rem;
+  /* background-color: bisque;
+  padding: 2rem; */
 }
 
 nav {
-  background-color: aquamarine;
+  background-color: gainsboro;
   padding: 2rem;
 }
 
 nav ul {
   list-style-type: none;
+  font-family: "Nunito Sans", sans-serif;
+  text-transform: capitalize;
 }
 
 footer {
-  background-color: lightblue;
+  background-color: lightgray;
   padding: 2rem;
 }
 
+.logo {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+}
+
 .blurb {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
   display: block;
   margin-bottom: 2rem;
 }
 
-.all_opps ul{
+.opportunities-list ul{
   list-style: none;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
-.all_opps li{
+.opportunities li{
   list-style: none;
 }
 
-.one_opp ul{
+.opportunity ul{
   margin-bottom: 2rem;
 }
 
-.one_opp li{
+.opportunity li{
   background-color: lightgoldenrodyellow;
 }

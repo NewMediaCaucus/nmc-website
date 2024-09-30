@@ -33,7 +33,9 @@ body {
     "logo-img"
     "logo"
     "navigation"
+    "opportunities-title"
     "opportunities"
+    "opportunity"
     "post-image"
     "post"
     "footer";
@@ -87,8 +89,9 @@ body {
     "logo-img logo-img"
     "logo logo"
     "navigation navigation"
+    "opportunities-title opportunities-title"
     "opportunities opportunities"
-    "post-image post"
+    "opportunity opportunity"
     "footer footer";
     row-gap: auto;
     column-gap: 20px;
@@ -190,9 +193,30 @@ footer {
 }
 
 
+.opportunities-title {
+  grid-area: opportunities-title;
+} 
 
 .opportunities {
   grid-area: opportunities;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "opportunity-row"
+  grid-auto-flow: rows;
+  /* grid-auto-flow: rows; */
+
+} 
+.opportunity {
+  grid-area: opportunity;
+  /* display: flex; */
+  
+} 
+
+.opportunity-row {
+  grid-area: opportunity-row;
+  grid-auto-flow: rows;
+  /* grid-template-columns: 1fr 1fr; */
+  
 } 
 
 .description {

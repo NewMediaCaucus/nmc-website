@@ -5,30 +5,28 @@
 <?php snippet('navigation') ?>
 
 <!-- content section -->
-<main class="opportunities">
+<main>
     <!-- grab title from opportunities.txt -->
-    <h1><?= $page->title() ?></h1>
-    <div class="opportunities-list">
-        <!-- grab all children folders and list them -->
-        <?php foreach ($page->children()->listed() as $opportunity): ?>
-        <section class="opportunity">
-            <div class="post-image">
-                <a href="<?= $opportunity->url() ?>">
-                    <!-- grab first image in project folder (alphabetically) -->
-                    <?= $opportunity->image()->crop(320, 320, 320) ?>                  
-                </a>
-            </div>
-            <div class="post">
-                <a href="<?= $opportunity->url() ?>">
-                    <!-- pull from sections defined in each opportunity text file -->
-                    <h2><?= $opportunity->Title() ?></h2>                    
-                </a>
-                    <p class="description"><?= $opportunity->Description() ?></p>
-                    <p class="due-date">DEADLINE: <?= $opportunity->Due() ?><p class="due-date">
-        </div>
-        </section>
-        <?php endforeach ?> 
+    <div class="opportunities">
+        <h1><?= $page->title() ?></h1>
     </div>
+    <!-- grab all children folders and list them -->
+    <?php foreach ($page->children()->listed() as $opportunity): ?>
+        <div class="post-image">
+            <a href="<?= $opportunity->url() ?>">
+                <!-- grab first image in project folder (alphabetically) -->
+                <?= $opportunity->image()->crop(320, 320, 320) ?>                  
+            </a>
+        </div>
+        <div class="post">
+            <a href="<?= $opportunity->url() ?>">
+                <!-- pull from sections defined in each opportunity text file -->
+                <h2><?= $opportunity->Title() ?></h2>                    
+            </a>
+            <p class="description"><?= $opportunity->Description() ?></p>
+            <p class="due-date">DEADLINE: <?= $opportunity->Due() ?><p class="due-date">
+        </div>
+    <?php endforeach ?> 
 </main>
 
 <!-- bottom section -->

@@ -34,19 +34,11 @@ body {
     "logo"
     "navigation"
     "opportunities"
+    "post-image"
+    "post"
     "footer";
     /* row-gap: auto; */
     /* column-gap: 20px; */
-  }
-
-  .post-image {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-  }
-
-  .post {
-    margin-bottom: 3em;
   }
 }
 
@@ -87,13 +79,27 @@ body {
     width: 1024px;
     margin: 0 auto;
   }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "logo-img logo-img"
+    "logo logo"
+    "navigation navigation"
+    "opportunities opportunities"
+    "post-image post"
+    "footer footer";
+    row-gap: auto;
+    column-gap: 20px;
+  }
 }
 
 
 /* All devices */
 
 h1 {
-  font-size: 3em;
+  font-size: 2.4em;
   font-family: "Nunito Sans", sans-serif;
   color: white;
   margin-bottom: .2em;
@@ -147,9 +153,6 @@ a:active {
   color: #D196E6;
 }
 
-nav {
-}
-
 .navigation {
   grid-area: navigation;
 }
@@ -187,36 +190,26 @@ footer {
 }
 
 
-.blurb {
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 400;
-  font-size: .9em;
-  display: block;
-  margin-bottom: 2rem;
-}
 
 .opportunities {
   grid-area: opportunities;
-}
-
-.opportunities-list ul {
-  list-style: none;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.opportunities li {
-  list-style: none;
-}
-
-.opportunity {
-  margin-bottom: 2rem;
-}
+} 
 
 .description {
   margin-bottom: 1em;
 }
 
+.post-image {
+  grid-area: post-image;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+.post {
+  grid-area: post;
+  margin-bottom: 3em;
+}
 
 .due-date {
   font-family: "DM Mono", monospace;
@@ -225,4 +218,11 @@ footer {
   color: lightgray;
   font-size: .8em;
   letter-spacing: 1px;
+}
+
+.blurb {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: .9em;
+  margin-bottom: 2rem;
 }

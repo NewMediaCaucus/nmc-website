@@ -35,10 +35,15 @@
   font-style: italic;
 }
 
+.metrophobic-regular {
+  font-family: "Metrophobic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   /* true sizing*/
   box-sizing: border-box;
-  margin: auto;
 }
 
 html {
@@ -46,7 +51,6 @@ html {
   font-size: 100%;
   font-family: "Atkinson Hyperlegible", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
   font-style: normal;
 }
 
@@ -54,8 +58,59 @@ body {
   background-color: #282A36;
   margin: auto;
   color: white;
-  display: block;
 }
+
+
+/* Extra small devices (iPhone SE, Pixel 7, Surface Duo, Samsung Galaxy A51/71, Galaxy Z Fold, phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .page {
+    /* background: #bada55; */
+    max-width: 320px;
+    margin: auto;
+  }
+}
+
+/* Small devices (iPhone SE in landscape, portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .page {
+    /* background: darkorange; */
+    max-width: 620px;
+    margin: auto;
+  }
+}
+
+
+/* Medium devices (iPad Air, iPad Mini, Surface Pro 7, Asus Zenbook Fold, landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .page {
+    /* background: darkolivegreen; */
+    max-width: 672px;
+    margin: auto;
+  }
+}
+
+
+/* Large devices (iPad Pro, laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .page {
+    /* background: darkmagenta; */
+    max-width: 960px;
+    margin: auto;
+  }
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .page {
+    /* background: darkslateblue; */
+    width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+
+/* All devices */
 
 h1 {
   font-size: 3em;
@@ -112,8 +167,9 @@ a:active {
 }
 
 nav {
-  background-color: gainsboro;
-  padding: 2rem;
+}
+
+.navigation {
 }
 
 .navigation a:link {
@@ -127,14 +183,25 @@ nav ul {
 }
 
 footer {
-  background-color: lightgray;
-  padding: 2rem;
+}
+
+.logo-img {
+  margin-top: 1.8rem;
+  margin-bottom: 2px;
 }
 
 .logo {
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 700;
+  font-family: "Metrophobic", sans-serif;
+  font-size: .8em;
+  color: #50FA7B;
+  text-transform: lowercase;
+  letter-spacing: 2.8px;
 }
+
+.logo:visited {
+  color: #50FA7B;
+}
+
 
 .blurb {
   font-family: "Nunito Sans", sans-serif;

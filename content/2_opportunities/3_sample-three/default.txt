@@ -1,9 +1,9 @@
-Title: My great opportunity
+Title: Faculty Position in Digital Media, Duke Kunshan University
 
 ----
 
-Description: Some text that describes what it is
+Description: Duke Kunshan University (DKU) invites applications for a tenured or tenure-track faculty position in digital media to begin in the academic year 2025-2026. Candidates must possess a terminal degree (MFA/PhD) at the time of appointment. We seek candidates with expertise in…
 
 ----
 
-Due: January 1, 2099
+Due: October 3, 2024

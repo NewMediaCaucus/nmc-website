@@ -206,6 +206,7 @@ footer {
 .blurb {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
+  font-size: .9em;
   display: block;
   margin-bottom: 2rem;
 }
@@ -230,5 +231,6 @@ footer {
 
 .due-date {
   color: lightgray;
-  font-size: 1em;
+  font-size: .9em;
+  letter-spacing: 2px;
 }

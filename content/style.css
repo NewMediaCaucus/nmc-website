@@ -25,13 +25,36 @@ body {
     max-width: 320px;
     margin: auto;
   }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "logo-img"
+    "logo"
+    "navigation"
+    "opportunities"
+    "footer";
+    /* row-gap: auto; */
+    /* column-gap: 20px; */
+  }
+
+  .post-image {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .post {
+    margin-bottom: 3em;
+  }
 }
 
-/* Small devices (iPhone SE in landscape, portrait tablets and large phones, 600px and up) */
+/* Small devices (Landscape iPhone SE, portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .page {
     /* background: darkorange; */
-    max-width: 620px;
+    max-width: 600px;
     margin: auto;
   }
 }
@@ -73,6 +96,7 @@ h1 {
   font-size: 3em;
   font-family: "Nunito Sans", sans-serif;
   color: white;
+  margin-bottom: .2em;
 }
 
 h2 {
@@ -127,6 +151,7 @@ nav {
 }
 
 .navigation {
+  grid-area: navigation;
 }
 
 .navigation a:link {
@@ -143,11 +168,13 @@ footer {
 }
 
 .logo-img {
+  grid-area: logo-img;
   margin-top: 1.8rem;
   margin-bottom: 2px;
 }
 
 .logo {
+  grid-area: logo;
   font-family: "Metrophobic", sans-serif;
   font-size: .8em;
   color: #50FA7B;
@@ -168,6 +195,10 @@ footer {
   margin-bottom: 2rem;
 }
 
+.opportunities {
+  grid-area: opportunities;
+}
+
 .opportunities-list ul {
   list-style: none;
   padding-top: 2rem;
@@ -186,8 +217,9 @@ footer {
   margin-bottom: 1em;
 }
 
+
 .due-date {
-  font-family: "B612 Mono", monospace;
+  font-family: "DM Mono", monospace;
   font-weight: 400;
   font-style: normal;
   color: lightgray;

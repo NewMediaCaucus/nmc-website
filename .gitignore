@@ -54,4 +54,4 @@ Icon
 /letsencrypt-logs/*
 
 # id.env file for Docker mount
-/id.dev
+/id.env

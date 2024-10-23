@@ -1,0 +1,29 @@
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: nmc-website-prod
+    container_name: nmc-website-prod-container
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - .:/var/www/html/
+      - ./certs:/etc/letsencrypt
+      - ./certs-data:/data/letsencrypt
+    env_file:
+      - ./id.env
+    depends_on:
+      - certbot
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    user: root
+    volumes:
+    - ./certs:/etc/letsencrypt
+    - ./certs-data:/data/letsencrypt
+    - ./letsencrypt-config:/etc/letsencrypt
+    - ./letsencrypt-work:/var/lib/letsencrypt
+    - ./letsencrypt-logs:/var/log/letsencrypt
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --config-dir /etc/letsencrypt --work-dir /var/lib/letsencrypt --logs-dir /var/log/letsencrypt; sleep 12h & wait $${!}; done;'"

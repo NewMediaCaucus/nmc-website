@@ -1,0 +1,13 @@
+services:
+  webserver:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    image: nmc-website-dev
+    container_name: nmc-website-dev-container
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html/
+    env_file:
+      - ./id.env

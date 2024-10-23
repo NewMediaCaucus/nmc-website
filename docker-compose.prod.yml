@@ -11,7 +11,7 @@ services:
     volumes:
       - .:/var/www/html/
       - ./certs:/etc/letsencrypt
-      - ./certs-data:/data/letsencrypt
+      # - ./certs-data:/data/letsencrypt
     env_file:
       - ./id.env
     depends_on:
@@ -22,7 +22,7 @@ services:
     user: root
     volumes:
     - ./certs:/etc/letsencrypt
-    - ./certs-data:/data/letsencrypt
+    # - ./certs-data:/data/letsencrypt
     - ./letsencrypt-config:/etc/letsencrypt
     - ./letsencrypt-work:/var/lib/letsencrypt
     - ./letsencrypt-logs:/var/log/letsencrypt

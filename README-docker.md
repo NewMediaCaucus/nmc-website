@@ -14,8 +14,22 @@ Windows: https://docs.docker.com/desktop/install/windows-install/
 
 ## Step 1. Create an id.env file.
 You're going to generate an id.env file for your computer. We have id.env in .gitignore so it won't share your id up to GitHub.com. Your ID is just a simple number, such as ```1001```. You need Docker to use this same ID to run Apache with the same ID as the ID that mount's your local filesystem.
- 
-```echo -e "USERID=$(id -u)" > id.env```
+
+### Windows Users
+Double-click create-id-windows.ps1
+This will create your id.env file
+
+### Mac Users
+Double-click create-id-mac.command 
+This will create your id.env file.
+You may need to enter your username and password to run this.
+
+### Linux Users
+Run create-id-linux.sh from the terminal 
+This will create your id.env file. You may need to run this as sudo.
+```$ sudo create-id-linux.sh```
+
+
 
 ## Step 2. Make the entrypoint.sh script executable and run it.
 There's a script that your docker will need to run. So you need to use this command to make it executable... The ```+x``` is for eXecutable.

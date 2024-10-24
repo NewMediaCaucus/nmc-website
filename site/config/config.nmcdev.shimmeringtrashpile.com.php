@@ -8,6 +8,7 @@
 #  ];
 
 return [
+  'debug' => true,
   'url' => [
     'https://nmcdev.shimmeringtrashpile.com',
   ]

@@ -10,17 +10,6 @@ services:
       - "443:443"
     volumes:
       - .:/var/www/html/
-      - ./certs:/etc/letsencrypt
+      - /etc/letsencrypt/:/etc/letsencrypt
     env_file:
       - ./id.env
-    depends_on:
-      - certbot
-
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
-    user: root
-    volumes:
-      - ./certs:/etc/letsencrypt
-      - ./letsencrypt-logs:/var/log/letsencrypt
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --force-renewal --config-dir /etc/letsencrypt --logs-dir /var/log/letsencrypt; sleep 12h & wait $${!}; done;'"

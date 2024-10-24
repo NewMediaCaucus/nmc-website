@@ -51,8 +51,11 @@ Icon
 
 
 # Let's Encrypt Logging and Config
-/letsencrypt-logs/*
-/letsencrypt-config/*
+# exclude everything
+letsencrypt-logs/*
+
+# exception to the rule
+!letsencrypt-logs/.gitkeep 
 
 # id.env file for Docker mount
 /id.env

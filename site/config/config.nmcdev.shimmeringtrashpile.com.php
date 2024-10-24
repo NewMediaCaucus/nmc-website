@@ -8,6 +8,12 @@
 #  ];
 
 return [
+  'url' => [
+    'https://nmcdev.shimmeringtrashpile.com',
+  ]
+];
+
+return [
     'panel' =>[
       'install' => true
     ]

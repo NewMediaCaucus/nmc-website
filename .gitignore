@@ -2,7 +2,7 @@
 # ------------
 
 Icon
-.DS_Store
+**/.DS_Store
 
 # Temporary files
 # ---------------
@@ -49,12 +49,17 @@ Icon
 
 /site/config/.license
 
-
-# Let's Encrypt Logging
-# exclude everything in the folder
-letsencrypt-logs/*
-# Git does not track empty folders so use an ! override with an empty .gitkeep folder to keep the folder
-!letsencrypt-logs/.gitkeep 
-
 # id.env file for Docker mount
 /id.env
+
+# Logs (exclude everything in these folders)
+# Git does not track empty folders so use an ! override with an empty .gitkeep file to keep the folder
+
+php-logs/*
+!php-logs/.gitkeep 
+
+apache-logs/*
+!apache-logs/.gitkeep 
+
+letsencrypt-logs/*
+!letsencrypt-logs/.gitkeep 

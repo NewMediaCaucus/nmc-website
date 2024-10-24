@@ -22,7 +22,7 @@ There's a script that your docker will need to run. So you need to use this comm
 
 ```chmod +x entrypoint.sh```
 
-## Step 3. Run docker build using docker's compose.
+## Step 3. Build and run your DEV environment using docker's compose.
 Now use this command to build your dev environment. This uses the ```docker compose``` command. Compose let's you get fancy with your Docker setups.
 
 ```sudo docker compose -f docker-compose.dev.yml up --build -d```
@@ -49,5 +49,9 @@ The beauty of Docker is only one developer has to set this up and everybody else
 ### Building and running prod
 This should only be done on the prod server. It won't harm your dev setup, it just won't work
 ```docker compose -f docker-compose.prod.yml up --build -d```
+
+### Restarting apache in the prod container
+Run this docker command to restart the container.
+```sudo docker restart nmc-website-prod-container```
 
 

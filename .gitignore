@@ -50,8 +50,9 @@ Icon
 /site/config/.license
 
 
-# Let's Encrypt Logging
+# Let's Encrypt Logging and Config
 /letsencrypt-logs/*
+/letsencrypt-config/*
 
 # id.env file for Docker mount
 /id.env

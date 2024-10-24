@@ -50,11 +50,10 @@ Icon
 /site/config/.license
 
 
-# Let's Encrypt Logging and Config
-# exclude everything
+# Let's Encrypt Logging
+# exclude everything in the folder
 letsencrypt-logs/*
-
-# exception to the rule
+# Git does not track empty folders so use an ! override with an empty .gitkeep folder to keep the folder
 !letsencrypt-logs/.gitkeep 
 
 # id.env file for Docker mount

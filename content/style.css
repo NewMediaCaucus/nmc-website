@@ -3,6 +3,17 @@
   box-sizing: border-box;
 }
 
+/* Define CSS variables */
+:root {
+  --primary-purple: #D196E6;
+  --electric-green: #50FA7B;
+  --background-blue: #282A36;
+  --button-background: #333544;
+  --button-hover: #37394a;
+  --button-active: #3e4053;
+
+}
+
 html {
   /* establish baseline font size, rems refer to this */
   font-size: 100%;
@@ -12,7 +23,7 @@ html {
 }
 
 body {
-  background-color: #282A36;
+  background-color: var(--background-blue);
   margin: auto;
   color: white;
 }
@@ -26,22 +37,6 @@ body {
     margin: auto;
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-    "logo-img"
-    "logo"
-    "navigation"
-    "opportunities-title"
-    "opportunities"
-    "opportunity"
-    "post-image"
-    "post"
-    "footer";
-    /* row-gap: auto; */
-    /* column-gap: 20px; */
-  }
 }
 
 /* Small devices (Landscape iPhone SE, portrait tablets and large phones, 600px and up) */
@@ -82,20 +77,6 @@ body {
     margin: 0 auto;
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-    "logo-img logo-img"
-    "logo logo"
-    "navigation navigation"
-    "opportunities-title opportunities-title"
-    "opportunities opportunities"
-    "opportunity opportunity"
-    "footer footer";
-    row-gap: auto;
-    column-gap: 20px;
-  }
 }
 
 
@@ -136,13 +117,13 @@ ul {
 
 /* unvisited link */
 a:link {
-  color: #D196E6;
+  color: var(--primary-purple);
   text-decoration-line: none;
 }
 
 /* visited link */
 a:visited {
-  color: #D196E6;
+  color: var(--primary-purple);
   text-decoration-line: none;
 }
 
@@ -153,7 +134,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: #D196E6;
+  color: var(--primary-purple);
 }
 
 .navigation {
@@ -183,13 +164,13 @@ footer {
   grid-area: logo;
   font-family: "Metrophobic", sans-serif;
   font-size: .8em;
-  color: #50FA7B;
+  color: var(--electric-green);
   text-transform: lowercase;
   letter-spacing: 2.8px;
 }
 
 .logo:visited {
-  color: #50FA7B;
+  color: var(--electric-green);
 }
 
 
@@ -198,40 +179,36 @@ footer {
 } 
 
 .opportunities {
-  grid-area: opportunities;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "opportunity-row"
-  grid-auto-flow: rows;
-  /* grid-auto-flow: rows; */
-
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-areas: "opportunity opportunity"; */
+  /* grid-auto-flow: row; */
+  
 } 
 .opportunity {
-  grid-area: opportunity;
-  /* display: flex; */
-  
+  grid-auto-flow: row;
+  text-decoration: none;
 } 
 
-.opportunity-row {
-  grid-area: opportunity-row;
-  grid-auto-flow: rows;
-  /* grid-template-columns: 1fr 1fr; */
-  
-} 
+.opportunity a:hover {
+  text-decoration: none; 
+}
+
+.opportunity .button {
+  text-decoration: none;
+}
 
 .description {
   margin-bottom: 1em;
 }
 
 .post-image {
-  grid-area: post-image;
   width: 100%;
   max-width: 320px;
-  height: auto;
 }
 
 .post {
-  grid-area: post;
   margin-bottom: 3em;
 }
 
@@ -242,6 +219,33 @@ footer {
   color: lightgray;
   font-size: .8em;
   letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 12px; /* Make text smaller */
+  background-color: var(--button-background);
+  color: var(--primary-purple);
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase; /* Make text all caps */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  line-height: normal; /* Ensure line-height does not affect button height */
+  letter-spacing: 1px; /* Ensure line-height does not affect button height */
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+}
+
+.button:active {
+  background-color: var(--button-active);
+  transform: scale(1);
 }
 
 .blurb {

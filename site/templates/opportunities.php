@@ -12,13 +12,12 @@
     </div>
     <div class="opportunities">
         <!-- grab all children folders and list them -->
-        <div class="opportunity-row">
-            <?php foreach ($page->children()->listed() as $opportunity): ?>
+        <?php foreach ($page->children()->listed() as $opportunity): ?>
             <div class="opportunity">
                 <div class="post-image">
                     <a href="<?= $opportunity->url() ?>">
                         <!-- grab first image in project folder (alphabetically) -->
-                        <?= $opportunity->image()->crop(320, 320, 320) ?>                  
+                        <?= $opportunity->image()->crop(468) ?>                  
                     </a>
                 </div>
                 <div class="post">
@@ -27,11 +26,14 @@
                         <h2><?= $opportunity->Title() ?></h2>                    
                     </a>
                     <p class="description"><?= $opportunity->Description() ?></p>
-                    <p class="due-date">DEADLINE: <?= $opportunity->Due() ?><p class="due-date">
+                    <p class="due-date">DEADLINE: <?= $opportunity->Due() ?></p>
+                    <!-- Read More Button -->
+                    <a href="<?= $opportunity->url() ?>" class="button">
+                        View Post
+                    </a>
                 </div>
             </div>
-            <?php endforeach ?> 
-        </div>
+        <?php endforeach ?> 
     </div>
 </main>
 

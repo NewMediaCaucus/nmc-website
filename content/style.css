@@ -11,7 +11,7 @@
   --button-background: #333544;
   --button-hover: #37394a;
   --button-active: #3e4053;
-
+  --white: #ffffff;
 }
 
 html {
@@ -123,7 +123,65 @@ justify-content: center; /* Center the content horizontally */
 align-items: center; /* Center the content vertically */
 }
 
-footer {
+.footer {
+}
+
+.footer-logo-subhead {
+  grid-area: logo-subhead;
+  font-family: "Metrophobic", sans-serif;
+  font-size: .5em;
+  color: var(--electric-green);
+  text-transform: lowercase;
+  letter-spacing: 2.8px;
+}
+
+.footer-logo-subhead:visited {
+  color: var(--electric-green);
+}
+
+.footer-navigation {
+  grid-area: navigation;
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  justify-content: right;
+  align-items: center;
+  padding: 10px;
+}
+
+.footer-navigation a:link,
+.footer-navigation a:visited {
+text-decoration: none;
+color: var(--primary-purple);
+padding: 10px 15px;
+display: block;
+}
+
+.footer-navigation a:hover,
+.footer-navigation a:active {
+/* color: #007bff; Optional: Change link color on hover */
+}
+
+.footer-social {
+  grid-area: social;
+  display: flex; /* Use Flexbox for horizontal layout */
+  justify-content: flex-end;
+  grid-template-columns: repeat(auto-fit, minmax(40px, auto));
+  justify-content: left;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.social-icon {
+  margin: 0 4px;
+}
+
+.copyright {
+  grid-area: copyright;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: .8em;
+  color: var(--white);
+  text-align: center;
+  padding: 10px 0 10px 4px;
 }
 
 .post-image img {
@@ -133,12 +191,11 @@ footer {
 
 .logo-img {
   grid-area: logo-img;
-  margin-top: 1.8rem;
   margin-bottom: 2px;
 }
 
-.logo {
-  grid-area: logo;
+.logo-subhead {
+  grid-area: logo-subhead;
   font-family: "Metrophobic", sans-serif;
   font-size: .8em;
   color: var(--electric-green);
@@ -146,7 +203,7 @@ footer {
   letter-spacing: 2.8px;
 }
 
-.logo:visited {
+.logo-subhead:visited {
   color: var(--electric-green);
 }
 
@@ -223,7 +280,6 @@ footer {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
   font-size: .9em;
-  margin-bottom: 2rem;
 }
 
 

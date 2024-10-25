@@ -8,7 +8,7 @@
   <div class="logo-img">
     <img class="logo-img" src="<?= url('logo.png') ?>" alt="" width="150" height="44">
   </div>
-  <a class="logo" href="<?= $site->url() ?>"><?= $site->title() ?></a>
+  <a class="logo-subhead" href="<?= $site->url() ?>"><?= $site->title() ?></a>
 
 
   <!-- kirby is picky about where this file goes -->

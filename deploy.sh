@@ -9,6 +9,9 @@ cd $DEPLOY_DIR || exit
 # Pull the latest changes from the main branch
 git pull origin main
 
+# Update submodules
+# git submodule update --init --recursive
+
 # Restart the Apache service in the nmc-website-prod-container docker container.
 # Note: This command assumes that the container is named nmc-website-prod-container.
 # Note: 

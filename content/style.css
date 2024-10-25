@@ -87,17 +87,42 @@ a:active {
 
 .navigation {
   grid-area: navigation;
+  display: grid; /* Use CSS Grid for layout */
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto)); /* Create columns for each nav item */
+  justify-content: right; /* Center the navigation items horizontally */
+  align-items: center; /* Center the navigation items vertically */
+  padding: 10px; /* Optional: Add padding */
 }
 
-.navigation a:link {
-  text-decoration-line: none;
+.navigation a:link,
+.navigation a:visited {
+text-decoration: none; /* Remove underline */
+color: var(--primary-purple);
+padding: 10px 15px; /* Add padding to links */
+display: block; /* Ensure the links take up the full height of the nav item */
+}
+
+.navigation a:hover,
+.navigation a:active {
+/* color: #007bff; Optional: Change link color on hover */
 }
 
 nav ul {
-  list-style-type: none;
-  font-family: "Nunito Sans", sans-serif;
-  text-transform: capitalize;
+list-style-type: none;
+font-family: "Nunito Sans", sans-serif;
+text-transform: capitalize;
+display: flex; /* Use Flexbox for horizontal layout */
+justify-content: flex-end; /* Right-justify the navigation items */
+margin: 0; /* Remove default margin */
+padding: 0; /* Remove default padding */
 }
+
+nav ul li {
+display: flex; /* Use Flexbox to center the content */
+justify-content: center; /* Center the content horizontally */
+align-items: center; /* Center the content vertically */
+}
+
 
 footer {
 }
@@ -285,5 +310,5 @@ footer {
     width: 100%;
     max-width: 480px;
   }
-
+  
 }

@@ -8,7 +8,8 @@
 #  ];
 
 return [
-    'panel' =>[
-      'install' => true
+  'debug' => true,
+  'panel' => [
+    'install' => true 
     ]
-  ];
+];

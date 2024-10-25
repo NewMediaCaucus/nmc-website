@@ -9,13 +9,10 @@
 
 return [
   'debug' => true,
-  'url' => [
-    'https://nmcdev.shimmeringtrashpile.com',
-  ]
-];
-
-return [
-    'panel' =>[
-      'install' => true
+  'url'   => [
+    'https://nmcdev.shimmeringtrashpile.com'
+  ],
+  'panel' => [
+    'install' => true 
     ]
-  ];
+];

@@ -8,7 +8,9 @@
 #  ];
 
 return [
-    'panel' =>[
-      'install' => true
+  'debug' => false,
+  'url'   => ['https://newmediacaucus.org'],
+  'panel' => [
+    'install' => true 
     ]
-  ];
+];

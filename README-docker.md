@@ -16,16 +16,16 @@ Windows: https://docs.docker.com/desktop/install/windows-install/
 You're going to generate an id.env file for your computer. We have id.env in .gitignore so it won't share your id up to GitHub.com. Your ID is just a simple number, such as ```1001```. You need Docker to use this same ID to run Apache with the same ID as the ID that mount's your local filesystem.
 
 ### Windows Users
-Double-click create-id-windows.ps1
-This will create your id.env file
+Right-click on the the *create-id-windows.ps1* file and select "Run with Powershell." 
+This will create your id.env file. If you don't have Windows Powershell installed you can get it at [learn.microsoft.com](https://learn.microsoft.com/powershell/scripting/overview?view=powershell-7.1). 
 
 ### Mac Users
-Double-click create-id-mac.command 
+Double-click the *create-id-mac.command* file
 This will create your id.env file.
 You may need to enter your username and password to run this.
 
 ### Linux Users
-Run create-id-linux.sh from the terminal 
+Run *create-id-linux.sh* from the terminal 
 This will create your id.env file. You may need to run this as sudo.
 ```$ sudo create-id-linux.sh```
 

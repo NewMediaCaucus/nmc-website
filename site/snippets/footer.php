@@ -25,12 +25,12 @@
   <div class="footer-social">
     <div class="social-icon">
       <a href="https://www.facebook.com/groups/newmediacaucus" target="_blank">
-        <img src="<?= url('fb.png') ?>" alt="Facebook" width="24" height="24">
+        <img src="<?= url('fb.png') ?>" alt="Facebook" width="18" height="18">
       </a>
     </div>
     <div class="social-icon">
       <a href="https://www.instagram.com/newmediacaucus/" target="_blank">
-        <img src="<?= url('ig.png') ?>" alt="Instagram" width="24" height="24">
+        <img src="<?= url('ig.png') ?>" alt="Instagram" width="18" height="18">
       </a>
     </div>
     <div class="copyright">Copyright © 2024</div>

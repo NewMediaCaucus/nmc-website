@@ -16,7 +16,7 @@ Windows: https://docs.docker.com/desktop/install/windows-install/
 You're going to generate an id.env file for your computer. We have id.env in .gitignore so it won't share your id up to GitHub.com. Your ID is just a simple number, such as ```1001```. You need Docker to use this same ID to run Apache with the same ID as the ID that mount's your local filesystem.
 
 ### Windows Users
-Right-click on the the *create-id-windows.ps1* file provided in this repo and select "Run with Powershell."
+Right-click on the *create-id-windows.ps1* file provided in this repo and select "Run with Powershell."
 
 This will create your id.env file. 
 
@@ -39,7 +39,11 @@ You may need to run this as sudo.
 
 
 ## Step 2. Make the entrypoint.sh script executable and run it.
-There's a script that your docker will need to run. So you need to use this command to make it executable... The ```+x``` is for eXecutable.
+There's a script that your docker will need to run. 
+
+You need to use this command to make it executable.
+
+The ```+x``` is for eXecutable.
 
 ```chmod +x entrypoint.sh```
 
@@ -55,6 +59,7 @@ This should now be serving this repo on http://localhost:8080
 You'll notice our development port is 8080. If you need to change it for yourself, just edit the ports line in your docker-compose.dev.yml
 
 You can also stop the container with docker-compose.
+
 ```docker compose -f docker-compose.dev.yml down```
 
 ## Building and running the production (also known as prod) containers.
@@ -74,7 +79,6 @@ This should only be done on the prod server. It won't harm your dev setup, it ju
 
 ### Restarting apache in the prod container
 Run this docker command to restart the container.
-
 ```sudo docker restart nmc-website-prod-container```
 
 

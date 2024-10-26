@@ -12,15 +12,13 @@ macOS: https://docs.docker.com/desktop/install/mac-install/
 
 Windows: https://docs.docker.com/desktop/install/windows-install/
 
-## Step 1. Create an id.env file.
-You're going to generate an id.env file for your computer. We have id.env in .gitignore so it won't share your id up to GitHub.com. Your ID is just a simple number, such as ```1001```. You need Docker to use this same ID to run Apache with the same ID as the ID that mount's your local filesystem.
+## Step 1. Mac and Linux users, create an id.env file.
 
 ### Windows Users
-Right-click on the *create-id-windows.ps1* file provided in this repo and select "Run with Powershell."
+You don't need an id.env file. You can jump to Step 3.
 
-This will create your id.env file. 
-
-If you don't have Windows Powershell installed you can get it at [learn.microsoft.com](https://learn.microsoft.com/powershell/scripting/overview?view=powershell-7.1). 
+### Mac and Linux Users
+You're going to generate an id.env file for your computer. We have id.env in .gitignore so it won't share your id up to GitHub.com. Your ID is just a simple number, such as ```1001```. You need Docker to use this same ID to run Apache with the same ID as the ID that mount's your local filesystem.
 
 ### Mac Users
 Double-click the *create-id-mac.command* file provided in this repo.
@@ -36,12 +34,8 @@ This will create your id.env file.
 You may need to run this as sudo.
 ```$ sudo create-id-linux.sh```
 
-
-
-## Step 2. Make the entrypoint.sh script executable and run it.
-There's a script that your docker will need to run. 
-
-You need to use this command to make it executable.
+## Step 2. Mac and Linux users, make the entrypoint.sh script executable and run it.
+Windows users can skip this step. Mac and Linux users, there's a script that your docker will need to run so it needs the "executable" permission. Use this command to make it executable.
 
 The ```+x``` is for eXecutable.
 
@@ -50,16 +44,30 @@ The ```+x``` is for eXecutable.
 ## Step 3. Build and run your DEV environment using docker's compose.
 Now use this command to build your dev environment. This uses the ```docker compose``` command. Compose let's you get fancy with your Docker setups.
 
+Windows Users:
+```sudo docker compose -f docker-compose.windows-dev.yml up --build -d```
+
+Mac and Linux Users:
 ```sudo docker compose -f docker-compose.dev.yml up --build -d```
 
-## Step 4. Try it out! Start the development (also known as dev) container with docker-compose.
+### Already have your images and you just want to build containers?
+Note: If you have already created your docker images and you just want to create containers you can run remove the --build argument.
+
+Example for Windows Users:
+```docker compose -f docker-compose.windows-dev.yml up -d```
+
+Example for Mac and Linux Users:
 ```docker compose -f docker-compose.dev.yml up -d```
 
 This should now be serving this repo on http://localhost:8080
 You'll notice our development port is 8080. If you need to change it for yourself, just edit the ports line in your docker-compose.dev.yml
 
-You can also stop the container with docker-compose.
+You can also stop the container with the Docker Compose down command.
 
+Windows Users:
+```docker compose -f docker-compose.windows-dev.yml down```
+
+Mac and Linux Users:
 ```docker compose -f docker-compose.dev.yml down```
 
 ## Building and running the production (also known as prod) containers.
@@ -73,12 +81,6 @@ You might ask yourself, how might dev and prod need to be different?
 The beauty of Docker is only one developer has to set this up and everybody else gets it for free.
 
 ### Building and running prod
-This should only be done on the prod server. It won't harm your dev setup, it just won't work.
+ATTN: This should only be run on a staging or prod server. It won't harm your dev setup, it just won't work.
 
 ```docker compose -f docker-compose.prod.yml up --build -d```
-
-### Restarting apache in the prod container
-Run this docker command to restart the container.
-```sudo docker restart nmc-website-prod-container```
-
-

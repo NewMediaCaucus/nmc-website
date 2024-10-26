@@ -65,6 +65,3 @@ nick is here
 finished my salad at 4 min before the meeting ended
 
 JLS is here.  Thanks y'all.
-
-## Testing Git post-recieve Hook
-testing

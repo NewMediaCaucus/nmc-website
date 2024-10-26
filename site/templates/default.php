@@ -1,8 +1,8 @@
-<!-- top section -->
-<?php snippet('header') ?>
-
 <!-- nav section -->
 <?php snippet('navigation') ?>
+
+<!-- top section -->
+<?php snippet('header') ?>
 
 <!-- content section -->
 <main>

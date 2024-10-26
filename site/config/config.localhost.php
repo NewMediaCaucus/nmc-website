@@ -7,8 +7,9 @@
 #    'panel' => false
 #  ];
 
-#return [
-#    'panel' =>[
-#      'install' => true
-#    ]
-#  ];
+return [
+  'debug' => true,
+  'panel' => [
+    'install' => true 
+    ]
+];

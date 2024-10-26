@@ -1,0 +1,30 @@
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: nmc-website-prod
+    container_name: nmc-website-prod-container
+    hostname: nmcdev.shimmeringtrashpile.com
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - .:/var/www/html/
+      - ./custom-php.prod.ini:/etc/php/8.3/apache2/conf.d/custom-php.ini
+      - ./php-logs:/var/log/php-logs
+      - ./apache-logs:/var/log/apache2
+      - /etc/letsencrypt:/etc/letsencrypt
+    env_file:
+      - ./id.env
+    depends_on:
+      - certbot
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    user: root
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - ./letsencrypt-logs:/var/log/letsencrypt
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --force-renewal --config-dir /etc/letsencrypt --logs-dir /var/log/letsencrypt; sleep 12h & wait $${!}; done;'"

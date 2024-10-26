@@ -1,60 +1,365 @@
-
-*,
-*:after,
-*:before {
-  margin: 0;
-  padding: 0;
-  /* true sizing including padding */
+* {
+  /* true sizing*/
   box-sizing: border-box;
+}
+
+/* Define CSS variables */
+:root {
+  --primary-purple: #D196E6;
+  --electric-green: #50FA7B;
+  --background-blue: #282A36;
+  --button-background: #333544;
+  --button-hover: #37394a;
+  --button-active: #3e4053;
+  --white: #ffffff;
 }
 
 html {
   /* establish baseline font size, rems refer to this */
   font-size: 100%;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Atkinson Hyperlegible", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
   font-style: normal;
 }
 
-main {
-  background-color: bisque;
-  padding: 2rem;
+body {
+  background-color: var(--background-blue);
+  margin: auto;
+  color: white;
 }
 
-nav {
-  background-color: aquamarine;
-  padding: 2rem;
+h1 {
+  font-size: 2.4em;
+  font-family: "Nunito Sans", sans-serif;
+  color: white;
+  margin-bottom: .2em;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.6em;
+  font-family: "Nunito Sans", sans-serif;
+  text-decoration: none;
+}
+
+h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 1.4em;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+h4 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 1.2em;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+p {
+  color: white;
+  line-height: 1.4;
+  font-size: 1.1em;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+ul {
+  line-height: 1.4;
+}
+
+a:link {
+  color: var(--primary-purple);
+  text-decoration-line: none;
+}
+
+a:visited {
+  color: var(--primary-purple);
+  text-decoration-line: none;
+}
+
+a:hover {
+  text-decoration-line: underline;
+}
+
+a:active {
+  color: var(--primary-purple);
+}
+
+.navigation {
+  grid-area: navigation;
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  justify-content: right;
+  align-items: center;
+  padding: 10px;
+}
+
+.navigation a:link,
+.navigation a:visited {
+text-decoration: none;
+color: var(--primary-purple);
+padding: 10px 15px;
+display: block;
+}
+
+.navigation a:hover,
+.navigation a:active {
+/* color: #007bff; Optional: Change link color on hover */
 }
 
 nav ul {
-  list-style-type: none;
+list-style-type: none;
+font-family: "Nunito Sans", sans-serif;
+text-transform: capitalize;
+display: flex; /* Use Flexbox for horizontal layout */
+justify-content: flex-end;
+margin: 0; 
+padding: 0;
 }
 
-footer {
-  background-color: lightblue;
-  padding: 2rem;
+nav ul li {
+display: flex; /* Use Flexbox to center the content */
+justify-content: center; /* Center the content horizontally */
+align-items: center; /* Center the content vertically */
+}
+
+.footer {
+}
+
+.footer-logo-subhead {
+  grid-area: logo-subhead;
+  font-family: "Metrophobic", sans-serif;
+  font-size: .5em;
+  color: var(--electric-green);
+  text-transform: lowercase;
+  letter-spacing: 2.8px;
+}
+
+.footer-logo-subhead:visited {
+  color: var(--electric-green);
+}
+
+.footer-navigation {
+  grid-area: navigation;
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  justify-content: right;
+  align-items: center;
+  padding: 10px;
+}
+
+.footer-navigation a:link,
+.footer-navigation a:visited {
+text-decoration: none;
+color: var(--primary-purple);
+padding: 10px 15px;
+display: block;
+}
+
+.footer-navigation a:hover,
+.footer-navigation a:active {
+/* color: #007bff; Optional: Change link color on hover */
+}
+
+.footer-social {
+  grid-area: social;
+  display: flex; /* Use Flexbox for horizontal layout */
+  justify-content: flex-end;
+  grid-template-columns: repeat(auto-fit, minmax(40px, auto));
+  justify-content: left;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.social-icon {
+  margin: 0 4px;
+}
+
+.copyright {
+  grid-area: copyright;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: .8em;
+  color: var(--white);
+  text-align: center;
+  padding: 10px 0 10px 4px;
+}
+
+.post-image img {
+  width: 100%; /* Ensure the image scales down */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.logo-img {
+  grid-area: logo-img;
+  margin-bottom: 2px;
+}
+
+.logo-subhead {
+  grid-area: logo-subhead;
+  font-family: "Metrophobic", sans-serif;
+  font-size: .8em;
+  color: var(--electric-green);
+  text-transform: lowercase;
+  letter-spacing: 2.8px;
+}
+
+.logo-subhead:visited {
+  color: var(--electric-green);
+}
+
+
+.opportunities-title {
+  grid-area: opportunities-title;
+} 
+
+.opportunities {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+} 
+
+.opportunity {
+  grid-auto-flow: row;
+  text-decoration: none;
+} 
+
+.opportunity a:hover {
+  text-decoration: none; 
+}
+
+.opportunity .button {
+  text-decoration: none;
+}
+
+.description {
+  margin-bottom: 1em;
+}
+
+
+.post {
+  margin-bottom: 3em;
+}
+
+.due-date {
+  font-family: "DM Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  color: lightgray;
+  font-size: .8em;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 12px;
+  background-color: var(--button-background);
+  color: var(--primary-purple);
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase; 
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  line-height: normal; 
+  letter-spacing: 1px; 
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+}
+
+.button:active {
+  background-color: var(--button-active);
+  transform: scale(1);
 }
 
 .blurb {
-  display: block;
-  margin-bottom: 2rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: .9em;
 }
 
-.all_opps ul{
-  list-style: none;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+
+
+/* Extra small devices (iPhone SE, Pixel 7, Surface Duo, Samsung Galaxy A51/71, Galaxy Z Fold, phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .page {
+    /* background: #bada55; */
+    max-width: 320px;
+    margin: auto;
+  }
+
+  .opportunities {
+    display: grid;
+    grid-template-columns: 1fr;
+  } 
+
+  .post-image {
+    width: 100%;
+    max-width: 400px;
+  }
+
 }
 
-.all_opps li{
-  list-style: none;
+/* Small devices (Landscape iPhone SE, portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .page {
+    /* background: darkorange; */
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .post-image {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
-.one_opp ul{
-  margin-bottom: 2rem;
+
+/* Medium devices (iPad Air, iPad Mini, Surface Pro 7, Asus Zenbook Fold, landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .page {
+    /* background: darkolivegreen; */
+    max-width: 672px;
+    margin: auto;
+  }
+
+  .post-image {
+    width: 100%;
+    max-width: 320px;
+  }
 }
 
-.one_opp li{
-  background-color: darkorange;
+
+/* Large devices (iPad Pro, laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .page {
+    /* background: darkmagenta; */
+    max-width: 960px;
+    margin: auto;
+  }
+
+  .post-image {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .page {
+    /* background: darkslateblue; */
+    width: 1024px;
+    margin: 0 auto;
+  }
+
+  .post-image {
+    width: 100%;
+    max-width: 480px;
+  }
+  
 }

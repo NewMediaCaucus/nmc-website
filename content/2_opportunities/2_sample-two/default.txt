@@ -1,9 +1,13 @@
-Title: My great opportunity
+Title: Call for Submissions: CURRENTS 2025 Art & Technology Festival + 3 Separate Exhibitions
 
 ----
 
-Description: Some text that describes what it is
+Description: CURRENTS New Media is now accepting submissions for our annual 2025 Art and Technology Festival in Santa Fe, New Mexico, as well as for three separate exhibitions throughout 2025. These exhibitions will focus on the following modalities of art and…
 
 ----
 
-Due: January 1, 2099
+Due: November 4, 2024
+
+----
+
+Uuid: 3mprE99OgGLFEjla

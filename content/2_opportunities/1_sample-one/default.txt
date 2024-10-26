@@ -1,9 +1,0 @@
-Title: My great opportunity
-
-----
-
-Description: Some text that describes what it is
-
-----
-
-Due: January 1, 2099

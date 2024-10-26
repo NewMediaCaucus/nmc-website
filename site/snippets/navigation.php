@@ -2,10 +2,11 @@
 <!-- dynamically assemble menu -->
 
 <nav class="navigation">
+<!-- <div class="logo-img">
+    <img src="<?= url('logo.png') ?>" alt="" width="150" height="44">
+</div>
+<a class="logo-subhead" href="<?= $site->url() ?>"><?= $site->title() ?></a> -->
 
-<a class="logo" href="<?= $site->url() ?>"><?= $site->title() ?></a>
-
-<span class="blurb">Blurb about NMC</span>
 
 <ul>
     <!-- grab all primary pages that have numbers in the title -->

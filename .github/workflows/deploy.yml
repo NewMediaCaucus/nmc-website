@@ -11,13 +11,13 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.5.3
+      uses: webfactory/ssh-agent@v0.5.4
       with:
         ssh-private-key: ${{ secrets.STAGING_SSH_KEY }}
 
     - name: Pull latest changes on staging server
       run: |
-        ssh -o StrictHostKeyChecking=no nmcdev@nmcdev.shimmeringtrashpile.com 'cd /home/nmcdev/nmc-website && git pull origin main && docker-compose -f docker-compose.prod.yml up -d --build'
+        ssh -o StrictHostKeyChecking=no nmcdev@nmcdev.shimmeringtrashpile.com 'cd /home/nmcdev/nmc-website && git pull origin main && docker compose -f docker compose.prod.yml up -d --build'

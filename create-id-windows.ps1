@@ -7,11 +7,40 @@
 # Step 3. If so, you're good to go.
 
 # Get the current user's SID
-$userSID = (Get-WmiObject Win32_UserAccount -Filter "Name='$env:USERNAME'").SID
+# Debugging: Output the current username and domain
+Write-Output "Username: $env:USERNAME"
+Write-Output "Domain: $env:USERDOMAIN"
+
+# Get the current user's SID
+$userAccount = Get-WmiObject Win32_UserAccount -Filter "Name='$env:USERNAME' AND Domain='$env:USERDOMAIN'"
+
+# Debugging: Output the user account object
+Write-Output "User Account: $userAccount"
+
+# Retrieve the SID
+$userSID = [System.Security.Principal.WindowsIdentity]::GetCurrent().User.Value
+
+# Debugging: Output the SID
+Write-Output "User SID: $userSID"
 
 # Define the path to the id.env file in the current directory
 $currentDirectory = Get-Location
-$filePath = "$currentDirectory\id.env"
+Write-Output "Current Directory: $currentDirectory"
+
+# Define the target subdirectory and append it to the current directory
+$targetSubDirectory = "Documents\GitHub\nmc-website"
+$targetDirectory = Join-Path -Path $currentDirectory -ChildPath $targetSubDirectory
+Write-Output "Target Directory: $targetDirectory"
+
+# Define the path to the id.env file in the target directory
+$filePath = Join-Path -Path $targetDirectory -ChildPath "id.env"
+Write-Output "File Path: $filePath"
 
 # Write the USERID to the id.env file
-"USERID=$userSID" | Out-File -FilePath $filePath -Encoding utf8
+try {
+    "USERID=$userSID" | Out-File -FilePath $filePath -Encoding utf8
+    Write-Output "Successfully wrote to $filePath"
+} catch {
+    Write-Output "Failed to write to $filePath"
+    Write-Output $_.Exception.Message
+}

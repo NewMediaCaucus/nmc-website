@@ -20,4 +20,4 @@ jobs:
 
     - name: Pull latest changes on staging server
       run: |
-        ssh -o StrictHostKeyChecking=no nmcdev@nmcdev.shimmeringtrashpile.com 'cd /home/nmcdev/nmc-website && git pull origin main && docker compose -f docker compose.prod.yml up -d --build'
+        ssh -o StrictHostKeyChecking=no nmcdev@nmcdev.shimmeringtrashpile.com 'cd /home/nmcdev/nmc-website && git pull origin main && docker compose -f docker-compose.prod.yml up -d --build'

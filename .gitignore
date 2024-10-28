@@ -13,7 +13,7 @@ Icon
 # Kirby content files
 # --------------------
 /content/*
-!/contenet/site.txt
+!/content/site.txt
 !/content/style.css
 
 

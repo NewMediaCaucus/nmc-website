@@ -1,14 +1,14 @@
 # System files
 # ------------
-
 Icon
 **/.DS_Store
 
+
 # Kirby media files
 # ---------------
-
 /media/*
 !/media/index.html
+
 
 # Kirby content files
 # --------------------
@@ -16,10 +16,11 @@ Icon
 !/contenet/site.txt
 !/content/style.css
 
+
 # Lock files
 # ---------------
-
 .lock
+
 
 # Editors
 # (sensitive workspace files)
@@ -28,39 +29,39 @@ Icon
 /.vscode
 /.idea
 
+
 # -------------SECURITY-------------
 # NEVER publish these files via Git!
 # -------------SECURITY-------------
 
 # Cache Files
 # ---------------
-
 /site/cache/*
 !/site/cache/index.html
 
 # Accounts
 # ---------------
-
 /site/accounts/*
 !/site/accounts/index.html
 
 # Sessions
 # ---------------
-
 /site/sessions/*
 !/site/sessions/index.html
 
 # License
 # ---------------
-
 /site/config/.license
 
+
+# ------------------
+# NMC Docker Devops
+# ------------------
 # id.env file for Docker mount
 /id.env
 
 # Logs (exclude everything in these folders)
 # Git does not track empty folders so use an ! override with an empty .gitkeep file to keep the folder
-
 php-logs/*
 !php-logs/.gitkeep 
 

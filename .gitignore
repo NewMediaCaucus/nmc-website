@@ -5,20 +5,20 @@ Icon
 
 
 # Kirby media files
-# ---------------
+# -----------------
 /media/*
 !/media/index.html
 
 
 # Kirby content files
-# --------------------
+# -------------------
 /content/*
 !/content/site.txt
 !/content/style.css
 
 
 # Lock files
-# ---------------
+# ----------
 .lock
 
 
@@ -35,28 +35,28 @@ Icon
 # -------------SECURITY-------------
 
 # Cache Files
-# ---------------
+# -----------
 /site/cache/*
 !/site/cache/index.html
 
 # Accounts
-# ---------------
+# --------
 /site/accounts/*
 !/site/accounts/index.html
 
 # Sessions
-# ---------------
+# --------
 /site/sessions/*
 !/site/sessions/index.html
 
 # License
-# ---------------
+# -------
 /site/config/.license
 
 
-# ------------------
+# -----------------
 # NMC Docker Devops
-# ------------------
+# -----------------
 # id.env file for Docker mount
 /id.env
 

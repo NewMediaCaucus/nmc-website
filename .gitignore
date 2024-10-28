@@ -10,6 +10,12 @@ Icon
 /media/*
 !/media/index.html
 
+# Kirby content files
+# --------------------
+/content/*
+!/contenet/site.txt
+!/content/style.css
+
 # Lock files
 # ---------------
 
@@ -63,3 +69,6 @@ apache-logs/*
 
 letsencrypt-logs/*
 !letsencrypt-logs/.gitkeep 
+
+certs/*
+!certs/.gitkeep 

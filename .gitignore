@@ -61,6 +61,7 @@ Icon
 /id.env
 
 # Logs (exclude everything in these folders)
+# ------------------------------------------
 # Git does not track empty folders so use an ! override with an empty .gitkeep file to keep the folder
 php-logs/*
 !php-logs/.gitkeep 

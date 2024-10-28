@@ -4,7 +4,7 @@
 Icon
 **/.DS_Store
 
-# Temporary files
+# Kirby media files
 # ---------------
 
 /media/*

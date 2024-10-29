@@ -50,7 +50,7 @@ Windows Users:
 Mac and Linux Users:
 ```sudo docker compose -f docker-compose.dev.yml up --build -d```
 
-### Already have your images and you just want to build containers?
+### Build and start your DEV containers from images you already have.
 Note: If you have already created your docker images and you just want to create containers you can run remove the --build argument.
 
 Example for Windows Users:
@@ -62,7 +62,7 @@ Example for Mac and Linux Users:
 This should now be serving this repo on http://localhost:8080
 You'll notice our development port is 8080. If you need to change it for yourself, just edit the ports line in your docker-compose.dev.yml
 
-You can also stop the container with the Docker Compose down command.
+### Stopping and deleting your DEV containers with the Docker Compose down command.
 
 Windows Users:
 ```docker compose -f docker-compose.windows-dev.yml down```
@@ -70,6 +70,7 @@ Windows Users:
 Mac and Linux Users:
 ```docker compose -f docker-compose.dev.yml down```
 
+# Docker on Staging and Production
 ## Building and running the production (also known as prod) containers.
 The production containers are setup to be the production (prod) environment. 
 
@@ -80,7 +81,7 @@ You might ask yourself, how might dev and prod need to be different?
 
 The beauty of Docker is only one developer has to set this up and everybody else gets it for free.
 
-### Building and running prod
+## Building and running prod
 ATTN: This should only be run on a staging or prod server. It won't harm your dev setup, it just won't work.
 
 ```docker compose -f docker-compose.prod.yml up --build -d```

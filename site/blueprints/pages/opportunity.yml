@@ -22,7 +22,7 @@ fields:
     type: textarea
     required: true
     minlength: 100
-    maxlength: 4000
+    maxlength: 6500
   image:
     label: Image
     type: files

@@ -4,18 +4,28 @@ fields:
   category:
     label: Category
     type: select
+    required: true
     options:
-      grant: Grant
-      job: Job
-      exhibition: Exhibition
+      grant: Call for Grants
+      job: Call for Jobs
+      paper: Call for Papers
+      entry: Call for Entries
       other: Other
   short_description:
     label: Short Description
-    type: text
+    type: textarea
+    required: true
+    minlength: 100
+    maxlength: 275
   long_description:
     label: Long Description
     type: textarea
+    required: true
+    minlength: 100
+    maxlength: 4000
   image:
     label: Image
     type: files
-    max: 1
+    required: true
+    multiple: false
+

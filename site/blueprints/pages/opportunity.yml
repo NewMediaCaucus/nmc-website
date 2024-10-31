@@ -15,10 +15,14 @@ fields:
     label: Short Description
     type: textarea
     required: true
+    minlength: 100
+    maxlength: 275
   long_description:
     label: Long Description
     type: textarea
     required: true
+    minlength: 100
+    maxlength: 4000
   image:
     label: Image
     type: files

@@ -4,6 +4,7 @@ fields:
   category:
     label: Category
     type: select
+    required: true
     options:
       grant: Grant
       job: Job
@@ -12,10 +13,14 @@ fields:
   short_description:
     label: Short Description
     type: textarea
+    required: true
   long_description:
     label: Long Description
     type: textarea
+    required: true
   image:
     label: Image
     type: files
-    max: 1
+    required: true
+    multiple: false
+

@@ -1,0 +1,21 @@
+title: Opportunity
+
+fields:
+  category:
+    label: Category
+    type: select
+    options:
+      grant: Grant
+      job: Job
+      exhibition: Exhibition
+      other: Other
+  short_description:
+    label: Short Description
+    type: text
+  long_description:
+    label: Long Description
+    type: textarea
+  image:
+    label: Image
+    type: files
+    max: 1

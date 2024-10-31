@@ -6,9 +6,10 @@ fields:
     type: select
     required: true
     options:
-      grant: Grant
-      job: Job
-      exhibition: Exhibition
+      grant: Call for Grants
+      job: Call for Jobs
+      paper: Call for Papers
+      entry: Call for Entries
       other: Other
   short_description:
     label: Short Description

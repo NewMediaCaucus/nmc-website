@@ -11,7 +11,7 @@ fields:
       other: Other
   short_description:
     label: Short Description
-    type: text
+    type: textarea
   long_description:
     label: Long Description
     type: textarea

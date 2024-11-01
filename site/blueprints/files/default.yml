@@ -7,6 +7,4 @@ accept:
   minwidth: 720 # accommodate 720p screenshots
   maxheight: 3840 # accommodate 4k screenshots
   maxwidth: 3840 # accommodate 4k screenshots
-  maxsize: 5000000 # in bytes
-  create:
-    format: webp # the children are our future
+  maxsize: 5000000 # in bytes, 5MB

@@ -12,4 +12,5 @@ sections:
     label: Opportunities
     type: pages
     parent: site.find("opportunities")
-    layout: list   
+    layout: list 
+    templates: opportunity 

@@ -1,0 +1,5 @@
+title: Image
+
+accept:
+  mime: image/*
+  type: image

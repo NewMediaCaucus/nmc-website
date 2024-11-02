@@ -32,7 +32,7 @@ sections:
     required: true
     max: 1
     empty: No image yet
-    help: Image replacements go live immediately. Remember to update the alt text too!
+    help: Image replacements on Public posts go live immediately. Remember to update the alt text too!
   alt:  
     type: fields
     fields:

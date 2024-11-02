@@ -1,5 +1,4 @@
 title: Image
-
 accept:
   mime: image/*
   type: image
@@ -8,3 +7,13 @@ accept:
   maxheight: 3840 # accommodate 4k screenshots
   maxwidth: 3840 # accommodate 4k screenshots
   maxsize: 5000000 # in bytes, 5MB
+  options:
+    delete:
+      admin: true
+      editor: false
+    replace:
+      admin: true
+      editor: true
+    update:
+      admin: true
+      editor: true

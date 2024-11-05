@@ -18,10 +18,6 @@
             <?= $page->title()->kirbytext() ?>
         </h2>
     <?php endif ?>
-    
-    <?php if ($page->long_description()->isNotEmpty()): ?>
-        <p><?= $page->long_description()->kirbytext() ?></p>
-    <?php endif ?>
 
     <?php if ($page->category()->isNotEmpty()): ?>
         <p>
@@ -34,6 +30,11 @@
             ?>
         </p>
     <?php endif ?>
+    
+    <?php if ($page->long_description()->isNotEmpty()): ?>
+        <p><?= $page->long_description()->kirbytext() ?></p>
+    <?php endif ?>
+
 
 
     

@@ -1,21 +1,49 @@
 title: Opportunity
 
-fields:
-  category:
-    label: Category
-    type: select
-    options:
-      grant: Grant
-      job: Job
-      exhibition: Exhibition
-      other: Other
-  short_description:
-    label: Short Description
-    type: text
-  long_description:
-    label: Long Description
-    type: textarea
-  image:
+sections:
+  content:
+    type: fields
+    fields:
+      category:
+        label: Category
+        type: select
+        required: true
+        options:
+          grant: Call for Grants
+          job: Call for Jobs
+          paper: Call for Papers
+          entry: Call for Entries
+          other: Other
+      date:
+        label: Created Date
+        type: date
+        default: today
+        required: true
+      short_description:
+        label: Short Description
+        type: textarea
+        required: true
+        minlength: 100
+        maxlength: 275
+      long_description:
+        label: Long Description
+        type: textarea
+        required: true
+        minlength: 100
+        maxlength: 6500
+  files:
     label: Image
     type: files
+    required: true
     max: 1
+    empty: No image yet
+    help: Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
+  alt:  
+    type: fields
+    fields:
+      alt:
+        label: Image Alt Text
+        required: true
+        type: textarea
+        buttons: false
+        help: <b>"Alt Text"</b> helps screen-reading tools describe the image we are posting to our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.

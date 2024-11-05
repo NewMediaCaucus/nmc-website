@@ -27,7 +27,8 @@
                             <!-- pull from sections defined in each opportunity text file -->
                             <h2><?= $opportunity->Title() ?></h2>                    
                         </a>
-                        <p class="description"><?= $opportunity->Description() ?></p>
+
+                        <p class="description"><?= $opportunity->short_description() ?></p>
                         <!-- Read More Button -->
                         <a href="<?= $opportunity->url() ?>" class="button">
                             View Post

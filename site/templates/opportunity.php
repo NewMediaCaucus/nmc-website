@@ -7,26 +7,37 @@
 <!-- content section -->
 <main>
     <br><br>
-    <h2>Category:</h2>
-    <?php if ($page->category()->isNotEmpty()): ?>
-        <p><?= $page->category()->kirbytext() ?></p>
+    <!-- grab the first/only image in the folder -->
+    <?php if($image = $page->image()): ?>
+        <!-- TODO: What div should go around this image? -->
+        <img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>" width="960px">
     <?php endif ?>
 
-    <h2>Short Description:</h2>
-    <?php if ($page->short_description()->isNotEmpty()): ?>
-        <p><?= $page->short_description()->kirbytext() ?></p>
+    <?php if ($page->title()->isNotEmpty()): ?>
+        <h2>
+            <?= $page->title()->kirbytext() ?>
+        </h2>
     <?php endif ?>
     
-    <h2>Long Description:</h2>
     <?php if ($page->long_description()->isNotEmpty()): ?>
         <p><?= $page->long_description()->kirbytext() ?></p>
     <?php endif ?>
-    
-    <h2>Image:<h2>
-    <!-- grab the first/only image in the folder -->
-    <?php if($image = $page->image()): ?>
-        <img src="<?= $image->url() ?>" alt="" width="300px">
+
+    <?php if ($page->category()->isNotEmpty()): ?>
+        <p>
+            <?php
+            $field = $page->blueprint()->field('category');
+            $value = $page->category()->value();
+            foreach ($page->category()->split() as $category):
+                echo $field['options'][$value] ?? $value;
+            endforeach;
+            ?>
+        </p>
     <?php endif ?>
+
+
+    
+    
     <br><br>
 </main>
 

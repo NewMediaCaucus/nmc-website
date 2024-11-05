@@ -14,6 +14,7 @@
     <div class="opportunities">
         <!-- grab all children folders and list them -->
         <?php foreach ($page->children()->listed() as $opportunity): ?>
+            <!-- There can be moments when an opp has no image. If so, skip it. -->
             <?php if($image = $opportunity->image()): ?>
                 <div class="opportunity">
                     <div class="post-image">
@@ -26,8 +27,25 @@
                         <a href="<?= $opportunity->url() ?>">
                             <!-- pull from sections defined in each opportunity text file -->
                             <h2><?= $opportunity->Title() ?></h2>                    
-                        </a>
-                        <p class="description"><?= $opportunity->Description() ?></p>
+                        </a>   
+                        <!-- Display category options -->
+                        <?php if ($opportunity->category()->isNotEmpty()): ?>
+                            <p class="categories">
+                                <?php
+                                $field = $opportunity->blueprint()->field('category');
+                                $value = $opportunity->category()->value();
+                                foreach ($opportunity->category()->split() as $category):
+                                    echo $field['options'][$value] ?? $value;
+                                endforeach;
+                                ?>
+                            </p>
+                            <?php endif ?>
+                        <!-- Display created date -->
+                        <p class="created-date">
+                            Posted <?= $opportunity->date()->toDate('F j, Y') ?>
+                        </p>
+                        <!-- Display short description -->
+                        <p class="description"><?= $opportunity->short_description() ?></p>
                         <!-- Read More Button -->
                         <a href="<?= $opportunity->url() ?>" class="button">
                             View Post

@@ -14,6 +14,11 @@ sections:
           paper: Call for Papers
           entry: Call for Entries
           other: Other
+      date:
+        label: Created Date
+        type: date
+        default: today
+        required: true
       short_description:
         label: Short Description
         type: textarea
@@ -32,7 +37,7 @@ sections:
     required: true
     max: 1
     empty: No image yet
-    help: Image replacements on Public posts go live immediately. Remember to update the alt text too!
+    help: Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
   alt:  
     type: fields
     fields:

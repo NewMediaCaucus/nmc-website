@@ -20,7 +20,8 @@
                     <div class="post-image">
                         <a href="<?= $opportunity->url() ?>">
                             <!-- grab first image in project folder (alphabetically) -->
-                            <?= $image->crop(468) ?>
+                            <img src="<?= $image->crop(468)->url() ?>" alt="<?= $opportunity->alt() ?>">
+
                         </a>
                     </div>
                     <div class="post">

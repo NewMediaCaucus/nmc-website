@@ -19,17 +19,22 @@
         </h2>
     <?php endif ?>
 
+    <!-- TODO: Style this -->
     <?php if ($page->category()->isNotEmpty()): ?>
         <p>
             <?php
-            $field = $page->blueprint()->field('category');
-            $value = $page->category()->value();
-            foreach ($page->category()->split() as $category):
-                echo $field['options'][$value] ?? $value;
-            endforeach;
+                $field = $page->blueprint()->field('category');
+                $value = $page->category()->value();
+                foreach ($page->category()->split() as $category):
+                    echo $field['options'][$value] ?? $value;
+                endforeach;
             ?>
         </p>
     <?php endif ?>
+    <!-- Display created date -->
+    <p class="created-date">
+        Posted: <?= $page->date()->toDate('F j, Y') ?>
+    </p>
     
     <?php if ($page->long_description()->isNotEmpty()): ?>
         <p><?= $page->long_description()->kirbytext() ?></p>

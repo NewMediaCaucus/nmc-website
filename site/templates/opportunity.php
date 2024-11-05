@@ -10,7 +10,7 @@
     <!-- grab the first/only image in the folder -->
     <?php if($image = $page->image()): ?>
         <!-- TODO: What div should go around this image? -->
-        <img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>" width="960px">
+        <img src="<?= $image->url() ?>" alt="<?= $page->alt()->value() ?>" width="960px">
     <?php endif ?>
 
     <?php if ($page->title()->isNotEmpty()): ?>
@@ -33,7 +33,7 @@
     <?php endif ?>
     <!-- Display created date -->
     <p class="created-date">
-        Posted: <?= $page->date()->toDate('F j, Y') ?>
+        Posted <?= $page->date()->toDate('F j, Y') ?>
     </p>
     
     <?php if ($page->long_description()->isNotEmpty()): ?>

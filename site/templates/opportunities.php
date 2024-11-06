@@ -13,7 +13,8 @@
     </div>
     <div class="opportunities">
         <!-- grab all children folders and list them -->
-        <?php foreach ($page->children()->listed() as $opportunity): ?>
+        <?php $opportunities = $page->children()->listed()->paginate(10); ?>
+        <?php foreach ($opportunities as $opportunity): ?>
             <!-- There can be moments when an opp has no image. If so, skip it. -->
             <?php if($image = $opportunity->image()): ?>
                 <div class="opportunity">
@@ -63,10 +64,10 @@
   <?php endforeach ?>
 </ul>
 
-<?php $pagination = $list->pagination() ?>
+<!-- Pagination -->
+<?php $pagination = $opportunities->pagination() ?>
 <nav>
   <ul>
-
     <?php if ($pagination->hasPrevPage()): ?>
     <li>
       <a href="<?= $pagination->prevPageURL() ?>">‹</a>
@@ -94,7 +95,6 @@
       <span>›</span>
     </li>
     <?php endif ?>
-
   </ul>
 </nav>
 </main>

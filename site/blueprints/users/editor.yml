@@ -1,0 +1,17 @@
+title: Editor
+description: Editors can create, update and delete pages. They can also upload and replace files.
+
+
+permissions:
+  panel:
+    access: true
+  site:
+    update: false
+  pages:
+    create: true
+    update: true
+    delete: false
+  files:
+    upload: true
+    replace: true
+    delete: true

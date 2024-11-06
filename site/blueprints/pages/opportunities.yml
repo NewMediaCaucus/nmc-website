@@ -4,37 +4,27 @@ options:
   access:
     admin: "*"  # Wildcard permission grants all access to admin role
   update:
-    admin: true
     editor: false
   delete: 
-    admin: true
     editor: false
   rename: 
-    admin: true
     editor: false
   changeTitle: 
-    admin: true
     editor: false
   status: 
     admin: true
     editor: false
   url: 
-    admin: true
     editor: false
   sortable: 
-    admin: true
     editor: false
   changePosition: 
-    admin: true
     editor: false  
   move: 
-    admin: true
     editor: false
   duplicate: 
-    admin: true
     editor: false
   changePosition: 
-    admin: true
     editor: false    
 
 sections:

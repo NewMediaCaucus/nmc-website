@@ -47,3 +47,5 @@ sections:
         type: textarea
         buttons: false
         help: <b>"Alt Text"</b> helps screen-reading tools describe the image we are posting to our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.
+        minlength: 20
+        maxlength: 400

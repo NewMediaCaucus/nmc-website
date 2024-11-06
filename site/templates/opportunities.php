@@ -13,7 +13,8 @@
     </div>
     <div class="opportunities">
         <!-- grab all children folders and list them -->
-        <?php foreach ($page->children()->listed() as $opportunity): ?>
+        <?php $opportunities = $page->children()->listed()->paginate(10); ?>
+        <?php foreach ($opportunities as $opportunity): ?>
             <!-- There can be moments when an opp has no image. If so, skip it. -->
             <?php if($image = $opportunity->image()): ?>
                 <div class="opportunity">
@@ -56,6 +57,46 @@
             <?php endif ?>              
         <?php endforeach ?> 
     </div>
+    <!-- Pagination -->
+    <ul>
+  <?php foreach ($list = $page->children()->paginate(10) as $item): ?>
+  <li><!-- item html --></li>
+  <?php endforeach ?>
+</ul>
+
+<!-- Pagination -->
+<?php $pagination = $opportunities->pagination() ?>
+<nav>
+  <ul>
+    <?php if ($pagination->hasPrevPage()): ?>
+    <li>
+      <a href="<?= $pagination->prevPageURL() ?>">‹</a>
+    </li>
+    <?php else: ?>
+    <li>
+      <span>‹</span>
+    </li>
+    <?php endif ?>
+
+    <?php foreach ($pagination->range(10) as $r): ?>
+    <li>
+      <a<?= $pagination->page() === $r ? ' aria-current="page"' : '' ?> href="<?= $pagination->pageURL($r) ?>">
+        <?= $r ?>
+      </a>
+    </li>
+    <?php endforeach ?>
+
+    <?php if ($pagination->hasNextPage()): ?>
+    <li>
+      <a href="<?= $pagination->nextPageURL() ?>">›</a>
+    </li>
+    <?php else: ?>
+    <li>
+      <span>›</span>
+    </li>
+    <?php endif ?>
+  </ul>
+</nav>
 </main>
 
 <!-- bottom section -->

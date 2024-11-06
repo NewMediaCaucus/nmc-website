@@ -1,0 +1,15 @@
+title: Opportunities
+
+options:
+  status: unlisted
+
+sections:
+  content:
+    type: fields
+    fields:
+      title:
+        label: Title
+        type: text
+      text:
+        label: Text
+        type: textarea

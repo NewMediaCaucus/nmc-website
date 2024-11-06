@@ -3,14 +3,13 @@ description: Editors can create, update, and delete pages. They can also upload 
 
 
 permissions:
-  panel:
-    access: true
+
   site:
     update: false
   pages:
     create: true
     update: true
-    delete: false
+    delete: true
   files:
     upload: true
     replace: true

@@ -14,18 +14,25 @@
   --white: #ffffff;
 }
 
+/* Prevent white flash */
+html, 
+body {
+  background-color: var(--background-blue);
+  color: var(--white);
+}
+
 html {
   /* establish baseline font size, rems refer to this */
   font-size: 100%;
   font-family: "Atkinson Hyperlegible", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  min-height: 100%;
 }
 
 body {
-  background-color: var(--background-blue);
   margin: auto;
-  color: white;
+  min-height: 100vh;
 }
 
 h1 {

@@ -294,11 +294,9 @@ display: block;
   background-color: var(--promo-background);
   padding: 16px 8px;
   border-radius: 10px;
-  margin: 32px 0px 48px 0px;
-  text-align: center;}
-
-.promo .button {
-  text-decoration: none;
+  margin: 32px auto 48px auto; /* Center the div horizontally */
+  text-align: center;
+  max-width: 420px; /* Set the maximum width */
 }
 
 /* Opportunities Pagination */

@@ -5,12 +5,13 @@
 
 /* Define CSS variables */
 :root {
-  --primary-purple: #D196E6;
+  --primary-purple: #d9a7eb;
   --electric-green: #50FA7B;
   --background-blue: #282A36;
-  --button-background: #333544;
-  --button-hover: #37394a;
-  --button-active: #3e4053;
+  --promo-background: #333544;
+  --button-background: #505369;
+  --button-hover: #545771;
+  --button-active: #6a6e8e;
   --white: #ffffff;
 }
 
@@ -287,6 +288,17 @@ display: block;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
   font-size: .9em;
+}
+
+.promo {
+  background-color: var(--promo-background);
+  padding: 16px 8px;
+  border-radius: 10px;
+  margin: 32px 0px 48px 0px;
+  text-align: center;}
+
+.promo .button {
+  text-decoration: none;
 }
 
 /* Opportunities Pagination */

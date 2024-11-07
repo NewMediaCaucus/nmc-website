@@ -13,7 +13,6 @@ sections:
           job: Call for Jobs
           paper: Call for Papers
           entry: Call for Entries
-          other: Other
       date:
         label: Created Date
         type: date

@@ -57,46 +57,27 @@
             <?php endif ?>              
         <?php endforeach ?> 
     </div>
-    <!-- Pagination -->
     <ul>
-  <?php foreach ($list = $page->children()->paginate(10) as $item): ?>
-  <li><!-- item html --></li>
-  <?php endforeach ?>
 </ul>
 
 <!-- Pagination -->
-<?php $pagination = $opportunities->pagination() ?>
-<nav>
-  <ul>
-    <?php if ($pagination->hasPrevPage()): ?>
-    <li>
-      <a href="<?= $pagination->prevPageURL() ?>">‹</a>
-    </li>
-    <?php else: ?>
-    <li>
-      <span>‹</span>
-    </li>
-    <?php endif ?>
+<?php if ($opportunities->pagination()->hasPages()): ?>
+<nav class="pagination">
 
-    <?php foreach ($pagination->range(10) as $r): ?>
-    <li>
-      <a<?= $pagination->page() === $r ? ' aria-current="page"' : '' ?> href="<?= $pagination->pageURL($r) ?>">
-        <?= $r ?>
-      </a>
-    </li>
-    <?php endforeach ?>
+  <?php if ($opportunities->pagination()->hasNextPage()): ?>
+  <a class="next" href="<?= $opportunities->pagination()->nextPageURL() ?>">
+    ‹ older posts
+  </a>
+  <?php endif ?>
 
-    <?php if ($pagination->hasNextPage()): ?>
-    <li>
-      <a href="<?= $pagination->nextPageURL() ?>">›</a>
-    </li>
-    <?php else: ?>
-    <li>
-      <span>›</span>
-    </li>
-    <?php endif ?>
-  </ul>
+  <?php if ($opportunities->pagination()->hasPrevPage()): ?>
+  <a class="prev" href="<?= $opportunities->pagination()->prevPageURL() ?>">
+    newer posts ›
+  </a>
+  <?php endif ?>
+
 </nav>
+<?php endif ?>
 </main>
 
 <!-- bottom section -->

@@ -81,6 +81,10 @@
 
 </nav>
 <?php endif ?>
+
+<!-- Submit an opportunity promo -->
+<div class="promo">📣 Got an opportunity? <a href="https://www.newmediacaucus.org/submit/" >Post It!</a> 🦄</div>
+
 </main>
 
 <!-- bottom section -->

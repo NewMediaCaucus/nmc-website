@@ -12,8 +12,11 @@
         <h1><?= $page->title() ?></h1>
     </div>
     <div class="opportunities">
-        <!-- grab all children folders and list them -->
-        <?php $opportunities = $page->children()->listed()->paginate(10); ?>
+        <!-- grab all children folders and sort by date -->
+        <?php $opportunities = $page->children()
+                                  ->listed()
+                                  ->sortBy('date', 'desc') // Sort by date field, newest first
+                                  ->paginate(10); ?>
         <?php foreach ($opportunities as $opportunity): ?>
             <!-- There can be moments when an opp has no image. If so, skip it. -->
             <?php if($image = $opportunity->image()): ?>

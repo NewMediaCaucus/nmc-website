@@ -2,8 +2,8 @@ title: Image
 accept:
   mime: image/*
   type: image
-  minheight: 720 # accommodate 720p screenshots
-  minwidth: 720 # accommodate 720p screenshots
+  minheight: 960 # accommodate 960px page widths in responsive design
+  minwidth: 960 # accommodate 960px page widths in responsive design
   maxheight: 3840 # accommodate 4k screenshots
   maxwidth: 3840 # accommodate 4k screenshots
   maxsize: 5000000 # in bytes, 5MB

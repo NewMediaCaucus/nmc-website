@@ -12,8 +12,11 @@
         <h1><?= $page->title() ?></h1>
     </div>
     <div class="opportunities">
-        <!-- grab all children folders and list them -->
-        <?php $opportunities = $page->children()->listed()->paginate(10); ?>
+        <!-- grab all children folders and sort by date -->
+        <?php $opportunities = $page->children()
+                                  ->listed()
+                                  ->sortBy('date', 'desc') // Sort by date field, newest first
+                                  ->paginate(10); ?>
         <?php foreach ($opportunities as $opportunity): ?>
             <!-- There can be moments when an opp has no image. If so, skip it. -->
             <?php if($image = $opportunity->image()): ?>
@@ -57,46 +60,27 @@
             <?php endif ?>              
         <?php endforeach ?> 
     </div>
-    <!-- Pagination -->
     <ul>
-  <?php foreach ($list = $page->children()->paginate(10) as $item): ?>
-  <li><!-- item html --></li>
-  <?php endforeach ?>
 </ul>
 
 <!-- Pagination -->
-<?php $pagination = $opportunities->pagination() ?>
-<nav>
-  <ul>
-    <?php if ($pagination->hasPrevPage()): ?>
-    <li>
-      <a href="<?= $pagination->prevPageURL() ?>">‹</a>
-    </li>
-    <?php else: ?>
-    <li>
-      <span>‹</span>
-    </li>
-    <?php endif ?>
+<?php if ($opportunities->pagination()->hasPages()): ?>
+<nav class="pagination">
 
-    <?php foreach ($pagination->range(10) as $r): ?>
-    <li>
-      <a<?= $pagination->page() === $r ? ' aria-current="page"' : '' ?> href="<?= $pagination->pageURL($r) ?>">
-        <?= $r ?>
-      </a>
-    </li>
-    <?php endforeach ?>
+  <?php if ($opportunities->pagination()->hasNextPage()): ?>
+  <a class="next" href="<?= $opportunities->pagination()->nextPageURL() ?>">
+    ‹ older posts
+  </a>
+  <?php endif ?>
 
-    <?php if ($pagination->hasNextPage()): ?>
-    <li>
-      <a href="<?= $pagination->nextPageURL() ?>">›</a>
-    </li>
-    <?php else: ?>
-    <li>
-      <span>›</span>
-    </li>
-    <?php endif ?>
-  </ul>
+  <?php if ($opportunities->pagination()->hasPrevPage()): ?>
+  <a class="prev" href="<?= $opportunities->pagination()->prevPageURL() ?>">
+    newer posts ›
+  </a>
+  <?php endif ?>
+
 </nav>
+<?php endif ?>
 </main>
 
 <!-- bottom section -->

@@ -30,16 +30,13 @@ sections:
         required: true
         minlength: 100
         maxlength: 6500
-  files:
-    label: Image
-    type: files
-    required: true
-    max: 1
-    empty: No image yet
-    help: Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
-  alt:  
-    type: fields
-    fields:
+      files:
+        label: Image
+        type: files
+        required: true
+        max: 1
+        empty: No image yet
+        help: Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
       alt:
         label: Image Alt Text
         required: true

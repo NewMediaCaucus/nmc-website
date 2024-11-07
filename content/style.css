@@ -282,7 +282,7 @@ display: block;
 }
 
 /* Opportunities Pagination */
-a {
+.pagination a {
   padding: 0.5rem 1rem;
   background-color: var(--button-background);
   color: var(--primary-purple);
@@ -297,7 +297,7 @@ a {
 a:hover {
   background-color: var(--button-hover);
   color: var(--white);
-  transform: translateY(-1px);
+  transform: scale(1.05);
 }
 
 /* Keep pagination styles */

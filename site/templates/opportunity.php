@@ -10,7 +10,10 @@
     <!-- grab the first/only image in the folder -->
     <?php if($image = $page->image()): ?>
         <!-- TODO: What div should go around this image? -->
-        <img src="<?= $image->url() ?>" alt="<?= $page->alt()->value() ?>" width="960px">
+        <img class="post-image" 
+            src="<?= $image->crop(960,960)->url() ?>" 
+            alt="<?= $page->alt()->value() ?>" 
+            width="960px">
     <?php endif ?>
 
     <?php if ($page->title()->isNotEmpty()): ?>

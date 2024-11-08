@@ -66,24 +66,22 @@
 <!-- Pagination -->
 <?php if ($opportunities->pagination()->hasPages()): ?>
 <nav class="pagination">
-
   <?php if ($opportunities->pagination()->hasNextPage()): ?>
-  <a class="next" href="<?= $opportunities->pagination()->nextPageURL() ?>">
-    ‹ Older Posts
-  </a>
+    <a href="<?= $opportunities->pagination()->nextPageURL() ?>" rel="next">
+      Older Posts
+    </a>
   <?php endif ?>
 
   <?php if ($opportunities->pagination()->hasPrevPage()): ?>
-  <a class="prev" href="<?= $opportunities->pagination()->prevPageURL() ?>">
-    Newer Posts ›
-  </a>
+    <a href="<?= $opportunities->pagination()->prevPageURL() ?>" rel="prev">
+      Newer Posts
+    </a>
   <?php endif ?>
-
 </nav>
 <?php endif ?>
 
 <!-- Submit an opportunity promo -->
-<div class="promo">📣 Got an opportunity? <a href="https://www.newmediacaucus.org/submit/" >Post It!</a> 🦄</div>
+<div class="promo">📣 <a href="https://www.newmediacaucus.org/submit/" >Got an Opportunity? Post It!</a> 🦄</div>
 
 </main>
 

@@ -42,10 +42,6 @@
     <?php if ($page->long_description()->isNotEmpty()): ?>
         <p><?= $page->long_description()->kirbytext() ?></p>
     <?php endif ?>
-
-<!-- Submit an opportunity promo -->
-<div class="promo">📣 Got an opportunity? <a href="https://www.newmediacaucus.org/submit/" >Post It!</a> 🦄</div>
-
     <br><br>
 </main>
 

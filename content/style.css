@@ -9,7 +9,9 @@
   --electric-green: #50FA7B;
   --background-blue: #282A36;
   --promo-background: #333544;
-  --button-background: #505369;
+  --button-background: rgba(217, 167, 235, 0.2);
+  --date-background: rgba(255, 255, 255, 0.1);
+  --date-text: rgba(255, 255, 255, 0.8);
   --button-hover: #545771;
   --button-active: #6a6e8e;
   --white: #ffffff;
@@ -36,39 +38,46 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 2.4em;
+/* Heading styles */
+h1, h2, h3, h4 {
   font-family: "Nunito Sans", sans-serif;
+}
+
+h1 {
+  font-size: 2.488rem;
+  line-height: 1.2;
   color: white;
-  margin-bottom: .2em;
+  margin-bottom: 1rem;
 }
 
 h2 {
-  margin-bottom: 10px;
-  font-size: 1.6em;
-  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.728rem;
+  line-height: 1.1;
   text-decoration: none;
   line-height: 1.1;
+  margin-bottom: 0.8rem;
 }
 
 h3 {
   margin-block-start: 0;
   margin-block-end: 0;
-  font-size: 1.4em;
-  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.44rem;  /* 31px */
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
 }
 
 h4 {
   margin-block-start: 0;
   margin-block-end: 0;
-  font-size: 1.2em;
-  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.2rem;  /* 25px */
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
 }
 
 p {
   color: white;
-  line-height: 1.2;
-  font-size: 1.1em;
+  font-size: 1.1rem;      /* 16px base */
+  line-height: 1.2;     /* Improved readability */
   font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
@@ -77,12 +86,12 @@ ul {
 }
 
 a:link {
-  color: var(--primary-purple);
+  color: var(--white);
   text-decoration-line: none;
 }
 
 a:visited {
-  color: var(--primary-purple);
+  color: var(--white);
   text-decoration-line: none;
 }
 
@@ -106,7 +115,7 @@ a:active {
 .navigation a:link,
 .navigation a:visited {
 text-decoration: none;
-color: var(--primary-purple);
+color: var(--white);
 padding: 10px 15px;
 display: block;
 }
@@ -248,14 +257,25 @@ display: block;
   margin-bottom: 3em;
 }
 
-.due-date {
-  font-family: "DM Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
-  color: lightgray;
-  font-size: .8em;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+.category {
+  background: rgba(217, 167, 235, 0.2); /* Using primary-purple with opacity */
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.65em;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 0.5rem;
+}
+.posted-date {
+  background: var(--date-background);
+  color: var(--date-text);
+  font-size: 0.65em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  display: inline-block;
 }
 
 .button {
@@ -263,7 +283,7 @@ display: block;
   padding: 8px 12px;
   font-size: 12px;
   background-color: var(--button-background);
-  color: var(--primary-purple);
+  color: var(--white);
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -303,7 +323,7 @@ display: block;
 .pagination a {
   padding: 0.5rem 1rem;
   background-color: var(--button-background);
-  color: var(--primary-purple);
+  color: var(--white);
   text-decoration: none;
   border: none;
   border-radius: 4px;
@@ -315,7 +335,7 @@ display: block;
 a:hover {
   background-color: var(--button-hover);
   color: var(--white);
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
 
 /* Keep pagination styles */
@@ -337,6 +357,27 @@ a:hover {
 
 /* Extra small devices (iPhone SE, Pixel 7, Surface Duo, Samsung Galaxy A51/71, Galaxy Z Fold, phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  h1 { 
+    font-size: 1.602rem;  /* Reduced from desktop 2.074rem */
+    line-height: 1.2;
+  }
+  h2 { 
+    font-size: 1.424rem;  /* Reduced from desktop 1.728rem */
+    line-height: 1.3;
+  }
+  h3 { 
+    font-size: 1.266rem;  /* Reduced from desktop 1.44rem */
+    line-height: 1.4;
+  }
+  h4 { 
+    font-size: 1.125rem;  /* Reduced from desktop 1.2rem */
+    line-height: 1.4;
+  }
+  p {
+    font-size: 0.95rem;   /* Slightly reduced from desktop 1rem */
+    line-height: 1.5;
+  }
+
   .page {
     /* background: #bada55; */
     max-width: 320px;
@@ -357,60 +398,170 @@ a:hover {
 
 /* Small devices (Landscape iPhone SE, portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  h1 { 
+    font-size: 1.802rem;  /* Minor third scale */
+    line-height: 1.2;
+  }
+  h2 { 
+    font-size: 1.602rem;
+    line-height: 1.3;
+  }
+  h3 { 
+    font-size: 1.424rem;
+    line-height: 1.4;
+  }
+  h4 { 
+    font-size: 1.266rem;
+    line-height: 1.4;
+  }
+  p { 
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
   .page {
-    /* background: darkorange; */
     max-width: 600px;
     margin: auto;
+    padding: 0 1rem;
+  }
+
+  .opportunities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .post-image {
     width: 100%;
-    /* max-width: 320px; */
+    height: auto;
   }
 }
 
 
 /* Medium devices (iPad Air, iPad Mini, Surface Pro 7, Asus Zenbook Fold, landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  h1 { 
+    font-size: 2.074rem;  /* Back to desktop size */
+    line-height: 1.2;
+  }
+  h2 { 
+    font-size: 1.728rem;
+    line-height: 1.3;
+  }
+  h3 { 
+    font-size: 1.44rem;
+    line-height: 1.4;
+  }
+  h4 { 
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  p { 
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
   .page {
     /* background: darkolivegreen; */
     max-width: 672px;
     margin: auto;
+    padding: 0 2rem;
+
+  }
+
+  .opportunities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
   }
 
   .post-image {
     width: 100%;
-    /* max-width: 320px; */
+    height: auto;
   }
 }
 
 
 /* Large devices (iPad Pro, laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  h1 { 
+    font-size: 2.774rem;  /* Same as medium devices */
+    line-height: 1.2;
+  }
+  h2 { 
+    font-size: 1.44rem;
+    line-height: 1.3;
+  }
+  h3 { 
+    font-size: 1.44rem;
+    line-height: 1.4;
+  }
+  h4 { 
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  p { 
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
   .page {
-    /* background: darkmagenta; */
     max-width: 960px;
     margin: auto;
+    padding: 0;
+  }
+
+  .opportunities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
   }
 
   .post-image {
     width: 100%;
-    /* max-width: 320px; */
+    height: auto;
   }
 }
 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+  h1 { 
+    font-size: 2.488rem;  /* Scale up for larger screens */
+    line-height: 1.2;
+  }
+  h2 { 
+    font-size: 1.728rem;
+    line-height: 1.1;
+  }
+  h3 { 
+    font-size: 1.728rem;
+    line-height: 1.4;
+  }
+  h4 { 
+    font-size: 1.44rem;
+    line-height: 1.4;
+  }
+  p { 
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+
   .page {
     /* background: darkslateblue; */
     width: 1024px;
     margin: 0 auto;
   }
 
+  .opportunities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+
   .post-image {
     width: 100%;
-    /* max-width: 480px; */
+    height: auto;
   }
   
 }

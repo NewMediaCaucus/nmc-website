@@ -332,6 +332,30 @@ display: block;
   display: inline-block;
 }
 
+/* Triangle arrows for pagination */
+.pagination a[rel="next"]::after,
+.pagination a[rel="prev"]::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Next arrow (pointing right) */
+.pagination a[rel="next"]::after {
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent var(--white);
+  margin-left: 8px;
+}
+
+/* Previous arrow (pointing left) */
+.pagination a[rel="prev"]::before {
+  border-width: 6px 8px 6px 0;
+  border-color: transparent var(--white) transparent transparent;
+  margin-right: 8px;
+}
+
 a:hover {
   background-color: var(--button-hover);
   color: var(--white);

@@ -16,7 +16,7 @@
         <?php $opportunities = $page->children()
                                   ->listed()
                                   ->sortBy('date', 'desc') // Sort by date field, newest first
-                                  ->paginate(10); ?>
+                                  ->paginate(9); ?>
         <?php foreach ($opportunities as $opportunity): ?>
             <!-- There can be moments when an opp has no image. If so, skip it. -->
             <?php if($image = $opportunity->image()): ?>
@@ -35,7 +35,7 @@
                         </a>   
                         <!-- Display category options -->
                         <?php if ($opportunity->category()->isNotEmpty()): ?>
-                            <p class="categories">
+                            <div class="category">
                                 <?php
                                 $field = $opportunity->blueprint()->field('category');
                                 $value = $opportunity->category()->value();
@@ -43,12 +43,12 @@
                                     echo $field['options'][$value] ?? $value;
                                 endforeach;
                                 ?>
-                            </p>
+                            </div>
                             <?php endif ?>
-                        <!-- Display created date -->
-                        <p class="created-date">
+                        <!-- Display posted date -->
+                        <div class="posted-date">
                             Posted <?= $opportunity->date()->toDate('F j, Y') ?>
-                        </p>
+                            </div>
                         <!-- Display short description -->
                         <p class="description"><?= $opportunity->short_description() ?></p>
                         <!-- Read More Button -->
@@ -69,13 +69,13 @@
 
   <?php if ($opportunities->pagination()->hasNextPage()): ?>
   <a class="next" href="<?= $opportunities->pagination()->nextPageURL() ?>">
-    ‹ older posts
+    ‹ Older Posts
   </a>
   <?php endif ?>
 
   <?php if ($opportunities->pagination()->hasPrevPage()): ?>
   <a class="prev" href="<?= $opportunities->pagination()->prevPageURL() ?>">
-    newer posts ›
+    Newer Posts ›
   </a>
   <?php endif ?>
 

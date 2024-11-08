@@ -18,13 +18,13 @@
 
     <?php if ($page->title()->isNotEmpty()): ?>
         <h2>
-            <?= $page->title()->kirbytext() ?>
+            <?= $page->title()->html() ?>
         </h2>
     <?php endif ?>
 
     <!-- TODO: Style this -->
     <?php if ($page->category()->isNotEmpty()): ?>
-        <p>
+        <div class="category">
             <?php
                 $field = $page->blueprint()->field('category');
                 $value = $page->category()->value();
@@ -32,12 +32,13 @@
                     echo $field['options'][$value] ?? $value;
                 endforeach;
             ?>
-        </p>
+        </div>
     <?php endif ?>
-    <!-- Display created date -->
-    <p class="created-date">
+
+    <!-- Display posted date -->
+    <div class="posted-date">
         Posted <?= $page->date()->toDate('F j, Y') ?>
-    </p>
+            </div>
     
     <?php if ($page->long_description()->isNotEmpty()): ?>
         <p><?= $page->long_description()->kirbytext() ?></p>

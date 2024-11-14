@@ -258,17 +258,29 @@ display: block;
 }
 
 .category {
-  background: rgba(217, 167, 235, 0.2); /* Using primary-purple with opacity */
-  color: var(--white);
+  display: inline-block;
   padding: 0.25rem 0.75rem;
-  border-radius: 4px;
+  text-decoration: none;
   font-size: 0.65em;
   font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-right: 0.5rem;
+  background-color: var(--button-background);
+  color: var(--white);
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.category a:hover,
+a.category:hover {
+  text-decoration: none;
+  background-color: var(--button-hover);
+  transform: scale(1.02);
+}
+
+.button:active {
+  background-color: var(--button-active);
+  transform: scale(1);
+}
+
 .posted-date {
   background: var(--date-background);
   color: var(--date-text);

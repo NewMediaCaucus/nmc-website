@@ -36,18 +36,6 @@
                             <!-- pull from sections defined in each opportunity text file -->
                             <h2><?= $opportunity->Title() ?></h2>                    
                         </a>   
-                        <!-- Display category options -->
-                        <?php if ($opportunity->category()->isNotEmpty()): ?>
-                            <div class="category">
-                                <?php
-                                $field = $opportunity->blueprint()->field('category');
-                                $value = $opportunity->category()->value();
-                                foreach ($opportunity->category()->split() as $category):
-                                    echo $field['options'][$value] ?? $value;
-                                endforeach;
-                                ?>
-                            </div>
-                            <?php endif ?>
                         <!-- Display posted date -->
                         <div class="posted-date">
                             Posted <?= $opportunity->date()->toDate('F j, Y') ?>

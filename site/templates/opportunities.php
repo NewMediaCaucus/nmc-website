@@ -35,17 +35,15 @@
                         </a>   
                         <!-- Display category options -->
                         <?php if ($opportunity->category()->isNotEmpty()): ?>
-                            <div class="category">
-                                <?php
-                                $field = $opportunity->blueprint()->field('category');
-                                $value = $opportunity->category()->value();
-                                foreach ($opportunity->category()->split() as $category):
-                                    ?>
-                                    <a href="<?= url('opportunities/' . strtolower($value) . 's') ?>" class="category-link">
-                                        <?= $field['options'][$value] ?? $value ?>
-                                    </a>
-                                <?php endforeach; ?>
-                            </div>
+                            <?php
+                            $field = $opportunity->blueprint()->field('category');
+                            $value = $opportunity->category()->value();
+                            foreach ($opportunity->category()->split() as $category):
+                                ?>
+                                <a href="<?= url('opportunities/' . strtolower($value) . 's') ?>" class="category">
+                                    <?= $field['options'][$value] ?? $value ?>
+                                </a>
+                            <?php endforeach; ?>
                         <?php endif ?>
                         <!-- Display posted date -->
                         <div class="posted-date">

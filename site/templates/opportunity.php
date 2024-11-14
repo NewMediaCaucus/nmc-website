@@ -24,15 +24,15 @@
 
     <!-- TODO: Style this -->
     <?php if ($page->category()->isNotEmpty()): ?>
-        <div class="category">
-            <?php
-                $field = $page->blueprint()->field('category');
-                $value = $page->category()->value();
-                foreach ($page->category()->split() as $category):
-                    echo $field['options'][$value] ?? $value;
-                endforeach;
+        <?php
+        $field = $page->blueprint()->field('category');
+        $value = $page->category()->value();
+        foreach ($page->category()->split() as $category):
             ?>
-        </div>
+            <a href="<?= url('opportunities/' . strtolower($value) . 's') ?>" class="category">
+                <?= $field['options'][$value] ?? $value ?>
+            </a>
+        <?php endforeach; ?>
     <?php endif ?>
 
     <!-- Display posted date -->

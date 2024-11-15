@@ -14,7 +14,6 @@ Icon
 # -------------------
 /content/*
 !/content/site.txt
-!/content/style.css
 
 
 # Lock files

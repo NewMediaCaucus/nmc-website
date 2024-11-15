@@ -13,5 +13,3 @@ permissions:
     upload: true
     replace: true
     delete: true
-  textarea:
-    upload: false  # Disable file uploads using a textarea's 'file' button.

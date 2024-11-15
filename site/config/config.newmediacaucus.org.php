@@ -1,16 +1,15 @@
 <?php
 
-# added by THO
-
-# disable panel creation now that we've already got one
-#return [
-#    'panel' => false
-#  ];
-
 return [
   'debug' => false,
-  'url'   => ['https://newmediacaucus.org'],
+  'url'   => 'https://newmediacaucus.org',
   'panel' => [
     'install' => true 
-    ]
+  ],
+  'thathoff.git-content.commit' => true,
+  'thathoff.git-content.pull' => false, // Set to true to enable pulling first. default is false.
+  'thathoff.git-content.push' => true, // This is not peformant, but it's a good way to test until a cron job can be setup.
+  'thathoff.git-content.branch' => 'main',
+  'thathoff.git-content.remote' => 'origin',
+  'thathoff.git-content.disable' => false, // Set to true if you want to disable the plugin
 ];

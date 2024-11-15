@@ -1,15 +1,14 @@
 <?php
 
-# added by THO
-
-# disable panel creation now that we've already got one
-#return [
-#    'panel' => false
-#  ];
-
 return [
   'debug' => true,
   'panel' => [
     'install' => true 
-  ]
+  ],
+  'thathoff.git-content.commit' => true,
+  'thathoff.git-content.pull' => true, // Set to true so devs get the latest content.
+  'thathoff.git-content.push' => false, // Dev content should not push to main. Server pushes will happen via cron job.
+  'thathoff.git-content.branch' => 'main',
+  'thathoff.git-content.remote' => 'origin',
+  'thathoff.git-content.disable' => false, // Set to true to disable git-content.
 ];

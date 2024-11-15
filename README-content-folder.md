@@ -15,7 +15,9 @@ More on that below.
 
 
 ## This folder uses Git LFS (Large File Storage)
-Git LFS is the Git large file storage.
+Git LFS is the Git Large File Storage.
+You can install it via [github.com](https://git-lfs.com/).
+
 You need to have a `.gitattributes` file for Git LFS. I created one that looks like this so you shouldn't need to make one but check and make sure. 
 
 ```

@@ -8,8 +8,7 @@
 ## Important File Locations
 
 - Content
-  - style.css
-  - site.txt
+  - this is managed under a seperate repo. See README-content-folder.md for more information.
 - Kirby
   - Leave this alone unless updating the Kirby CMS
 - Media

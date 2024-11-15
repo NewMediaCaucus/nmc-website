@@ -12,7 +12,7 @@ Icon
 
 # Kirby content files
 # -------------------
-/content/*
+/content/
 
 # Lock files
 # ----------

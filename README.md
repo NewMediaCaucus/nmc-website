@@ -4,7 +4,6 @@
 2. [Workflow Proposal](#workflow-proposal)
 3. [Further Reading](#further-reading)
 4. [Rolling Back](#rolling-back)
-5. [Dun Goofed](#dun-goofed)
 
 ## Important File Locations
 
@@ -60,10 +59,3 @@ To view the state of the project at a previous point on the main branch:
 To view the state of a branch other than main:
 1. Switch branches from "main" to something else
 2. Pick a commit the checkout if you want something older
-
-## dun goofed
-
-nick is here
-finished my salad at 4 min before the meeting ended
-
-JLS is here.  Thanks y'all.

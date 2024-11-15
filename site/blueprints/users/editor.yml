@@ -3,13 +3,14 @@ description: Editors can create, update, and delete pages. They can also upload 
 
 
 permissions:
-
   site:
     update: false
   pages:
     create: true
     update: true
     delete: true
+    sort: false # This is the "change position" permission
+
   files:
     upload: true
     replace: true

@@ -14,7 +14,6 @@ Icon
 # -------------------
 /content/*
 !/content/site.txt
-!/content/style.css
 
 
 # Lock files
@@ -74,3 +73,8 @@ letsencrypt-logs/*
 
 certs/*
 !certs/.gitkeep 
+
+# PHP Composer (used to upgrade Kirby and plugins)
+# ------------------------------------------------    
+composer.phar
+ 

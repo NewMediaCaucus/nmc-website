@@ -1,0 +1,6 @@
+type: pages
+label: Blog Posts
+info: "{{ page.date.toDate('d.m.Y') }}"
+template: blog_post
+empty: No blog posts yet
+sortBy: date desc

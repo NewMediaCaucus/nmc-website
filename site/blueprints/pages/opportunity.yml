@@ -24,12 +24,28 @@ sections:
         required: true
         minlength: 100
         maxlength: 275
+        buttons:
+          - bold
+          - italic
+          - link
+          - email
+          - code
+          - ul
+          - ol
       long_description:
         label: Long Description
         type: textarea
         required: true
         minlength: 100
         maxlength: 6500
+        buttons:
+          - bold
+          - italic
+          - link
+          - email
+          - code
+          - ul
+          - ol
       files:
         label: Image
         type: files

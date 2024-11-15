@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= $site->title() ?></title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
 
   
   <!-- Critical CSS inline -->
@@ -24,8 +24,8 @@
 
 <!-- kirby is picky about where the CSS file goes -->
 <!-- Preload CSS -->
-<link rel="preload" href="<?= url('content/style.css') ?>" as="style">
-<link rel="stylesheet" href="<?= url('content/style.css') ?>">
+<link rel="preload" href="<?= url('assets/css/style.css') ?>" as="style">
+<link rel="stylesheet" href="<?= url('assets/css/style.css') ?>">
 
 <!-- Preload fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,7 @@
   </script>
 
 <div class="logo-img">
-  <img class="logo-img" src="<?= url('logo.png') ?>" alt="" width="150" height="44">
+  <img class="logo-img" src="<?= url('assets/icons/logo.png') ?>" alt="" width="150" height="44">
 </div>
 <a class="logo-subhead" href="<?= $site->url() ?>"><?= $site->title() ?></a>
 

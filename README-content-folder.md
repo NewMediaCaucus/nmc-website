@@ -1,3 +1,10 @@
+# Our Kirby Content Folder
+
+## This folder is managed by a seperate github repo
+Repo URL: https://github.com/NewMediaCaucus/nmc-website-content
+More on that below.
+
+## Kirby folder names
 1_home
 2_opportunities
     opportunities.txt # can be blank
@@ -5,3 +12,34 @@
 3_blog
     blog.txt # can be blank
     1_blog_post
+
+
+## This folder uses Git LFS (Large File Storage)
+Git LFS is the Git Large File Storage.
+You can install it via [github.com](https://git-lfs.com/).
+
+You need to have a `.gitattributes` file for Git LFS. I created one that looks roughly like this so you shouldn't need to make one but check and make sure. 
+
+```
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+*.webp filter=lfs diff=lfs merge=lfs -text
+```
+
+## Using the repo
+### Developers
+You should clone it from inside this nmc-website repo using:
+
+`git clone <REPOSITORY_URL> content`
+
+This will clone using the folder name of "content" which is what kirby is looking for.
+
+### Staging and Live
+These servers have the nmc-website-content repo set as a remote using https with a key.
+https://<github_key_goes_here>@github.com/NewMediaCaucus/nmc-website-content.git
+
+Example: `git remote add origin https://<github_key_goes_here>@github.com/NewMediaCaucus/nmc-website-content.git`
+

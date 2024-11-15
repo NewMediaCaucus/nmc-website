@@ -8,8 +8,7 @@
 ## Important File Locations
 
 - Content
-  - style.css
-  - site.txt
+  - This folder is managed under a seperate repo. See `README-content-folder.md` for more information.
 - Kirby
   - Leave this alone unless updating the Kirby CMS
 - Media
@@ -28,14 +27,14 @@ Kirby relies on four main folders: kirby, media, site, and content. In order to 
 
 The dev team should install: 
 - Docker or mampp/xampp
-- Github Desktop
-- Coding IDE (win: Visual Studio Code)
+- Github Desktop (https://desktop.github.com/download/) and Git Large File Storage (https://git-lfs.com/)
+- Coding IDE (ex: Visual Studio Code)
 - Apache server, php8 (our Docker Compose will do this for you or mampp/xampp)
 - php composer (used to update kirby and install/update plugins into the vendor folder)
 
-
 Set up local repository:
 - Clone the nmc-website repo at C://xampp/htdocs (win)
+- Clone the nmc-website-content repo. See the README-content-folder.md for how-to.
 - Changes focus on site operation and style, not content
 - All changes should have detailed notes
 

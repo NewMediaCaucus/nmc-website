@@ -10,5 +10,5 @@ return [
   'thathoff.git-content.push' => false, // Dev content should not push to main. Server pushes will happen via cron job.
   'thathoff.git-content.branch' => 'main',
   'thathoff.git-content.remote' => 'origin',
-  'thathoff.git-content.disable' => false, // Set to true to disable git-content.
+  'thathoff.git-content.disable' => true, // Set to true to disable git-content.
 ];

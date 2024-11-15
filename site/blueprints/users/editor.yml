@@ -3,7 +3,6 @@ description: Editors can create, update, and delete pages. They can also upload 
 
 
 permissions:
-
   site:
     update: false
   pages:
@@ -14,3 +13,5 @@ permissions:
     upload: true
     replace: true
     delete: true
+  textarea:
+    upload: false  # Disable file uploads using a textarea's 'file' button.

@@ -47,15 +47,3 @@ Still needed: solution to back up content and media folders.
 2. [Checking out a previous commit](https://docs.github.com/en/desktop/managing-commits/checking-out-a-commit-in-github-desktop)
 3. [Resetting the panel](https://forum.getkirby.com/t/problems-with-panel-access/24815/2)
 
-## Rolling Back
-Take all this with a grain of salt - I'm new here and this should be confirmed by folks with more git knowledge
-
-To view the state of the project at a previous point on the main branch:
-1. Navigate to the "history" tab in Github Desktop
-2. R-click and select "Checkout commit"
-3. Examine your files - they should match the state of the earlier commit
-4. When done, click "Detatched HEAD" and switch back to the main branch
-
-To view the state of a branch other than main:
-1. Switch branches from "main" to something else
-2. Pick a commit the checkout if you want something older

@@ -17,15 +17,11 @@ options:
   url: 
     editor: false
   sortable: 
-    editor: false
-  changePosition: 
-    editor: false  
+    editor: false 
   move: 
     editor: false
   duplicate: 
-    editor: false
-  changePosition: 
-    editor: false    
+    editor: false 
 
 sections:
   content:

@@ -13,8 +13,6 @@ Icon
 # Kirby content files
 # -------------------
 /content/*
-!/content/site.txt
-
 
 # Lock files
 # ----------

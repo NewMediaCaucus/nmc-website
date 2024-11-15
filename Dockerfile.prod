@@ -25,8 +25,8 @@ RUN apt-get update && apt-get install -y \
   php-json \
   php-mbstring \
   php-xml \
-  php-zip && \
-  git && \
+  php-zip \
+  git \
   git-lfs && \
   apt-get clean && rm -rf /var/lib/apt/lists/*
 

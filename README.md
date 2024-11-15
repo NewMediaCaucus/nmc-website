@@ -27,11 +27,13 @@
 
 Kirby relies on four main folders: kirby, media, site, and content. In order to keep our repo from getting too big, we'll use .gitignore to exclude the media and content folders (with one or two individual file exceptions). 
 
-The dev team should install:
+The dev team should install: 
+- Docker or mampp/xampp
 - Github Desktop
 - Coding IDE (win: Visual Studio Code)
-- Local Apache server (win: xampp)
-- FTP (win: winscp)
+- Apache server, php8 (our Docker Compose will do this for you or mampp/xampp)
+- php composer (used to update kirby and install/update plugins into the vendor folder)
+
 
 Set up local repository:
 - Clone the nmc-website repo at C://xampp/htdocs (win)

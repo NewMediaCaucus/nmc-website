@@ -9,6 +9,8 @@ permissions:
     create: true
     update: true
     delete: true
+    sort: false # This is the "change position" permission
+
   files:
     upload: true
     replace: true

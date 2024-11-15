@@ -73,3 +73,9 @@ letsencrypt-logs/*
 
 certs/*
 !certs/.gitkeep 
+
+# PHP Composer (used to upgrade Kirby and plugins)
+# ------------------------------------------------    
+/vendor/*
+composer.phar
+ 

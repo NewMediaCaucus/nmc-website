@@ -51,18 +51,6 @@ RUN a2enmod headers rewrite
 COPY entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["entrypoint.sh"]
 
-# Copy cron job file
-COPY cronjob.prod /etc/cron.d/git-push
-
-# Give execution rights on the cron job
-RUN chmod 0644 /etc/cron.d/git-push
-
-# Apply cron job
-RUN crontab /etc/cron.d/git-push
-
-# Create the log file to be able to run tail
-RUN touch /var/log/cron.log
-
 # Tell container to listen to port 80 at runtime
 EXPOSE 80 443
 

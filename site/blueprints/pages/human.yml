@@ -1,0 +1,62 @@
+title: Human
+
+sections:
+  content:
+    type: fields
+    fields:
+      category:
+        label: Category
+        type: select
+        required: true
+        options:
+          officer: Officer
+          board: Board of Directors
+          advisory: Advisory Board
+          alumni: Board Alumni
+      date:
+        label: Created Date
+        type: date
+        default: today
+        required: true
+      nmc_title:
+        label: NMC Title
+        type: text
+        required: true
+        help: "Example: Board Member, Chair of Resources Committee, President, etc."
+      professional_title:
+        label: Professional Title
+        type: text
+        required: true
+        help: "Example: Assistant Professor of Creative Technologies, Virginia Tech, etc.""
+      url:
+        label: URL
+        type: url
+        help: "Remember the http:// or https:// such as http://robray.net"
+      bio:
+        label: Bio
+        type: textarea
+        minlength: 50
+        maxlength: 750
+        buttons:
+          - bold
+          - italic
+          - link
+          - email
+          - code
+          - ul
+          - ol
+      files:
+        label: Image
+        type: files
+        required: true
+        max: 1
+        empty: No image yet
+        help: Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
+      alt:
+        label: Image Alt Text
+        required: true
+        type: textarea
+        buttons: false
+        help: <b>"Alt Text"</b> helps screen-reading tools describe the image we are posting to our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.
+        minlength: 20
+        maxlength: 400

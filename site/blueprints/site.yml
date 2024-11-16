@@ -14,3 +14,10 @@ sections:
     parent: site.find("opportunities")
     layout: list 
     templates: opportunity 
+
+  about:
+    label: About Us
+    type: pages
+    parent: site.find("about-us")
+    layout: list 
+    templates: human

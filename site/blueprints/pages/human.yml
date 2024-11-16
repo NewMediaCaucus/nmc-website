@@ -31,7 +31,7 @@ sections:
       url:
         label: URL
         type: url
-        help: "Remember the http:// or https:// such as http://robray.net"
+        help: "Remember http:// or https:// such as http://robray.net"
       bio:
         label: Bio
         type: textarea

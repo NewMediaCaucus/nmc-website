@@ -24,10 +24,14 @@ jobs:
       run: |
         rsync -avz /home/nmcdev/nmc-website/content/ ./content/
 
+    - name: Add nmc-website-content remote
+      run: |
+        git remote add content-repo git@github.com:NewMediaCaucus/nmc-website-content.git
+
     - name: Commit and push changes
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add content/
         git commit -m "Automated commit of content changes"
-        git push origin main
+        git push content-repo main

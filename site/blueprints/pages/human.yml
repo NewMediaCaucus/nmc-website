@@ -22,12 +22,12 @@ sections:
         label: NMC Title
         type: text
         required: true
-        help: "Example: Board Member, Chair of Resources Committee, President, etc."
+        help: "Example: Board Member, Chair of Resources Committee, President"
       professional_title:
         label: Professional Title
         type: text
         required: true
-        help: "Example: Assistant Professor of Creative Technologies, Virginia Tech, etc.""
+        help: "Example: Assistant Professor of Creative Technologies, Virginia Tech, etc"
       url:
         label: URL
         type: url

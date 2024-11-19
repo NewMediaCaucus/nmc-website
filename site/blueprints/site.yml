@@ -16,6 +16,7 @@ sections:
     templates: opportunity
     # https://getkirby.com/docs/reference/panel/sections/pages
     sortBy: date desc
+    help: "Sorted newest at the top."
 
   about:
     label: About Us
@@ -24,3 +25,5 @@ sections:
     layout: list 
     templates: human
     sortBy: title asc
+    help: "Sorted alphabetically by first name."
+

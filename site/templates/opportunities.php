@@ -51,12 +51,19 @@
                             $field = $opportunity->blueprint()->field('category');
                             $value = $opportunity->category()->value();
                             foreach ($opportunity->category()->split() as $category):
-                                ?>
-                                <a href="<?= url('opportunities/' . strtolower($value) . 's') ?>" class="category">
+                                // Determine the category URL part
+                                $categoryUrl = strtolower($value);
+                                if (substr($categoryUrl, -1) === 'y') {
+                                    $categoryUrl = substr($categoryUrl, 0, -1) . 'ies';
+                                } else {
+                                    $categoryUrl .= 's';
+                                }
+                            ?>
+                                <a href="<?= url('opportunities/' . $categoryUrl) ?>" class="category">
                                     <?= $field['options'][$value] ?? $value ?>
                                 </a>
-                            <?php endforeach; ?>
-                        <?php endif ?>
+    <?php endforeach; ?>
+<?php endif ?>
                         <!-- Display posted date -->
                         <div class="posted-date">
                             Posted <?= $opportunity->date()->toDate('F j, Y') ?>

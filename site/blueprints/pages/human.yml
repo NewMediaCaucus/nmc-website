@@ -22,7 +22,7 @@ sections:
         label: NMC Title
         type: text
         required: true
-        help: "Example: Board Member, Chair of Resources Committee, President"
+        help: "Examples: Board Member or Chair of Resources Committee or President"
       professional_title:
         label: Professional Title
         type: text

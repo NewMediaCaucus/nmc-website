@@ -390,6 +390,30 @@ a:hover {
 }
 
 
+.about-title {
+  grid-area: about-title;
+} 
+
+.about {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+} 
+
+.human {
+  grid-auto-flow: row;
+  text-decoration: none;
+} 
+
+.human a:hover {
+  text-decoration: none; 
+}
+
+.human .button {
+  text-decoration: none;
+}
+
+
 /* Extra small devices (iPhone SE, Pixel 7, Surface Duo, Samsung Galaxy A51/71, Galaxy Z Fold, phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   h1 { 

@@ -11,17 +11,30 @@
     <div class="about-title">
         <h1><?= $page->title() ?></h1>
     </div>
-    <div class="board-title">
+    <?php
+    // Load the 'human' page
+    $humanPage = page('human');
+
+    if ($humanPage) {
+        // Access the 'category' field value
+        $categoryValue = $humanPage->category()->value();
+
+        // Check if the category field value matches 'officer'
+        if ($categoryValue === 'officer') {
+            // Access the value of the 'board' field
+            $boardValue = $humanPage->board()->value();
+        }
+    }
+    ?>
+    <div class="officers-title">
+    <?php if (isset($categoryValue)): ?>
         <h2>
             <?php
-
-            // Access the 'board' key
-            $board = $human['board'] ?? '';
-
-            // Display the value of the 'board' key
-            echo $board;
+            // Display the value of the 'board' field
+            echo htmlspecialchars($boardValue);
             ?>
         </h2>
+    <?php endif; ?>
     </div>
     <div class="about">
         

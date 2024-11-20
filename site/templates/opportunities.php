@@ -12,23 +12,9 @@
         <h1><?= $page->title() ?></h1>
     </div>
     <div class="opportunities">
-        
-        <?php if (str_contains($page->url(), 'jobs')){
 
-            $opportunities = $page->parent()
-                                    ->children()
-                                    ->filterBy('category', 'job')
-                                    ->sortBy('date', 'desc') 
-                                    ->paginate(9);
-        } else {
-           
-            $opportunities = $page->children()
-                                  ->listed()
-                                  ->sortBy('date', 'desc') 
-                                  ->paginate(9);
-        }
-        ?>
-        
+    <!-- site/controllers/opportunities.php is defining the $opportunities variable -->
+
         <?php foreach ($opportunities as $opportunity): ?>
             <!-- There can be moments when an opp has no image. If so, skip it. -->
             <?php if($image = $opportunity->image()): ?>

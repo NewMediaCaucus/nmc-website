@@ -39,5 +39,9 @@ columns:
             type: users
           tags:
             type: tags
+            options:
+              # check all blog posts for existing tags and autofill on partial entry
+              type: query
+              query: site.index.pluck("tags", ",", true)
       files:
         type: files

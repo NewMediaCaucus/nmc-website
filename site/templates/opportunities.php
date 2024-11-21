@@ -12,11 +12,9 @@
         <h1><?= $page->title() ?></h1>
     </div>
     <div class="opportunities">
-        <!-- grab all children folders and sort by date -->
-        <?php $opportunities = $page->children()
-                                  ->listed()
-                                  ->sortBy('date', 'desc') // Sort by date field, newest first
-                                  ->paginate(9); ?>
+
+    <!-- site/controllers/opportunities.php is defining the $opportunities variable -->
+
         <?php foreach ($opportunities as $opportunity): ?>
             <!-- There can be moments when an opp has no image. If so, skip it. -->
             <?php if($image = $opportunity->image()): ?>
@@ -39,12 +37,19 @@
                             $field = $opportunity->blueprint()->field('category');
                             $value = $opportunity->category()->value();
                             foreach ($opportunity->category()->split() as $category):
-                                ?>
-                                <a href="<?= url('opportunities/' . strtolower($value) . 's') ?>" class="category">
+                                // Determine the category URL part
+                                $categoryUrl = strtolower($value);
+                                if (substr($categoryUrl, -1) === 'y') {
+                                    $categoryUrl = substr($categoryUrl, 0, -1) . 'ies';
+                                } else {
+                                    $categoryUrl .= 's';
+                                }
+                            ?>
+                                <a href="<?= url('opportunities/' . $categoryUrl) ?>" class="category">
                                     <?= $field['options'][$value] ?? $value ?>
                                 </a>
-                            <?php endforeach; ?>
-                        <?php endif ?>
+    <?php endforeach; ?>
+<?php endif ?>
                         <!-- Display posted date -->
                         <div class="posted-date">
                             Posted <?= $opportunity->date()->toDate('F j, Y') ?>

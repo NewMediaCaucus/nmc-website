@@ -13,7 +13,10 @@ sections:
     type: pages
     parent: site.find("opportunities")
     layout: list 
-    templates: opportunity 
+    templates: opportunity
+    # https://getkirby.com/docs/reference/panel/sections/pages
+    sortBy: date desc
+    help: "Sorted newest at the top."
 
   about:
     label: About Us
@@ -21,3 +24,6 @@ sections:
     parent: site.find("about-us")
     layout: list 
     templates: human
+    sortBy: title asc
+    help: "Sorted alphabetically by first name."
+

@@ -36,7 +36,7 @@ sections:
         label: Bio
         type: textarea
         minlength: 50
-        maxlength: 750
+        maxlength: 1200
         buttons:
           - bold
           - italic

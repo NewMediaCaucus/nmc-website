@@ -45,6 +45,7 @@ sections:
           - code
           - ul
           - ol
+        help: "Adding a bio info will create a bio page for this person."
       files:
         label: Image
         type: files

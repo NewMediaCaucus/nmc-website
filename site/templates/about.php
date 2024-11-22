@@ -27,7 +27,7 @@
         <?php foreach ($officers as $officer): ?>
             <!-- There can be moments when a human has no image. If so, skip it. -->
             <?php if($image = $officer->image()): ?>
-                <div class="about">
+                <div class="about-human">
                     <div class="post-image">
                         <a href="<?= $officer->url() ?>">
                             <!-- grab first image in project folder (alphabetically) -->
@@ -59,7 +59,7 @@
         <?php foreach ($board_members as $board_member): ?>
             <!-- There can be moments when a human has no image. If so, skip it. -->
             <?php if($image = $board_member->image()): ?>
-                <div class="about">
+                <div class="about-human">
                     <div class="post-image">
                         <a href="<?= $board_member->url() ?>">
                             <!-- grab first image in project folder (alphabetically) -->
@@ -88,7 +88,7 @@
         <?php foreach ($advisory_members as $advisory_member): ?>
             <!-- There can be moments when a human has no image. If so, skip it. -->
             <?php if($image = $advisory_member->image()): ?>
-                <div class="about">
+                <div class="about-human">
                     <div class="post-image">
                         <a href="<?= $advisory_member->url() ?>">
                             <!-- grab first image in project folder (alphabetically) -->

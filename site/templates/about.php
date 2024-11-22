@@ -29,24 +29,38 @@
             <?php if($image = $officer->image()): ?>
                 <div class="about-human">
                     <div class="post-image">
-                        <a href="<?= $officer->url() ?>">
-                            <!-- grab first image in project folder (alphabetically) -->
-                            <img src="<?= $image->crop(468)->url() ?>" alt="<?= $officer->alt() ?>">
-                        </a>
+                        <?php if ($officer->bio()->isNotEmpty()): ?>
+                            <a href="<?= $officer->url() ?>">
+                                <!-- grab first image in project folder (alphabetically) -->
+                                <img src="<?= $image->crop(468)->url() ?>" alt="<?= $officer->alt() ?>">
+                            </a>
+                            <?php else: ?>
+                                <!-- Display image without link -->
+                                <img src="<?= $image->crop(468)->url() ?>" alt="<?= $officer->alt() ?>">
+                            <?php endif ?>
                     </div>
                     <div class="post">
-                        <h3><?= $officer->Title() ?></h3>                     
+                        <h3>
+                            <?php if ($officer->bio()->isNotEmpty()): ?>
+                                <a href="<?= $officer->url() ?>">
+                                    <?= $officer->title()->html() ?>
+                                </a>
+                            <?php else: ?>
+                                <?= $officer->Title() ?>
+                            <?php endif ?>
+                        </h3>                     
                         <?php if ($officer->nmc_title()->isNotEmpty()): ?>
-                            <p class="nmc_title"><?= $officer->nmc_title() ?></p>
+                            <p class="nmc-title"><?= $officer->nmc_title() ?></p>
                         <?php endif ?>
                         <?php if ($officer->professional_title()->isNotEmpty()): ?>
-                            <p class="professional_title"><?= $officer->professional_title() ?></p>
+                            <p class="professional-title"><?= $officer->professional_title() ?></p>
                         <?php endif ?>
-                        <p class="description"><?= $officer->short_description() ?></p>
                         <!-- Read More Button -->
-                        <!-- <a href="<?= $officer->url() ?>" class="button">
-                            View Bio
-                        </a> -->
+                        <?php if ($officer->bio()->isNotEmpty()): ?>
+                            <a href="<?= $officer->url() ?>" class="button">
+                                View Bio
+                            </a>
+                        <?php endif ?>
                     </div>
                 </div>
             <?php endif ?>              
@@ -60,22 +74,36 @@
             <!-- There can be moments when a human has no image. If so, skip it. -->
             <?php if($image = $board_member->image()): ?>
                 <div class="about-human">
-                    <div class="post-image">
-                        <a href="<?= $board_member->url() ?>">
-                            <!-- grab first image in project folder (alphabetically) -->
-                            <img src="<?= $image->crop(468)->url() ?>" alt="<?= $board_member->alt() ?>">
-                        </a>
+                <div class="post-image">
+                        <?php if ($board_member->bio()->isNotEmpty()): ?>
+                            <a href="<?= $board_member->url() ?>">
+                                <!-- grab first image in project folder (alphabetically) -->
+                                <img src="<?= $image->crop(468)->url() ?>" alt="<?= $board_member->alt() ?>">
+                            </a>
+                            <?php else: ?>
+                                <!-- Display image without link -->
+                                <img src="<?= $image->crop(468)->url() ?>" alt="<?= $board_member->alt() ?>">
+                            <?php endif ?>
                     </div>
                     <div class="post">
-                        <h3><?= $board_member->Title() ?></h3>                     
-                        <?php if ($board_member->professional_title()->isNotEmpty()): ?>
-                            <p class="professional_title"><?= $board_member->professional_title() ?></p>
+                    <h3>
+                        <?php if ($board_member->bio()->isNotEmpty()): ?>
+                            <a href="<?= $board_member->url() ?>">
+                                <?= $board_member->title()->html() ?>
+                            </a>
+                        <?php else: ?>
+                            <?= $board_member->Title() ?>
                         <?php endif ?>
-                        <p class="description"><?= $board_member->short_description() ?></p>
+                    </h3>                     
+                        <?php if ($board_member->professional_title()->isNotEmpty()): ?>
+                            <p class="professional-title"><?= $board_member->professional_title() ?></p>
+                        <?php endif ?>
                         <!-- Read More Button -->
-                        <!-- <a href="<?= $board_member->url() ?>" class="button">
-                            View Bio
-                        </a> -->
+                        <?php if ($board_member->bio()->isNotEmpty()): ?>
+                            <a href="<?= $officer->url() ?>" class="button">
+                                View Bio
+                            </a>
+                        <?php endif ?>
                     </div>
                 </div>
             <?php endif ?>              
@@ -89,22 +117,36 @@
             <!-- There can be moments when a human has no image. If so, skip it. -->
             <?php if($image = $advisory_member->image()): ?>
                 <div class="about-human">
-                    <div class="post-image">
-                        <a href="<?= $advisory_member->url() ?>">
-                            <!-- grab first image in project folder (alphabetically) -->
-                            <img src="<?= $image->crop(468)->url() ?>" alt="<?= $advisory_member->alt() ?>">
-                        </a>
+                <div class="post-image">
+                        <?php if ($advisory_member->bio()->isNotEmpty()): ?>
+                            <a href="<?= $advisory_member->url() ?>">
+                                <!-- grab first image in project folder (alphabetically) -->
+                                <img src="<?= $image->crop(468)->url() ?>" alt="<?= $advisory_member->alt() ?>">
+                            </a>
+                            <?php else: ?>
+                                <!-- Display image without link -->
+                                <img src="<?= $image->crop(468)->url() ?>" alt="<?= $advisory_member->alt() ?>">
+                            <?php endif ?>
                     </div>
                     <div class="post">
-                        <h3><?= $advisory_member->Title() ?></h3>                     
-                        <?php if ($advisory_member->professional_title()->isNotEmpty()): ?>
-                            <p class="professional_title"><?= $advisory_member->professional_title() ?></p>
+                    <h3>
+                        <?php if ($advisory_member->bio()->isNotEmpty()): ?>
+                            <a href="<?= $advisory_member->url() ?>">
+                                <?= $advisory_member->title()->html() ?>
+                            </a>
+                        <?php else: ?>
+                            <?= $advisory_member->Title() ?>
                         <?php endif ?>
-                        <p class="description"><?= $advisory_member->short_description() ?></p>
+                    </h3>                           
+                        <?php if ($advisory_member->professional_title()->isNotEmpty()): ?>
+                            <p class="professional-title"><?= $advisory_member->professional_title() ?></p>
+                        <?php endif ?>
                         <!-- Read More Button -->
-                        <a href="<?= $advisory_member->url() ?>" class="button">
-                            View Bio
-                        </a>
+                        <?php if ($advisory_member->bio()->isNotEmpty()): ?>
+                            <a href="<?= $officer->url() ?>" class="button">
+                                View Bio
+                            </a>
+                        <?php endif ?>
                     </div>
                 </div>
             <?php endif ?>              

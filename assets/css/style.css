@@ -57,6 +57,11 @@ h2 {
   margin-bottom: 0.8rem;
 }
 
+
+.post a:hover {
+  text-decoration: none;
+}
+
 h3 {
   margin-block-start: 0;
   margin-block-end: 0;
@@ -206,6 +211,16 @@ display: block;
   height: auto; /* Maintain aspect ratio */
 }
 
+.post-image a {
+  text-decoration: none;
+  background-color: none;
+
+}
+
+.post-image a:hover{
+  text-decoration: none;
+}
+
 .logo-img {
   grid-area: logo-img;
   margin-bottom: 2px;
@@ -239,10 +254,6 @@ display: block;
   grid-auto-flow: row;
   text-decoration: none;
 } 
-
-.opportunity a:hover {
-  text-decoration: none; 
-}
 
 .opportunity .button {
   text-decoration: none;
@@ -368,7 +379,6 @@ a.category:hover {
 }
 
 a:hover {
-  background-color: var(--button-hover);
   color: var(--white);
   /* transform: scale(1.05); */
 }
@@ -400,14 +410,24 @@ a:hover {
   margin-bottom: 2rem;
 } 
 
+.nmc-title {
+  grid-area: nmc-title;
+  margin: 0rem 0rem .4rem 0rem;
+}
+
+.professional-title {
+  grid-area: professional-title;
+  margin-top: 0rem;
+}
+
+.about-human h3 {
+line-height: 2rem;
+}
+
 .human {
   grid-auto-flow: row;
   text-decoration: none;
 } 
-
-.human a:hover {
-  text-decoration: none; 
-}
 
 .human .button {
   text-decoration: none;
@@ -451,6 +471,10 @@ a:hover {
   .about {
     display: grid;
     grid-template-columns: 1fr;
+  } 
+
+  .about-human h3 {
+    margin-top: 1rem;  
   } 
 
   .post-image {
@@ -613,7 +637,7 @@ a:hover {
   .about-human {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.4rem;
+    gap: 1.2rem;
   }
 
   .post-image {
@@ -667,7 +691,7 @@ a:hover {
   .about-human {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.4rem;
   }
 
   .post-image {

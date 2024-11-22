@@ -23,7 +23,6 @@
                         <a href="<?= $opportunity->url() ?>">
                             <!-- grab first image in project folder (alphabetically) -->
                             <img src="<?= $image->crop(468)->url() ?>" alt="<?= $opportunity->alt() ?>">
-
                         </a>
                     </div>
                     <div class="post">
@@ -45,11 +44,12 @@
                                     $categoryUrl .= 's';
                                 }
                             ?>
-                                <a href="<?= url('opportunities/' . $categoryUrl) ?>" class="category">
-                                    <?= $field['options'][$value] ?? $value ?>
-                                </a>
-    <?php endforeach; ?>
-<?php endif ?>
+                            <a href="<?= url('opportunities/' . $categoryUrl) ?>" class="category">
+                                <?= $field['options'][$value] ?? $value ?>
+                            </a>
+                            <?php endforeach; ?>
+                        <?php endif ?>
+                        
                         <!-- Display posted date -->
                         <div class="posted-date">
                             Posted <?= $opportunity->date()->toDate('F j, Y') ?>

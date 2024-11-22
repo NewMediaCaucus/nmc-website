@@ -55,7 +55,7 @@
                             Posted <?= $opportunity->date()->toDate('F j, Y') ?>
                             </div>
                         <!-- Display short description -->
-                        <p class="description"><?= $opportunity->short_description() ?></p>
+                        <p class="description"><?= $opportunity->short_description()->kirbytext() ?></p>
                         <!-- Read More Button -->
                         <a href="<?= $opportunity->url() ?>" class="button">
                             View Post

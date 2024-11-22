@@ -42,11 +42,12 @@
                     <div class="post">
                         <h3>
                             <?php if ($officer->bio()->isNotEmpty()): ?>
+                            <!-- The human's name is stored as the page title. -->
                                 <a href="<?= $officer->url() ?>">
                                     <?= $officer->title()->html() ?>
                                 </a>
                             <?php else: ?>
-                                <?= $officer->Title() ?>
+                                <?= $officer->title() ?>
                             <?php endif ?>
                         </h3>                     
                         <?php if ($officer->nmc_title()->isNotEmpty()): ?>
@@ -88,11 +89,12 @@
                     <div class="post">
                     <h3>
                         <?php if ($board_member->bio()->isNotEmpty()): ?>
+                        <!-- The human's name is stored as the page title. -->
                             <a href="<?= $board_member->url() ?>">
                                 <?= $board_member->title()->html() ?>
                             </a>
                         <?php else: ?>
-                            <?= $board_member->Title() ?>
+                            <?= $board_member->title() ?>
                         <?php endif ?>
                     </h3>                     
                         <?php if ($board_member->professional_title()->isNotEmpty()): ?>
@@ -100,7 +102,7 @@
                         <?php endif ?>
                         <!-- Read More Button -->
                         <?php if ($board_member->bio()->isNotEmpty()): ?>
-                            <a href="<?= $officer->url() ?>" class="button">
+                            <a href="<?= $board_member->url() ?>" class="button">
                                 View Bio
                             </a>
                         <?php endif ?>
@@ -131,11 +133,12 @@
                     <div class="post">
                     <h3>
                         <?php if ($advisory_member->bio()->isNotEmpty()): ?>
+                        <!-- The human's name is stored as the page title. -->
                             <a href="<?= $advisory_member->url() ?>">
                                 <?= $advisory_member->title()->html() ?>
                             </a>
                         <?php else: ?>
-                            <?= $advisory_member->Title() ?>
+                            <?= $advisory_member->title() ?>
                         <?php endif ?>
                     </h3>                           
                         <?php if ($advisory_member->professional_title()->isNotEmpty()): ?>
@@ -143,7 +146,7 @@
                         <?php endif ?>
                         <!-- Read More Button -->
                         <?php if ($advisory_member->bio()->isNotEmpty()): ?>
-                            <a href="<?= $officer->url() ?>" class="button">
+                            <a href="<?= $advisory_member->url() ?>" class="button">
                                 View Bio
                             </a>
                         <?php endif ?>

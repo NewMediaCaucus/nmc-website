@@ -11,51 +11,27 @@
     <div class="about-title">
         <h1><?= $page->title() ?></h1>
     </div>
+    <p><?= $page->mission() ?></p>
     <?php
-    // Load the 'human' page
-    $humanPage = page('human');
-
-    if ($humanPage) {
-        // Access the 'category' field value
-        $categoryValue = $humanPage->category()->value();
-
-        // Check if the category field value matches 'officer'
-        if ($categoryValue === 'officer') {
-            // Access the value of the 'board' field
-            $boardValue = $humanPage->board()->value();
-        }
-    }
-    ?>
-    <div class="officers-title">
-    <?php if (isset($categoryValue)): ?>
-        <h2>
-            <?php
-            // Display the value of the 'board' field
-            echo htmlspecialchars($boardValue);
-            ?>
-        </h2>
-    <?php endif; ?>
-    </div>
-    <div class="about">
+        $humans = $page->children()->listed();
         
-        <?php 
-            $about = $page->children()
-                                  ->listed()
-                                  ->sortBy('date', 'desc') 
-                                  ->paginate(9);
-        ?>
-
-        <?php
-            $humans = $page->children()->listed();
-
         // Filter the humans by category 'officer'
         $officers = $humans->filterBy('category', 'officer');
-
+        
         // Filter the humans by category 'board'
         $board_members = $humans->filterBy('category', 'board');
+        
+        // Filter the humans by category 'advisory board'
+        $advisory_members = $humans->filterBy('category', 'advisory');
+        
+        // Filter the humans by category 'alumni'
+        $alumni = $humans->filterBy('category', 'alumni');
+        
         ?>
 
-        <!-- List Officers -->
+    <h2>Officers</h2>
+    <!-- List Officers -->
+    <div class="about">
         <?php foreach ($officers as $officer): ?>
             <!-- There can be moments when a human has no image. If so, skip it. -->
             <?php if($image = $officer->image()): ?>
@@ -68,7 +44,7 @@
                         </a>
                     </div>
                     <div class="post">
-                        <h2><?= $officer->Title() ?></h2>                     
+                        <h3><?= $officer->Title() ?></h3>                     
                         <!-- Display NMC Title -->
                         <?php if ($officer->nmc_title()->isNotEmpty()): ?>
                             <p class="nmc_title"><?= $officer->nmc_title() ?></p>
@@ -87,8 +63,11 @@
                 </div>
             <?php endif ?>              
         <?php endforeach ?> 
+    </div>
 
-        <!-- List Board Members -->
+    <h2>Board Members</h2>
+    <!-- List Board Members -->
+    <div class="about">
         <?php foreach ($board_members as $board_member): ?>
             <!-- There can be moments when a human has no image. If so, skip it. -->
             <?php if($image = $board_member->image()): ?>
@@ -100,7 +79,7 @@
                         </a>
                     </div>
                     <div class="post">
-                        <h2><?= $board_member->Title() ?></h2>                     
+                        <h3><?= $board_member->Title() ?></h3>                     
                         <!-- Display Professional Title -->
                         <?php if ($board_member->professional_title()->isNotEmpty()): ?>
                             <p class="professional_title"><?= $board_member->professional_title() ?></p>
@@ -116,9 +95,43 @@
             <?php endif ?>              
         <?php endforeach ?> 
     </div>
-    <ul>
-</ul>
 
+    <h2>Advisory Board</h2>
+    <!-- List Board Members -->
+    <div class="about">
+        <?php foreach ($advisory_members as $advisory_member): ?>
+            <!-- There can be moments when a human has no image. If so, skip it. -->
+            <?php if($image = $advisory_member->image()): ?>
+                <div class="about">
+                    <div class="post-image">
+                        <a href="<?= $advisory_member->url() ?>">
+                            <!-- grab first image in project folder (alphabetically) -->
+                            <img src="<?= $image->crop(468)->url() ?>" alt="<?= $advisory_member->alt() ?>">
+                        </a>
+                    </div>
+                    <div class="post">
+                        <h3><?= $advisory_member->Title() ?></h3>                     
+                        <!-- Display Professional Title -->
+                        <?php if ($advisory_member->professional_title()->isNotEmpty()): ?>
+                            <p class="professional_title"><?= $advisory_member->professional_title() ?></p>
+                        <?php endif ?>
+                        <!-- Display short description -->
+                        <p class="description"><?= $advisory_member->short_description() ?></p>
+                        <!-- Read More Button -->
+                        <a href="<?= $advisory_member->url() ?>" class="button">
+                            View Bio
+                        </a>
+                    </div>
+                </div>
+            <?php endif ?>              
+        <?php endforeach ?> 
+    </div>
+
+    <h2>Board Alumni & Past Leadership</h2>
+    <!-- List Board Members -->
+    <div class="about">
+    <p><?= $page->alumni() ?></p>
+    </div>
 
 <!-- Submit an opportunity promo -->
 <div class="promo">🪩 <a href="https://www.newmediacaucus.org/join/" >Become a Member!</a> 🐝</div>

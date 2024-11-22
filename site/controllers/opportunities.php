@@ -2,13 +2,13 @@
 
 return function ($page) {
 
-    if (str_contains($page->url(), 'grants')){
+    if (str_contains($page->url(), '/grants')){
         $x = "grant";
-    } elseif (str_contains($page->url(), 'jobs')){
+    } elseif (str_contains($page->url(), '/jobs')){
         $x = "job";
-    } elseif (str_contains($page->url(), 'papers')){
+    } elseif (str_contains($page->url(), '/papers')){
         $x = "paper";
-    } elseif (str_contains($page->url(), 'entries')){
+    } elseif (str_contains($page->url(), '/entries')){
         $x = "entry";
     } else {
         $x = "all";

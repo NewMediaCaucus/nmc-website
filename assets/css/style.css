@@ -52,7 +52,6 @@ h1 {
 
 h2 {
   font-size: 1.728rem;
-  line-height: 1.1;
   text-decoration: none;
   line-height: 1.1;
   margin-bottom: 0.8rem;
@@ -398,7 +397,7 @@ a:hover {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 } 
 
 .human {
@@ -449,6 +448,11 @@ a:hover {
     grid-template-columns: 1fr;
   } 
 
+  .about {
+    display: grid;
+    grid-template-columns: 1fr;
+  } 
+
   .post-image {
     width: 100%;
     /* max-width: 400px; */
@@ -491,6 +495,18 @@ a:hover {
     gap: 2rem;
   }
 
+  .about {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+
+  .about-human {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
   .post-image {
     width: 100%;
     height: auto;
@@ -522,7 +538,6 @@ a:hover {
   }
 
   .page {
-    /* background: darkolivegreen; */
     max-width: 672px;
     margin: auto;
     padding: 0 2rem;
@@ -533,6 +548,18 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .about-human {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
   }
 
   .post-image {
@@ -577,6 +604,18 @@ a:hover {
     gap: 3rem;
   }
 
+  .about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .about-human {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem;
+  }
+
   .post-image {
     width: 100%;
     height: auto;
@@ -617,6 +656,18 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
+  }
+ 
+  .about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .about-human {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .post-image {

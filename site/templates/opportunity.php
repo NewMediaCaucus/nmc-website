@@ -22,18 +22,24 @@
         </h2>
     <?php endif ?>
 
-    <!-- TODO: Style this -->
     <?php if ($page->category()->isNotEmpty()): ?>
-        <?php
-        $field = $page->blueprint()->field('category');
-        $value = $page->category()->value();
-        foreach ($page->category()->split() as $category):
-            ?>
-            <a href="<?= url('opportunities/' . strtolower($value) . 's') ?>" class="category">
-                <?= $field['options'][$value] ?? $value ?>
-            </a>
-        <?php endforeach; ?>
-    <?php endif ?>
+    <?php
+    $field = $page->blueprint()->field('category');
+    $value = $page->category()->value();
+    foreach ($page->category()->split() as $category):
+        // Determine the category URL part
+        $categoryUrl = strtolower($value);
+        if (substr($categoryUrl, -1) === 'y') {
+            $categoryUrl = substr($categoryUrl, 0, -1) . 'ies';
+        } else {
+            $categoryUrl .= 's';
+        }
+    ?>
+        <a href="<?= url('opportunities/' . $categoryUrl) ?>" class="category">
+            <?= $field['options'][$value] ?? $value ?>
+        </a>
+    <?php endforeach; ?>
+<?php endif ?>
 
     <!-- Display posted date -->
     <div class="posted-date">

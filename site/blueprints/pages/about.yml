@@ -32,8 +32,13 @@ sections:
         type: text
         access:
           panel: false
-      text:
+      mission:
         label: Mission Statement
+        type: textarea
+        access:
+          panel: false
+      alumni:
+        label: Alumni
         type: textarea
         access:
           panel: false

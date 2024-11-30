@@ -129,23 +129,65 @@ display: block;
 /* color: #007bff; Optional: Change link color on hover */
 }
 
-nav ul {
+.navigation ul {
 list-style-type: none;
 font-family: "Nunito Sans", sans-serif;
 text-transform: capitalize;
-display: flex; /* Use Flexbox for horizontal layout */
+display: flex;
 justify-content: flex-end;
 margin: 0; 
 padding: 0;
 }
 
-nav ul li {
-display: flex; /* Use Flexbox to center the content */
-justify-content: center; /* Center the content horizontally */
-align-items: center; /* Center the content vertically */
+.navigation ul li {
+display: flex; 
+justify-content: center;
+align-items: center;
 }
 
-.footer {
+.footer-navigation {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ensure three equal columns */
+  grid-gap: 1rem; /* Optional: Add gap between columns */
+  justify-content: right;
+  align-items: start;
+  padding: 10px 0px 10px 0px;
+}
+
+.footer-navigation a:link,
+.footer-navigation a:visited {
+text-decoration: none;
+display: block;
+}
+
+.footer-nav-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-nav-block ul {
+  list-style: none; /* Remove list item markers */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-block li {
+  margin-bottom: 0.5rem; /* Add space between items */
+}
+
+.footer-nav-block a {
+  display: block; /* Ensure links are block elements */
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-nav-block a:hover {
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+.footer-logo {
+  padding-top: .4rem;
+  padding-bottom: .4rem;
 }
 
 .footer-logo-subhead {
@@ -159,28 +201,6 @@ align-items: center; /* Center the content vertically */
 
 .footer-logo-subhead:visited {
   color: var(--electric-green);
-}
-
-.footer-navigation {
-  grid-area: navigation;
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
-  justify-content: right;
-  align-items: center;
-  padding: 10px;
-}
-
-.footer-navigation a:link,
-.footer-navigation a:visited {
-text-decoration: none;
-color: var(--primary-purple);
-padding: 10px 15px;
-display: block;
-}
-
-.footer-navigation a:hover,
-.footer-navigation a:active {
-/* color: #007bff; Optional: Change link color on hover */
 }
 
 .footer-social {

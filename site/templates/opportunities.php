@@ -86,7 +86,7 @@
 <?php endif ?>
 
 <!-- Submit an opportunity promo -->
-<div class="promo">📣 <a href="https://www.newmediacaucus.org/submit/" >Got an Opportunity? Post It!</a> 🦄</div>
+<div class="promo">📣 <a href="https://docs.google.com/forms/d/e/1FAIpQLSczR9Ct3qaWETS72DoIO03LlLTeIWF8sSQxMvnTNwfs0aXAHA/viewform" >Got an Opportunity? Post It!</a> 🦄</div>
 
 </main>
 

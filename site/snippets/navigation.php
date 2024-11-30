@@ -17,9 +17,9 @@
     <?php if ($blogPage = $site->find('blog')): ?>
         <li><a href="<?= $blogPage->url() ?>"><?= $blogPage->title() ?></a></li>
     <?php endif ?>
-    <!-- Add about us page link -->
-    <?php if ($aboutusPage = $site->find('about-us')): ?>
-        <li><a href="<?= $aboutusPage->url() ?>"><?= $aboutusPage->title() ?></a></li>
+    <!-- Add opportunities page link -->
+    <?php if ($opportunitiesPage = $site->find('opportunities')): ?>
+        <li><a href="<?= $opportunitiesPage->url() ?>"><?= $opportunitiesPage->title() ?></a></li>
     <?php endif ?>
     <!-- Add Media-N link -->
     <?php if ($medianPage = $site->find('media-n-journal')): ?>

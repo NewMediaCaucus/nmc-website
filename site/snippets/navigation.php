@@ -9,15 +9,26 @@
 
 
 <ul>
-    <!-- grab all primary pages that have numbers in the title -->
-    <?php foreach ($site->children()->listed() as $item): ?>
-        <!-- add a css class to the active nav element -->
-        <?php if ($item->isOpen()): ?>
-            <li><a class="active_nav" href="<?= $item->url() ?>"><?= $item->title() ?></a></li>
-        <?php else: ?>
-            <li><a href="<?= $item->url() ?>"><?= $item->title() ?></a></li>
-        <?php endif ?>
-    <?php endforeach ?>
+    <!-- Add opportunities page link -->
+    <?php if ($aboutusPage = $site->find('about-us')): ?>
+        <li><a href="<?= $aboutusPage->url() ?>"><?= $aboutusPage->title() ?></a></li>
+    <?php endif ?>
+    <!-- Add blog page link -->
+    <?php if ($blogPage = $site->find('blog')): ?>
+        <li><a href="<?= $blogPage->url() ?>"><?= $blogPage->title() ?></a></li>
+    <?php endif ?>
+    <!-- Add about us page link -->
+    <?php if ($aboutusPage = $site->find('about-us')): ?>
+        <li><a href="<?= $aboutusPage->url() ?>"><?= $aboutusPage->title() ?></a></li>
+    <?php endif ?>
+    <!-- Add Media-N link -->
+    <?php if ($medianPage = $site->find('media-n-journal')): ?>
+        <li><a href="<?= $medianPage->url() ?>"><?= $medianPage->title() ?></a></li>
+    <?php endif ?>
+    <!-- Add submit news link -->
+    <?php if ($submitnewsPage = $site->find('submit-news')): ?>
+        <li><a href="<?= $submitnewsPage->url() ?>"><?= $submitnewsPage->title() ?></a></li>
+    <?php endif ?>
 </ul>
 
 </nav>

@@ -163,6 +163,7 @@ display: block;
 .footer-nav-block {
   display: flex;
   flex-direction: column;
+  text-transform: capitalize; 
 }
 
 .footer-nav-block ul {
@@ -354,7 +355,7 @@ a.category:hover {
   background-color: var(--promo-background);
   padding: 1rem .5rem;
   border-radius: 20px;
-  margin: 2rem auto 3rem auto; /* Center the div horizontally */
+  margin: 2rem auto 2rem auto; /* Center the div horizontally */
   text-align: center;
   max-width: 420px; /* Set the maximum width */
 }

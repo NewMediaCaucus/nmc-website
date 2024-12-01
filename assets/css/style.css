@@ -161,6 +161,12 @@ justify-content: center;
 align-items: center;
 }
 
+.navigation a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Hamburger Menu Styles */
 .hamburger-menu {
   display: none;
@@ -557,6 +563,11 @@ line-height: 2rem;
     text-transform: capitalize;
     margin: 0; 
     padding: 0;
+  }
+
+  .navigation a {
+    font-size: 1.5rem; /* Increase text size */
+    font-weight: bold; /* Make text bolder */
   }
 
   .opportunities {

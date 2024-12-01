@@ -346,7 +346,7 @@ display: block;
   display: inline-block;
   padding: 0.25rem 0.75rem;
   text-decoration: none;
-  font-size: 0.65em;
+  font-size: 0.75em;
   font-weight: 500;
   background-color: var(--button-background);
   color: var(--white);
@@ -369,7 +369,7 @@ a.category:hover {
 .posted-date {
   background: var(--date-background);
   color: var(--date-text);
-  font-size: 0.65em;
+  font-size: 0.75em;
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
   display: inline-block;
@@ -528,7 +528,7 @@ line-height: 2rem;
     line-height: 1.4;
   }
   p {
-    font-size: 0.95rem;   /* Slightly reduced from desktop 1rem */
+    font-size: 1.1rem;   /* Slightly reduced from desktop 1rem */
     line-height: 1.5;
   }
 
@@ -616,7 +616,7 @@ line-height: 2rem;
     line-height: 1.4;
   }
   p { 
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.5;
   }
 

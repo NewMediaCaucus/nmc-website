@@ -652,6 +652,11 @@ line-height: 2rem;
     margin: 0; 
     padding: 0;
   }
+  
+  .navigation a {
+    font-size: 1.5rem; /* Increase text size */
+    font-weight: bold; /* Make text bolder */
+  }
 
   .opportunities {
     display: grid;

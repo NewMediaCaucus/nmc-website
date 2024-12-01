@@ -8,6 +8,7 @@
   --primary-purple: #d9a7eb;
   --electric-green: #50FA7B;
   --background-blue: #282A36;
+  --background-blue-hamburger: rgba(40, 42, 54, 0.95);
   --promo-background: rgba(217, 167, 235, 0.05);
   --button-background: rgba(217, 167, 235, 0.2);
   --date-background: rgba(255, 255, 255, 0.1);
@@ -112,9 +113,9 @@ a:active {
   display: flex;
   /* display: grid;  */
   /* grid-template-columns: repeat(auto-fit, minmax(100px, auto)); */
-  /* justify-content: right;
+  justify-content: right;
   align-items: center;
-  padding: 10px; */
+  padding: 10px;
 }
 
 .navigation.active {
@@ -124,7 +125,7 @@ a:active {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
+  background-color: var(--background-blue-hamburger);
   z-index: 999; /* Ensure it covers the screen */
   flex-direction: column;
   justify-content: center;
@@ -168,15 +169,30 @@ align-items: center;
   justify-content: space-around;
   width: 30px;
   height: 30px;
-  position: relative;
+  position: absolute; /* Use absolute positioning */
+  right: 15px; /* Position to the right */  
   z-index: 1000; /* Ensure it is on top */
 }
 
 .hamburger-menu .bar {
-  height: 1px;
+  height: 3px;
   width: 100%;
   background-color: var(--white);
-  border-radius: 0px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Transform hamburger menu into an "X" when active */
+.hamburger-menu.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(9px, 9px);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 .footer-navigation {
@@ -276,7 +292,7 @@ display: block;
 
 .logo-img {
   grid-area: logo-img;
-  margin-bottom: 2px;
+  margin: 2px;
 }
 
 .logo-subhead {
@@ -516,17 +532,31 @@ line-height: 2rem;
     margin: auto;
   }
 
+  .logo-img {
+    grid-area: logo-img;
+    margin: 16px 0 2px 0;
+  }
+
   .hamburger-menu {
     display: flex;
   }
 
   .navigation {
     display: none;
-    flex-direction: column;
   }
 
   .navigation.active {
     display: flex;
+    flex-direction: column;
+  }
+
+  .navigation ul {
+    display: block;
+    list-style: none;
+    font-family: "Nunito Sans", sans-serif;
+    text-transform: capitalize;
+    margin: 0; 
+    padding: 0;
   }
 
   .opportunities {
@@ -556,7 +586,8 @@ line-height: 2rem;
 }
 
 /* Small devices (Landscape iPhone SE, portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) { */
+@media only screen and (min-width: 480px) and (max-width: 812px) and (orientation: landscape) {
   h1 { 
     font-size: 1.802rem;  /* Minor third scale */
     line-height: 1.2;
@@ -582,6 +613,33 @@ line-height: 2rem;
     max-width: 600px;
     margin: auto;
     padding: 0 1rem;
+  }
+
+  .logo-img {
+    grid-area: logo-img;
+    margin: 16px 0 2px 0;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .navigation.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navigation ul {
+    display: block;
+    list-style: none;
+    font-family: "Nunito Sans", sans-serif;
+    text-transform: capitalize;
+    margin: 0; 
+    padding: 0;
   }
 
   .opportunities {

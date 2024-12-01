@@ -1,13 +1,12 @@
 
 <!-- dynamically assemble menu -->
+<div class="hamburger-menu" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
 
 <nav class="navigation">
-<!-- <div class="logo-img">
-    <img src="<?= url('assets/icons/logo.png') ?>" alt="" width="150" height="44">
-</div>
-<a class="logo-subhead" href="<?= $site->url() ?>"><?= $site->title() ?></a> -->
-
-
 <ul>
     <!-- Add opportunities page link -->
     <?php if ($aboutusPage = $site->find('about-us')): ?>
@@ -30,5 +29,14 @@
         <li><a href="<?= $submitnewsPage->url() ?>"><?= $submitnewsPage->title() ?></a></li>
     <?php endif ?>
 </ul>
-
 </nav>
+
+<!-- Hamburger nav -->
+<script>
+function toggleMenu() {
+  const nav = document.querySelector('.navigation');
+  const hamburger = document.querySelector('.hamburger-menu');
+  nav.classList.toggle('active');
+  hamburger.classList.toggle('active');
+}
+</script>

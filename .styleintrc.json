@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": 2,
+    "string-quotes": "double",
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "block-no-empty": true,
+    "comment-whitespace-inside": "always",
+    "declaration-block-trailing-semicolon": "always",
+    "no-extra-semicolons": true,
+    "selector-list-comma-newline-after": "always"
+  }
+}

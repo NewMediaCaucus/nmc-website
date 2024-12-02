@@ -374,6 +374,7 @@ a:active {
   text-transform: lowercase;
   letter-spacing: 2.8px;
   margin-left: 3px;
+  text-decoration-line: none;
 }
 
 .logo-subhead:visited {

@@ -351,7 +351,6 @@ align-items: center;
   text-decoration: none;
 }
 
-
 .opportunities-title {
   grid-area: opportunities-title;
 } 
@@ -554,6 +553,26 @@ line-height: 2rem;
   text-decoration: none;
 }
 
+.initiatives-title {
+  grid-area: initiatives-title;
+} 
+
+.initiatives {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+} 
+
+.initiative {
+  grid-auto-flow: row;
+  text-decoration: none;
+} 
+
+.initiative .button {
+  text-decoration: none;
+  color: var(--white);
+}
+
 
 /* Extra small devices (iPhone SE, Pixel 7, Surface Duo, Samsung Galaxy A51/71, Galaxy Z Fold, phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -625,9 +644,14 @@ line-height: 2rem;
     display: grid;
     grid-template-columns: 1fr;
   } 
-
+  
   .about-human h3 {
     margin-top: 1rem;  
+  } 
+  
+  .initiatives {
+    display: grid;
+    grid-template-columns: 1fr;
   } 
 
   .post-image {
@@ -709,17 +733,24 @@ line-height: 2rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-
+  
+  
   .about {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
   }
-
+  
   .about-human {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+
+  .initiatives {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .post-image {
@@ -770,16 +801,22 @@ line-height: 2rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
   }
-
+  
   .about {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-
+  
   .about-human {
     display: flex;
     flex-direction: column;
+  }
+
+  .initiatives {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
   }
 
   .post-image {
@@ -831,17 +868,24 @@ line-height: 2rem;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
   }
+ 
 
   .about {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-
+  
   .about-human {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
+  }
+  
+  .initiatives {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
   }
 
   .post-image {
@@ -896,6 +940,12 @@ line-height: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.4rem;
+  }
+
+  .initiatives {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
   }
 
   .post-image {

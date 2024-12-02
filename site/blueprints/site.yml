@@ -39,7 +39,7 @@ sections:
   galleries:
     label: Header/Footer Gallery
     type: pages
-    parent: site.find("header-footer")
+    parent: site.find("header-footer-galleries")
     layout: list 
     templates: gallery
     sortBy: date desc

@@ -47,7 +47,7 @@ h1, h2, h3, h4 {
 h1 {
   font-size: 2.488rem;
   line-height: 1.2;
-  color: white;
+  color: var(--white);
   margin-bottom: 1rem;
 }
 
@@ -61,8 +61,12 @@ h2 {
 
 h2 a {
   color: var(--white);
+  text-decoration-line: none;
 }
 
+.post a {
+  text-decoration: none;
+}
 
 .post a:hover {
   text-decoration: none;
@@ -74,10 +78,20 @@ h3 {
   font-size: 1.44rem;  /* 31px */
   line-height: 1.3;
   margin-bottom: 0.6rem;
+  color: var(--white);
+  text-decoration-line: none;
+
 }
 
 h3 a {
   color: var(--white);
+  text-decoration-line: none;
+}
+
+h3 a:link {
+  color: var(--white);
+  text-decoration-line: none;
+
 }
 
 h4 {
@@ -109,9 +123,9 @@ ul {
   line-height: 1.4;
 }
 
-a:link, a:visited {
+a:visited {
   /* color: var(--white); */
-  text-decoration-line: none;
+  text-decoration: none;
 }
 
 /* a:hover {
@@ -230,6 +244,7 @@ align-items: center;
   display: block;
 }
 
+
 .footer-nav-block {
   display: flex;
   flex-direction: column;
@@ -305,6 +320,11 @@ align-items: center;
   color: var(--white);
   text-align: center;
   padding: 10px 0 10px 4px;
+}
+
+.copyright a:link{
+  color: var(--primary-purple);
+  text-decoration-line: none;
 }
 
 .copyright a:hover {
@@ -448,6 +468,11 @@ a.category:hover {
   text-decoration: underline;
 }
 
+.blurb a:link{
+  color: var(--primary-purple);
+  text-decoration-line: none;
+}
+
 .promo {
   background-color: var(--promo-background);
   padding: 1rem .5rem;
@@ -459,6 +484,7 @@ a.category:hover {
 
 .promo a {
   color: var(--white);
+  text-decoration-line: none;
 }
 
 .promo a:hover {

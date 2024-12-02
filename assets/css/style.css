@@ -332,6 +332,7 @@ display: block;
 
 .opportunity .button {
   text-decoration: none;
+  color: var(--white);
 }
 
 .description {

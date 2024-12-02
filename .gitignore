@@ -19,6 +19,9 @@ Icon
 .lock
 
 
+# Node and NPM
+node_modules/
+
 # Editors
 # (sensitive workspace files)
 # ---------------------------

@@ -62,7 +62,11 @@
     </div>
   </nav>
 
-  <div class="blurb">The New Media Caucus (NMC) is an international non-profit association formed to promote the development and understanding of new media art. We represent and serve: artists, designers, practitioners, historians, theorists, educators, students, and scholars. <a href="">Join us</a>.</div>
+  <div class="blurb">The New Media Caucus (NMC) is an international non-profit association formed to promote the development and understanding of new media art. We represent and serve: artists, designers, practitioners, historians, theorists, educators, students, and scholars. 
+    <?php if ($joinPage = $site->find('join')): ?>
+      <a href="<?= $joinPage->url() ?>"><?= $joinPage->title() ?> us</a>.
+    <?php endif ?>
+  </div>
   
   <div class="footer-social">
     <div class="social-icon">
@@ -75,7 +79,12 @@
         <img src="<?= url('assets/icons/ig.png') ?>" alt="Instagram" width="18" height="18">
       </a>
     </div>
-    <div class="copyright">Copyright © 2024</div>
+    <div class="copyright">Copyright © <?= date('Y') ?> New Media Caucus  
+        <!-- Add linked privacy policy -->
+        <?php if ($privacypolicyPage = $site->find('privacy-policy')): ?>
+          <a href="<?= $privacypolicyPage->url() ?>"><?= $privacypolicyPage->title() ?></a>
+        <?php endif ?>
+    </div>
   </div>
 
 

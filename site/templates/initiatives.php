@@ -12,10 +12,10 @@
     </div>
     <p><?= $page->description()->kirbytext() ?></p>
     <?php
-        // Setup filters for each category
-        $initiatives = $page->children()->listed();
-        $current_initiatives = $initiatives->filterBy('category', 'current');
-        $previous_initiatives = $initiatives->filterBy('category', 'previous');
+    // Setup filters for each category
+    $initiatives = $page->children()->listed();
+    $current_initiatives = $initiatives->filterBy('category', 'current');
+    $previous_initiatives = $initiatives->filterBy('category', 'previous');
     ?>
 
     <h2>Current</h2>
@@ -23,7 +23,7 @@
     <div class="initiatives">
         <?php foreach ($current_initiatives as $current): ?>
             <!-- There can be moments when an initiative has no image. If so, skip it. -->
-            <?php if($image = $current->image()): ?>
+            <?php if ($image = $current->image()): ?>
                 <div class="initiative">
                     <div class="post-image">
                         <a href="<?= $current->url() ?>">
@@ -34,8 +34,8 @@
                     <div class="post">
                         <a href="<?= $current->url() ?>">
                             <!-- Get the title of the initiative -->
-                            <h3><?= $current->title() ?></h3>                    
-                        </a>   
+                            <h3><?= $current->title() ?></h3>
+                        </a>
                         <!-- Display short description -->
                         <p class="description"><?= $current->short_description()->kirbytext() ?></p>
                         <!-- Read More Button -->
@@ -44,8 +44,8 @@
                         </a>
                     </div>
                 </div>
-            <?php endif ?>              
-        <?php endforeach ?> 
+            <?php endif ?>
+        <?php endforeach ?>
     </div>
 
     <h2>Previous</h2>
@@ -53,7 +53,7 @@
     <div class="initiatives">
         <?php foreach ($previous_initiatives as $previous): ?>
             <!-- There can be moments when an initiative has no image. If so, skip it. -->
-            <?php if($image = $previous->image()): ?>
+            <?php if ($image = $previous->image()): ?>
                 <div class="initiative">
                     <div class="post-image">
                         <a href="<?= $previous->url() ?>">
@@ -64,8 +64,8 @@
                     <div class="post">
                         <a href="<?= $previous->url() ?>">
                             <!-- Get the title of the initiative -->
-                            <h3><?= $previous->title() ?></h3>                    
-                        </a>   
+                            <h3><?= $previous->title() ?></h3>
+                        </a>
                         <!-- Display short description -->
                         <p class="description"><?= $previous->short_description()->kirbytext() ?></p>
                         <!-- Read More Button -->
@@ -74,8 +74,8 @@
                         </a>
                     </div>
                 </div>
-            <?php endif ?>              
-        <?php endforeach ?> 
+            <?php endif ?>
+        <?php endforeach ?>
     </div>
 
 </main>

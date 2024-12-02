@@ -19,7 +19,7 @@
 }
 
 /* Prevent white flash */
-html, 
+html,
 body {
   background-color: var(--background-blue);
   color: var(--white);
@@ -40,7 +40,10 @@ body {
 }
 
 /* Heading styles */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -75,7 +78,8 @@ h2 a {
 h3 {
   margin-block-start: 0;
   margin-block-end: 0;
-  font-size: 1.44rem;  /* 31px */
+  font-size: 1.44rem;
+  /* 31px */
   line-height: 1.3;
   margin-bottom: 0.6rem;
   color: var(--white);
@@ -97,15 +101,18 @@ h3 a:link {
 h4 {
   margin-block-start: 0;
   margin-block-end: 0;
-  font-size: 1.2rem;  /* 25px */
+  font-size: 1.2rem;
+  /* 25px */
   line-height: 1.4;
   margin-bottom: 0.5rem;
 }
 
 p {
   color: white;
-  font-size: 1.1rem;      /* 16px base */
-  line-height: 1.2;     /* Improved readability */
+  font-size: 1.1rem;
+  /* 16px base */
+  line-height: 1.2;
+  /* Improved readability */
   font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
@@ -154,7 +161,8 @@ a:active {
   width: 100%;
   height: 100%;
   background-color: var(--background-blue-hamburger);
-  z-index: 999; /* Ensure it covers the screen */
+  z-index: 999;
+  /* Ensure it covers the screen */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -162,31 +170,28 @@ a:active {
 
 .navigation a:link,
 .navigation a:visited {
-text-decoration: none;
-color: var(--white);
-padding: 10px 15px;
-display: block;
+  text-decoration: none;
+  color: var(--white);
+  padding: 10px 15px;
+  display: block;
 }
 
-.navigation a:hover,
-.navigation a:active {
-/* color: #007bff; Optional: Change link color on hover */
-}
+
 
 .navigation ul {
-list-style: none;
-font-family: "Nunito Sans", sans-serif;
-text-transform: capitalize;
-display: flex;
-justify-content: flex-end;
-margin: 0; 
-padding: 0;
+  list-style: none;
+  font-family: "Nunito Sans", sans-serif;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
 }
 
 .navigation ul li {
-display: flex; 
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navigation a {
@@ -203,9 +208,12 @@ align-items: center;
   justify-content: space-around;
   width: 30px;
   height: 30px;
-  position: absolute; /* Use absolute positioning */
-  right: 15px; /* Position to the right */  
-  z-index: 1000; /* Ensure it is on top */
+  position: absolute;
+  /* Use absolute positioning */
+  right: 15px;
+  /* Position to the right */
+  z-index: 1000;
+  /* Ensure it is on top */
 }
 
 .hamburger-menu .bar {
@@ -231,8 +239,10 @@ align-items: center;
 
 .footer-navigation {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Ensure three equal columns */
-  grid-gap: 1rem; /* Optional: Add gap between columns */
+  grid-template-columns: repeat(3, 1fr);
+  /* Ensure three equal columns */
+  grid-gap: 1rem;
+  /* Optional: Add gap between columns */
   justify-content: right;
   align-items: start;
   padding: 10px 0px 10px 0px;
@@ -248,27 +258,31 @@ align-items: center;
 .footer-nav-block {
   display: flex;
   flex-direction: column;
-  text-transform: capitalize; 
+  text-transform: capitalize;
 }
 
 .footer-nav-block ul {
-  list-style: none; /* Remove list item markers */
+  list-style: none;
+  /* Remove list item markers */
   padding: 0;
   margin: 0;
 }
 
 .footer-nav-block li {
-  margin-bottom: 0.5rem; /* Add space between items */
+  margin-bottom: 0.5rem;
+  /* Add space between items */
 }
 
 .footer-nav-block a {
-  display: block; /* Ensure links are block elements */
+  display: block;
+  /* Ensure links are block elements */
   text-decoration: none;
   color: inherit;
 }
 
 .footer-nav-block a:hover {
-  text-decoration: underline; /* Optional: Add underline on hover */
+  text-decoration: underline;
+  /* Optional: Add underline on hover */
 }
 
 .footer-logo {
@@ -301,7 +315,8 @@ align-items: center;
 
 .footer-social {
   grid-area: social;
-  display: flex; /* Use Flexbox for horizontal layout */
+  display: flex;
+  /* Use Flexbox for horizontal layout */
   justify-content: flex-end;
   grid-template-columns: repeat(auto-fit, minmax(40px, auto));
   justify-content: left;
@@ -322,7 +337,7 @@ align-items: center;
   padding: 10px 0 10px 4px;
 }
 
-.copyright a:link{
+.copyright a:link {
   color: var(--primary-purple);
   text-decoration-line: none;
 }
@@ -332,15 +347,17 @@ align-items: center;
 }
 
 .post-image img {
-  width: 100%; /* Ensure the image scales down */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%;
+  /* Ensure the image scales down */
+  height: auto;
+  /* Maintain aspect ratio */
 }
 
 .post-image a {
   text-decoration: none;
 }
 
-.post-image a:hover{
+.post-image a:hover {
   text-decoration: none;
 }
 
@@ -373,18 +390,18 @@ align-items: center;
 
 .opportunities-title {
   grid-area: opportunities-title;
-} 
+}
 
 .opportunities {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr;
-} 
+}
 
 .opportunity {
   grid-auto-flow: row;
   text-decoration: none;
-} 
+}
 
 .opportunity .button {
   text-decoration: none;
@@ -442,10 +459,10 @@ a.category:hover {
   border-radius: 5px;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  line-height: normal; 
-  letter-spacing: 1px; 
+  line-height: normal;
+  letter-spacing: 1px;
 }
 
 .button:hover {
@@ -468,7 +485,7 @@ a.category:hover {
   text-decoration: underline;
 }
 
-.blurb a:link{
+.blurb a:link {
   color: var(--primary-purple);
   text-decoration-line: none;
 }
@@ -477,9 +494,11 @@ a.category:hover {
   background-color: var(--promo-background);
   padding: 1rem .5rem;
   border-radius: 20px;
-  margin: 2rem auto 2rem auto; /* Center the div horizontally */
+  margin: 2rem auto 2rem auto;
+  /* Center the div horizontally */
   text-align: center;
-  max-width: 420px; /* Set the maximum width */
+  max-width: 420px;
+  /* Set the maximum width */
 }
 
 .promo a {
@@ -532,9 +551,11 @@ a.category:hover {
 /* Keep pagination styles */
 .pagination {
   display: flex;
-  justify-content: center; /* Center buttons */
+  justify-content: center;
+  /* Center buttons */
   align-items: center;
-  gap: 2rem; /* Space between buttons */
+  gap: 2rem;
+  /* Space between buttons */
   margin: 2rem 0 1rem 0;
 }
 
@@ -547,14 +568,14 @@ a.category:hover {
 
 .about-title {
   grid-area: about-title;
-} 
+}
 
 .about {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 2rem;
-} 
+}
 
 .nmc-title {
   grid-area: nmc-title;
@@ -567,13 +588,13 @@ a.category:hover {
 }
 
 .about-human h3 {
-line-height: 2rem;
+  line-height: 2rem;
 }
 
 .human {
   grid-auto-flow: row;
   text-decoration: none;
-} 
+}
 
 .human .button {
   text-decoration: none;
@@ -581,18 +602,18 @@ line-height: 2rem;
 
 .initiatives-title {
   grid-area: initiatives-title;
-} 
+}
 
 .initiatives {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr;
-} 
+}
 
 .initiative {
   grid-auto-flow: row;
   text-decoration: none;
-} 
+}
 
 .initiative .button {
   text-decoration: none;
@@ -602,24 +623,33 @@ line-height: 2rem;
 
 /* Extra small devices (iPhone SE, Pixel 7, Surface Duo, Samsung Galaxy A51/71, Galaxy Z Fold, phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  h1 { 
-    font-size: 1.602rem;  /* Reduced from desktop 2.074rem */
+  h1 {
+    font-size: 1.602rem;
+    /* Reduced from desktop 2.074rem */
     line-height: 1.2;
   }
-  h2 { 
-    font-size: 1.424rem;  /* Reduced from desktop 1.728rem */
+
+  h2 {
+    font-size: 1.424rem;
+    /* Reduced from desktop 1.728rem */
     line-height: 1.3;
   }
-  h3 { 
-    font-size: 1.266rem;  /* Reduced from desktop 1.44rem */
+
+  h3 {
+    font-size: 1.266rem;
+    /* Reduced from desktop 1.44rem */
     line-height: 1.4;
   }
-  h4 { 
-    font-size: 1.125rem;  /* Reduced from desktop 1.2rem */
+
+  h4 {
+    font-size: 1.125rem;
+    /* Reduced from desktop 1.2rem */
     line-height: 1.4;
   }
+
   p {
-    font-size: 1.1rem;   /* Slightly reduced from desktop 1rem */
+    font-size: 1.1rem;
+    /* Slightly reduced from desktop 1rem */
     line-height: 1.5;
   }
 
@@ -652,33 +682,35 @@ line-height: 2rem;
     list-style: none;
     font-family: "Nunito Sans", sans-serif;
     text-transform: capitalize;
-    margin: 0; 
+    margin: 0;
     padding: 0;
   }
 
   .navigation a {
-    font-size: 1.5rem; /* Increase text size */
-    font-weight: bold; /* Make text bolder */
+    font-size: 1.5rem;
+    /* Increase text size */
+    font-weight: bold;
+    /* Make text bolder */
   }
 
   .opportunities {
     display: grid;
     grid-template-columns: 1fr;
-  } 
+  }
 
   .about {
     display: grid;
     grid-template-columns: 1fr;
-  } 
-  
+  }
+
   .about-human h3 {
-    margin-top: 1rem;  
-  } 
-  
+    margin-top: 1rem;
+  }
+
   .initiatives {
     display: grid;
     grid-template-columns: 1fr;
-  } 
+  }
 
   .post-image {
     width: 100%;
@@ -688,30 +720,35 @@ line-height: 2rem;
   .footer-navigation {
     display: grid;
     grid-template-columns: 1fr;
-  } 
+  }
 
 }
 
 /* Small devices (Landscape iPhone SE, portrait tablets and large phones, 600px and up) */
 /* @media only screen and (min-width: 600px) { */
 @media only screen and (min-width: 480px) and (max-width: 812px) and (orientation: landscape) {
-  h1 { 
-    font-size: 1.802rem;  /* Minor third scale */
+  h1 {
+    font-size: 1.802rem;
+    /* Minor third scale */
     line-height: 1.2;
   }
-  h2 { 
+
+  h2 {
     font-size: 1.602rem;
     line-height: 1.3;
   }
-  h3 { 
+
+  h3 {
     font-size: 1.424rem;
     line-height: 1.4;
   }
-  h4 { 
+
+  h4 {
     font-size: 1.266rem;
     line-height: 1.4;
   }
-  p { 
+
+  p {
     font-size: 1.1rem;
     line-height: 1.5;
   }
@@ -745,13 +782,15 @@ line-height: 2rem;
     list-style: none;
     font-family: "Nunito Sans", sans-serif;
     text-transform: capitalize;
-    margin: 0; 
+    margin: 0;
     padding: 0;
   }
-  
+
   .navigation a {
-    font-size: 1.5rem; /* Increase text size */
-    font-weight: bold; /* Make text bolder */
+    font-size: 1.5rem;
+    /* Increase text size */
+    font-weight: bold;
+    /* Make text bolder */
   }
 
   .opportunities {
@@ -759,14 +798,14 @@ line-height: 2rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-  
-  
+
+
   .about {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
   }
-  
+
   .about-human {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -788,29 +827,34 @@ line-height: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-  } 
+  }
 }
 
 
 /* Medium devices (iPad Air, iPad Mini, Surface Pro 7, Asus Zenbook Fold, landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  h1 { 
-    font-size: 2.074rem;  /* Back to desktop size */
+  h1 {
+    font-size: 2.074rem;
+    /* Back to desktop size */
     line-height: 1.2;
   }
-  h2 { 
+
+  h2 {
     font-size: 1.728rem;
     line-height: 1.3;
   }
-  h3 { 
+
+  h3 {
     font-size: 1.44rem;
     line-height: 1.4;
   }
-  h4 { 
+
+  h4 {
     font-size: 1.2rem;
     line-height: 1.4;
   }
-  p { 
+
+  p {
     font-size: 1rem;
     line-height: 1.6;
   }
@@ -827,13 +871,13 @@ line-height: 2rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
   }
-  
+
   .about {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-  
+
   .about-human {
     display: flex;
     flex-direction: column;
@@ -854,7 +898,8 @@ line-height: 2rem;
 
   .post-image img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
+    /* Maintain aspect ratio */
     display: block;
   }
 }
@@ -862,23 +907,28 @@ line-height: 2rem;
 
 /* Large devices (iPad Pro, laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  h1 { 
-    font-size: 2.774rem;  /* Same as medium devices */
+  h1 {
+    font-size: 2.774rem;
+    /* Same as medium devices */
     line-height: 1.2;
   }
-  h2 { 
+
+  h2 {
     font-size: 1.728rem;
     line-height: 1.3;
   }
-  h3 { 
+
+  h3 {
     font-size: 1.44rem;
     line-height: 1.4;
   }
-  h4 { 
+
+  h4 {
     font-size: 1.2rem;
     line-height: 1.4;
   }
-  p { 
+
+  p {
     font-size: 1rem;
     line-height: 1.6;
   }
@@ -894,20 +944,20 @@ line-height: 2rem;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
   }
- 
+
 
   .about {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   .about-human {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
   }
-  
+
   .initiatives {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -923,23 +973,28 @@ line-height: 2rem;
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  h1 { 
-    font-size: 2.488rem;  /* Scale up for larger screens */
+  h1 {
+    font-size: 2.488rem;
+    /* Scale up for larger screens */
     line-height: 1.2;
   }
-  h2 { 
+
+  h2 {
     font-size: 1.728rem;
     line-height: 1.1;
   }
-  h3 { 
+
+  h3 {
     font-size: 1.44rem;
     line-height: 1.4;
   }
-  h4 { 
+
+  h4 {
     font-size: 1.2rem;
     line-height: 1.4;
   }
-  p { 
+
+  p {
     font-size: 1.1rem;
     line-height: 1.2;
   }
@@ -955,7 +1010,7 @@ line-height: 2rem;
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
   }
- 
+
   .about {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -978,5 +1033,5 @@ line-height: 2rem;
     width: 100%;
     height: auto;
   }
-  
+
 }

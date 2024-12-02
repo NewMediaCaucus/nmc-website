@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    <?= $page->title() ?> | <?= $site->title() ?>
+    <?= $page->title() ?> | New Media Caucus
   </title>
   <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
 

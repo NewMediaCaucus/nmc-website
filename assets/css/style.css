@@ -56,6 +56,11 @@ h2 {
   text-decoration: none;
   line-height: 1.1;
   margin-bottom: 0.8rem;
+  color: var(--white);
+}
+
+h2 a {
+  color: var(--white);
 }
 
 
@@ -69,6 +74,10 @@ h3 {
   font-size: 1.44rem;  /* 31px */
   line-height: 1.3;
   margin-bottom: 0.6rem;
+}
+
+h3 a {
+  color: var(--white);
 }
 
 h4 {
@@ -86,19 +95,21 @@ p {
   font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
+p a:link {
+  color: var(--primary-purple);
+  text-decoration-line: none;
+}
+
+
 ul {
   line-height: 1.4;
 }
 
-a:link {
-  color: var(--white);
+a:link, a:visited {
+  /* color: var(--white); */
   text-decoration-line: none;
 }
 
-a:visited {
-  color: var(--white);
-  text-decoration-line: none;
-}
 
 a:hover {
   text-decoration-line: underline;
@@ -258,6 +269,16 @@ align-items: center;
 
 .footer-logo-subhead:visited {
   color: var(--electric-green);
+  text-decoration-line: none;
+
+}
+
+.footer-logo-subhead a:link {
+  text-decoration-line: none;
+}
+
+.footer-logo-subhead a:hover {
+  text-decoration-line: none;
 }
 
 .footer-social {
@@ -308,10 +329,19 @@ align-items: center;
   color: var(--electric-green);
   text-transform: lowercase;
   letter-spacing: 2.8px;
+  margin-left: 3px;
 }
 
 .logo-subhead:visited {
   color: var(--electric-green);
+}
+
+.logo-subhead a {
+  text-decoration: none;
+}
+
+.logo-subhead a:hover {
+  text-decoration: none;
 }
 
 
@@ -417,6 +447,11 @@ a.category:hover {
   max-width: 420px; /* Set the maximum width */
 }
 
+.promo a {
+  color: var(--white);
+}
+
+
 /* Opportunities Pagination */
 .pagination a {
   padding: 0.5rem 1rem;
@@ -452,11 +487,6 @@ a.category:hover {
   border-width: 6px 8px 6px 0;
   border-color: transparent var(--white) transparent transparent;
   margin-right: 8px;
-}
-
-a:hover {
-  color: var(--white);
-  /* transform: scale(1.05); */
 }
 
 /* Keep pagination styles */

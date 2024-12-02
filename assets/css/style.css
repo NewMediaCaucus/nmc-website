@@ -57,8 +57,12 @@ h2 {
   line-height: 1.1;
   margin-bottom: 0.8rem;
   color: var(--white);
-
 }
+
+h2 a {
+  color: var(--white);
+}
+
 
 .post a:hover {
   text-decoration: none;
@@ -70,12 +74,10 @@ h3 {
   font-size: 1.44rem;  /* 31px */
   line-height: 1.3;
   margin-bottom: 0.6rem;
-  color: var(--white);
 }
 
 h3 a {
   color: var(--white);
-  text-decoration-line: none;
 }
 
 h4 {
@@ -93,23 +95,28 @@ p {
   font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
+p a:link {
+  color: var(--primary-purple);
+  text-decoration-line: none;
+}
+
+p a:hover {
+  color: var(--primary-purple);
+  text-decoration: underline;
+}
+
 ul {
   line-height: 1.4;
 }
 
-a:link {
+a:link, a:visited {
+  /* color: var(--white); */
   text-decoration-line: none;
-  color: var(--primary-purple);
 }
 
-/* a:visited {
-  color: var(--white);
-  text-decoration-line: none;
-} */
-
-a:hover {
+/* a:hover {
   text-decoration-line: underline;
-}
+} */
 
 a:active {
   color: var(--primary-purple);
@@ -219,8 +226,8 @@ align-items: center;
 
 .footer-navigation a:link,
 .footer-navigation a:visited {
-text-decoration: none;
-display: block;
+  text-decoration: none;
+  display: block;
 }
 
 .footer-nav-block {
@@ -265,6 +272,16 @@ display: block;
 
 .footer-logo-subhead:visited {
   color: var(--electric-green);
+  text-decoration-line: none;
+
+}
+
+.footer-logo-subhead a:link {
+  text-decoration-line: none;
+}
+
+.footer-logo-subhead a:hover {
+  text-decoration-line: none;
 }
 
 .footer-social {
@@ -288,6 +305,10 @@ display: block;
   color: var(--white);
   text-align: center;
   padding: 10px 0 10px 4px;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
 }
 
 .post-image img {
@@ -315,10 +336,19 @@ display: block;
   color: var(--electric-green);
   text-transform: lowercase;
   letter-spacing: 2.8px;
+  margin-left: 3px;
 }
 
 .logo-subhead:visited {
   color: var(--electric-green);
+}
+
+.logo-subhead a {
+  text-decoration: none;
+}
+
+.logo-subhead a:hover {
+  text-decoration: none;
 }
 
 
@@ -415,6 +445,10 @@ a.category:hover {
   font-size: .9em;
 }
 
+.blurb a:hover {
+  text-decoration: underline;
+}
+
 .promo {
   background-color: var(--promo-background);
   padding: 1rem .5rem;
@@ -426,8 +460,12 @@ a.category:hover {
 
 .promo a {
   color: var(--white);
-  /* text-decoration-line: none; */
 }
+
+.promo a:hover {
+  text-decoration: underline;
+}
+
 
 /* Opportunities Pagination */
 .pagination a {
@@ -464,11 +502,6 @@ a.category:hover {
   border-width: 6px 8px 6px 0;
   border-color: transparent var(--white) transparent transparent;
   margin-right: 8px;
-}
-
-a:hover {
-  color: var(--white);
-  /* transform: scale(1.05); */
 }
 
 /* Keep pagination styles */

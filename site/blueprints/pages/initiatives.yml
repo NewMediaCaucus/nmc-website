@@ -32,7 +32,7 @@ sections:
         type: text
         access:
           panel: false
-      mission:
+      description:
         label: Description
         type: textarea
         access:

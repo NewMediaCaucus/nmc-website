@@ -16,11 +16,26 @@ sections:
         type: date
         default: today
         required: true
-      description:
-        label: Description
+      short_description:
+        label: Short Description
         type: textarea
-        minlength: 50
-        maxlength: 2400
+        required: true
+        minlength: 100
+        maxlength: 275
+        buttons:
+          - bold
+          - italic
+          - link
+          - email
+          - code
+          - ul
+          - ol
+      long_description:
+        label: Long Description
+        type: textarea
+        required: true
+        minlength: 100
+        maxlength: 6500
         buttons:
           - bold
           - italic

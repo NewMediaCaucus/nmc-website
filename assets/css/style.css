@@ -100,6 +100,10 @@ p a:link {
   text-decoration-line: none;
 }
 
+p a:hover {
+  color: var(--primary-purple);
+  text-decoration: underline;
+}
 
 ul {
   line-height: 1.4;
@@ -110,10 +114,9 @@ a:link, a:visited {
   text-decoration-line: none;
 }
 
-
-a:hover {
+/* a:hover {
   text-decoration-line: underline;
-}
+} */
 
 a:active {
   color: var(--primary-purple);
@@ -304,6 +307,10 @@ align-items: center;
   padding: 10px 0 10px 4px;
 }
 
+.copyright a:hover {
+  text-decoration: underline;
+}
+
 .post-image img {
   width: 100%; /* Ensure the image scales down */
   height: auto; /* Maintain aspect ratio */
@@ -438,6 +445,10 @@ a.category:hover {
   font-size: .9em;
 }
 
+.blurb a:hover {
+  text-decoration: underline;
+}
+
 .promo {
   background-color: var(--promo-background);
   padding: 1rem .5rem;
@@ -449,6 +460,10 @@ a.category:hover {
 
 .promo a {
   color: var(--white);
+}
+
+.promo a:hover {
+  text-decoration: underline;
 }
 
 

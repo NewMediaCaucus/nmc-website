@@ -1,0 +1,39 @@
+title: Our Initiatives
+
+options:
+  access:
+    admin: "*"  # Wildcard permission grants all access to admin role
+  update:
+    editor: false
+  delete: 
+    editor: false
+  rename: 
+    editor: false
+  changeTitle: 
+    editor: false
+  status: 
+    admin: true
+    editor: false
+  url: 
+    editor: false
+  sortable: 
+    editor: false 
+  move: 
+    editor: false
+  duplicate: 
+    editor: false 
+
+sections:
+  content:
+    type: fields
+    fields:
+      title:
+        label: Title
+        type: text
+        access:
+          panel: false
+      mission:
+        label: Description
+        type: textarea
+        access:
+          panel: false

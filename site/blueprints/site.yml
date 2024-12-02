@@ -17,7 +17,7 @@ sections:
     # https://getkirby.com/docs/reference/panel/sections/pages
     sortBy: date desc
     help: "Sorted newest at the top."
-
+    
   about:
     label: About Us
     type: pages
@@ -26,4 +26,13 @@ sections:
     templates: human
     sortBy: title asc
     help: "Sorted alphabetically by first name."
+
+  initiatives:
+    label: Our Initiatives
+    type: pages
+    parent: site.find("our-initiatives")
+    layout: list 
+    templates: initiative
+    sortBy: date desc
+    help: "Sorted newest at the top."
 

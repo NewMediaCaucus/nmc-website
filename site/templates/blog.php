@@ -25,6 +25,7 @@
 
 <article>
   <h1><a href="<?= $article->url() ?>"><?= $article->title()->html() ?></a></h1>
+  <!-- do something with post tags here -->
   <?= $article->text()->excerpt(300) ?>
 </article>
 <?php endforeach ?>

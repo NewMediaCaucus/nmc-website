@@ -1,47 +1,61 @@
-<!-- nav section -->
-<?php snippet('navigation') ?>
-
 <!-- top section -->
 <?php snippet('header') ?>
 
+<!-- nav section -->
+<?php snippet('navigation') ?>
 
 <!-- content section -->
+
+<?php snippet('header') ?>
+
 <main>
 
-<section class="blog">
+<h1>Blog</h1>
 
-  <h1><?= $page->title()->html() ?></h1>
+<!-- articles -->
+<?php foreach($articles as $article): ?>
 
-  <?php foreach($page->children()->listed()->flip() as $article): ?>
+    <?php if($image = $article->image()): ?>
+        <!-- TODO: What div should go around this image? -->
+        <img  
+            src="<?= $image->crop(250,250)->url() ?>" 
+            alt="<?= $page->alt()->value() ?>" 
+        width="250px">
+    <?php endif ?>
 
-    <article>
+<article>
+  <h1><a href="<?= $article->url() ?>"><?= $article->title()->html() ?></a></h1>
+  <?= $article->text()->excerpt(300) ?>
+</article>
+<?php endforeach ?>
 
-      <?php if($image = $article->image()): ?>
-          <div class="post-image">
-              <a href="<?= $article->url() ?>">
-                  <!-- grab first image in project folder (alphabetically) -->
-                  <img src="<?= $image->crop(468)->url() ?>" alt="<?= $article->alt() ?>">
-              </a>
-          </div>
-      <?php endif ?>
+<!-- sidebar with tagcloud -->
+<aside>
+  <h1>Tag Cloud</h1>
+  <ul class="tags">
+    <?php foreach($tags as $tag): ?>
+    <li>
+      <a href="<?= url($page->url(), ['params' => ['tag' => $tag]]) ?>">
+        <?= html($tag) ?>
+      </a>
+    </li>
+    <?php endforeach ?>
+  </ul>
+</aside>
 
-      <h1><?= $article->title()->html() ?></h1>
-      <p><?= $article->text()->excerpt(300) ?></p>
-      <a href="<?= $article->url() ?>">Read more…</a>
-      <!-- list all tags associated with this post -->
-      <h1>Tags:</h1>
-      <ul>
-        <?php $tags = $article->tags()->split() ?>
-          <?php foreach ($tags as $tag): ?>
-            <li><?=  $tag ?></li>
-          <?php endforeach ?>
-      </ul>
+<!-- pagination -->
+<nav class="pagination">
+  <?php if($pagination->hasPrevPage()): ?>
+  <a href="<?= $pagination->prevPageUrl() ?>">previous posts</a>
+  <?php endif ?>
 
-    </article>
+  <?php if($pagination->hasNextPage()): ?>
+  <a href="<?= $pagination->nextPageUrl() ?>">next posts</a>
+  <?php endif ?>
+</nav>
 
-  <?php endforeach ?>
-
-</section>
+<!-- Submit an opportunity promo -->
+<div class="promo">📣 <a href="https://docs.google.com/forms/d/e/1FAIpQLSczR9Ct3qaWETS72DoIO03LlLTeIWF8sSQxMvnTNwfs0aXAHA/viewform" >Got an Opportunity? Post It!</a> 🦄</div>
 
 </main>
 

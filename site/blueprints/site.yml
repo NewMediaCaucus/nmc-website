@@ -36,12 +36,12 @@ sections:
     sortBy: date desc
     help: "Sorted newest at the top."
 
-  galleries:
+  header_footer_gallery:
     label: Header/Footer Gallery
     type: pages
-    parent: site.find("header-footer-galleries")
+    parent: site.find("header-footer-gallery")
     layout: list 
-    templates: gallery
+    templates: show
     sortBy: date desc
     help: "Sorted newest at the top."
 

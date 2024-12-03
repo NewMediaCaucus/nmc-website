@@ -8,6 +8,7 @@
   --primary-purple: #d9a7eb;
   --electric-green: #50FA7B;
   --background-blue: #282A36;
+  --background-black: #000000;
   --background-blue-hamburger: rgba(40, 42, 54, 0.95);
   --promo-background: rgba(217, 167, 235, 0.05);
   --button-background: rgba(217, 167, 235, 0.2);
@@ -302,7 +303,6 @@ a:active {
 .footer-logo-subhead:visited {
   color: var(--electric-green);
   text-decoration-line: none;
-
 }
 
 .footer-logo-subhead a:link {
@@ -311,6 +311,27 @@ a:active {
 
 .footer-logo-subhead a:hover {
   text-decoration-line: none;
+}
+
+.header-footer-gallery {
+  background-color: var(--background-black);
+  padding: 10px 0;
+  margin-bottom: 2rem;
+}
+
+.header-footer-gallery h3 {
+  padding-left: 12px;
+}
+
+.gallery-footer {}
+
+.gallery-footer-text {
+  background-color: var(--background-black);
+  padding-left: 24px;
+}
+
+.gallery-footer-text p {
+  font-size: .9rem;
 }
 
 .footer-social {
@@ -622,7 +643,9 @@ a.category:hover {
 }
 
 
+
 /* Extra small devices (iPhone SE, Pixel 7, Surface Duo, Samsung Galaxy A51/71, Galaxy Z Fold, phones, 600px and down) */
+
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: 1.602rem;

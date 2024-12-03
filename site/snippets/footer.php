@@ -61,6 +61,29 @@
       </ul>
     </div>
   </nav>
+  <!-- Add Header/Footer Gallery link -->
+  <?php if ($headerfootergalleryPage = $site->find('header-footer-gallery')): ?>
+    <div class="header-footer-gallery">
+      <h3>Header/Footer Gallery</h3>
+      <?php
+      $shows = $headerfootergalleryPage->children();
+      $current_shows = $shows->filterBy('category', 'current')->sortBy('date', 'desc')->limit(1);
+      ?>
+      <?php foreach ($current_shows as $current): ?>
+        <div class="gallery-footer">
+          <a href="<?= $current->footer_image_url() ?>" target="_blank" rel="noopener">
+            <?php if ($promo = $current->footer_image()->toFile()): ?>
+              <img src="<?= $promo->crop(960, 320)->url() ?>" alt="<?= $current->promo_image_alt() ?>">
+            <?php endif ?>
+          </a>
+          <div class="gallery-footer-text">
+            <p><?= $current->footer_image_caption()->kirbytext() ?></p>
+            <p>See more at <a href="<?= $headerfootergalleryPage->url() ?>">Header/Footer Gallery</a> </p>
+          </div>
+        </div>
+      <?php endforeach ?>
+    </div>
+  <?php endif ?>
 
   <div class="blurb">The New Media Caucus (NMC) is an international non-profit association formed to promote the development and understanding of new media art. We represent and serve: artists, designers, practitioners, historians, theorists, educators, students, and scholars.
     <?php if ($joinPage = $site->find('join')): ?>
@@ -86,6 +109,5 @@
       <?php endif ?>
     </div>
   </div>
-
 
 </footer>

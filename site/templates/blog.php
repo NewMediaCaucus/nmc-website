@@ -11,7 +11,6 @@
 <section class="blog">
 
   <h1><?= $page->title()->html() ?></h1>
-  <?= $page->text()->kirbytext() ?>
 
   <?php foreach($page->children()->listed()->flip() as $article): ?>
 

@@ -64,7 +64,7 @@
   <!-- Add Header/Footer Gallery link -->
   <?php if ($headerfootergalleryPage = $site->find('header-footer-gallery')): ?>
     <div class="header-footer-gallery">
-      <h3>Header/Footer Gallery</h3>
+      <!-- <h3>Header/Footer Gallery</h3> -->
       <?php
       $shows = $headerfootergalleryPage->children();
       $current_shows = $shows->filterBy('category', 'current')->sortBy('date', 'desc')->limit(1);
@@ -73,13 +73,23 @@
         <div class="gallery-footer">
           <a href="<?= $current->footer_image_url() ?>" target="_blank" rel="noopener">
             <?php if ($promo = $current->footer_image()->toFile()): ?>
-              <img src="<?= $promo->crop(960, 320)->url() ?>" alt="<?= $current->promo_image_alt() ?>">
-            <?php endif ?>
+              <img
+                src="<?= $promo->crop(960, 320)->url() ?>"
+                srcset="<?= $promo->crop(480, 320)->url() ?> 480w,
+                        <?= $promo->crop(768, 320)->url() ?> 768w,
+                        <?= $promo->crop(960, 320)->url() ?> 960w"
+                sizes="(max-width: 480px) 480px,
+                       (max-width: 768px) 768px,
+                       960px"
+                alt="<?= $current->promo_image_alt() ?>"
+                class="gallery-footer-image"> <?php endif ?>
           </a>
           <div class="gallery-footer-text">
             <p><?= $current->footer_image_caption()->kirbytext() ?></p>
-            <p>See more at <a href="<?= $headerfootergalleryPage->url() ?>">Header/Footer Gallery</a> </p>
           </div>
+          <a href="<?= $headerfootergalleryPage->url() ?>">
+            <img class="hf-logo" src="<?= url('assets/icons/hf-logo.png') ?>" alt="HF Logo" width="50">
+          </a>
         </div>
       <?php endforeach ?>
     </div>

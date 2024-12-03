@@ -8,15 +8,15 @@
   --primary-purple: #d9a7eb;
   --electric-green: #50FA7B;
   --background-blue: #282A36;
-  --background-black: #000000;
+  --background-black: #000;
   --background-blue-hamburger: rgba(40, 42, 54, 0.95);
-  --promo-background: rgba(66, 51, 71, 0.05);
+  --promo-background: rgba(88, 67, 95, 0.2);
   --button-background: rgba(217, 167, 235, 0.2);
   --date-background: rgba(255, 255, 255, 0.1);
   --date-text: rgba(255, 255, 255, 0.8);
   --button-hover: #545771;
   --button-active: #6a6e8e;
-  --white: #ffffff;
+  --white: #fff;
 }
 
 /* Prevent white flash */
@@ -338,7 +338,9 @@ a:active {
 
 .gallery-footer-text {
   background-color: var(--background-black);
-  padding-left: 24px;
+  padding-left: 1rem;
+  width: 75%;
+  max-width: 75%;
 }
 
 .gallery-footer-text p {
@@ -598,7 +600,6 @@ a.category:hover {
   margin: 0;
 }
 
-
 .about-title {
   grid-area: about-title;
 }
@@ -652,7 +653,6 @@ a.category:hover {
   text-decoration: none;
   color: var(--white);
 }
-
 
 
 /* Extra small devices (iPhone SE, Pixel 7, Surface Duo, Samsung Galaxy A51/71, Galaxy Z Fold, phones, 600px and down) */
@@ -749,7 +749,6 @@ a.category:hover {
 
   .post-image {
     width: 100%;
-    /* max-width: 400px; */
   }
 
   .header-footer-gallery {
@@ -758,11 +757,13 @@ a.category:hover {
   }
 
   .gallery-footer {
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
   }
 
   .gallery-footer-text {
-    padding-left: 12px;
+    padding-left: .75rem;
+    width: 75%;
+    max-width: 75%;
   }
 
   .gallery-footer-text p {
@@ -785,7 +786,9 @@ a.category:hover {
 
 /* Small devices (Landscape iPhone SE, portrait tablets and large phones, 600px and up) */
 /* @media only screen and (min-width: 600px) { */
-@media only screen and (min-width: 480px) and (max-width: 812px) and (orientation: landscape) {
+
+@media only screen and (min-width: 480px) and (max-width: 768px) and (orientation: landscape) {
+
   h1 {
     font-size: 1.802rem;
     /* Minor third scale */
@@ -882,15 +885,51 @@ a.category:hover {
     height: auto;
   }
 
-  .footer-navigation {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+  .header-footer-gallery {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
   }
+
+  .gallery-footer {
+    padding-bottom: 16px;
+    min-height: 320px;
+  }
+
+  .gallery-footer-text {
+    padding-left: .75rem;
+    width: 75%;
+    max-width: 75%;
+    font-size: 0.9rem;
+  }
+
+  .gallery-footer-text p {
+    padding-left: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .gallery-footer-image {
+    width: 80%;
+    height: 320px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  .hf-logo {
+    width: 40px;
+    height: auto;
+  }
+}
+
+.footer-navigation {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
 }
 
 
 /* Medium devices (iPad Air, iPad Mini, Surface Pro 7, Asus Zenbook Fold, landscape tablets, 768px and up) */
+
 @media only screen and (min-width: 768px) {
   h1 {
     font-size: 2.074rem;
@@ -960,6 +999,39 @@ a.category:hover {
     height: auto;
     /* Maintain aspect ratio */
     display: block;
+  }
+
+  .header-footer-gallery {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  .gallery-footer {
+    padding-bottom: 16px;
+    min-height: 320px;
+  }
+
+  .gallery-footer-text {
+    padding-left: .75rem;
+    width: 75%;
+    max-width: 75%;
+    font-size: 0.9rem;
+  }
+
+  .gallery-footer-text p {
+    padding-left: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .gallery-footer-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+
+  .hf-logo {
+    width: 40px;
+    height: auto;
   }
 }
 

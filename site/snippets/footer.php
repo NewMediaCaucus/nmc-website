@@ -82,7 +82,8 @@
                        (max-width: 768px) 768px,
                        960px"
                 alt="<?= $current->promo_image_alt() ?>"
-                class="gallery-footer-image"> <?php endif ?>
+                class="gallery-footer-image">
+            <?php endif ?>
           </a>
           <div class="gallery-footer-text">
             <p><?= $current->footer_image_caption()->kirbytext() ?></p>

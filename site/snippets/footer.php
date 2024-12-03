@@ -86,7 +86,12 @@
             <?php endif ?>
           </a>
           <div class="gallery-footer-text">
-            <p><?= $current->footer_image_caption()->kirbytext() ?></p>
+            <div class="gallery-footer-title">
+              <?= $current->title()->kirbytext() ?>
+            </div>
+            <div class="gallery-footer-artist-name">
+              <?= $current->artist_name()->kirbytext() ?>
+            </div>
           </div>
           <a href="<?= $headerfootergalleryPage->url() ?>">
             <img class="hf-logo" src="<?= url('assets/icons/hf-logo.png') ?>" alt="HF Logo" width="50">

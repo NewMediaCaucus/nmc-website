@@ -342,9 +342,23 @@ a:active {
   max-width: 75%;
 }
 
-.gallery-footer-text p {
-  font-size: .9rem;
+.gallery-footer-title p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: .4rem;
 }
+
+.gallery-footer-artist-name p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: .9rem;
+  color: var(--white);
+  margin-top: 0;
+}
+
+/* .gallery-footer-text p {
+  font-size: .9rem;
+} */
 
 .footer-social {
   grid-area: social;
@@ -760,13 +774,23 @@ a.category:hover {
   }
 
   .gallery-footer-text {
-    padding-left: .75rem;
+    padding-left: 1rem;
     width: 75%;
     max-width: 75%;
   }
 
-  .gallery-footer-text p {
-    font-size: 0.8rem;
+  .gallery-footer-title p {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: .4rem;
+  }
+
+  .gallery-footer-artist-name p {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: .8rem;
+    color: var(--white);
+    margin-top: 0;
   }
 
   .gallery-footer-image {
@@ -899,15 +923,23 @@ a.category:hover {
   }
 
   .gallery-footer-text {
-    padding-left: .75rem;
+    padding-left: 1rem;
     width: 75%;
     max-width: 75%;
-    font-size: 0.9rem;
   }
 
-  .gallery-footer-text p {
-    padding-left: 0.75rem;
-    font-size: 0.9rem;
+  .gallery-footer-title p {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: .4rem;
+  }
+
+  .gallery-footer-artist-name p {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: .9rem;
+    color: var(--white);
+    margin-top: 0;
   }
 
   .gallery-footer-image {
@@ -1014,15 +1046,23 @@ a.category:hover {
   }
 
   .gallery-footer-text {
-    padding-left: .75rem;
+    padding-left: 1rem;
     width: 75%;
     max-width: 75%;
-    font-size: 0.9rem;
   }
 
-  .gallery-footer-text p {
-    padding-left: 0.75rem;
-    font-size: 0.9rem;
+  .gallery-footer-title p {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: .4rem;
+  }
+
+  .gallery-footer-artist-name p {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: .9rem;
+    color: var(--white);
+    margin-top: 0;
   }
 
   .gallery-footer-image {

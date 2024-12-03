@@ -38,10 +38,46 @@
                         <!-- pull from sections defined in each opportunity text file -->
                         <h2><?= $current->Title() ?></h2>
                     </a>
+                    <!-- Display artist name -->
+                    <p class="artist_name"><?= $current->artist_name()->kirbytext() ?></p>
                     <!-- Display short description -->
                     <p class="description"><?= $current->short_description()->kirbytext() ?></p>
                     <!-- Read More Button -->
                     <a href="<?= $current->url() ?>" class="button">
+                        View Details
+                    </a>
+                </div>
+            </div>
+            <!-- <?php endif ?> -->
+        <?php endforeach ?>
+    </div>
+
+    <!-- List Previous -->
+    <div class="opportunities">
+        <?php foreach ($previous_shows as $previous): ?>
+            <!-- There can be moments when an opp has no image. If so, skip it. -->
+            <!-- <?php if ($image = $previous->promo_image()): ?> -->
+            <?php $image = $previous->image() ?>
+            <div class="opportunity">
+                <div class="post-image">
+                    <a href="<?= $previous->url() ?>">
+                        <?php if ($promo = $previous->promo_image()->toFile()): ?>
+                            <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $previous->promo_image_alt() ?>">
+                        <?php endif ?>
+                    </a>
+                </div>
+                <div class="post">
+                    <a href="<?= $previous->url() ?>">
+                        <!-- pull from sections defined in each opportunity text file -->
+                        <h2><?= $previous->Title() ?></h2>
+                    </a>
+                    <!-- Display artist name -->
+                    <p class="artist_name"><?= $previous->artist_name()->kirbytext() ?></p>
+                    <!-- Display short description -->
+                    <!-- Display short description -->
+                    <p class="description"><?= $previous->short_description()->kirbytext() ?></p>
+                    <!-- Read More Button -->
+                    <a href="<?= $previous->url() ?>" class="button">
                         View Details
                     </a>
                 </div>

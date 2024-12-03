@@ -73,7 +73,7 @@
         <div class="gallery-footer">
           <a href="<?= $current->footer_image_url() ?>" target="_blank" rel="noopener">
             <?php if ($promo = $current->footer_image()->toFile()): ?>
-              <img
+              <img class="gallery-footer-image"
                 src="<?= $promo->crop(960, 320)->url() ?>"
                 srcset="<?= $promo->crop(480, 320)->url() ?> 480w,
                         <?= $promo->crop(768, 320)->url() ?> 768w,

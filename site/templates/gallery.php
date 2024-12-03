@@ -52,6 +52,7 @@
         <?php endforeach ?>
     </div>
 
+    <h2>Previous</h2>
     <!-- List Previous -->
     <div class="opportunities">
         <?php foreach ($previous_shows as $previous): ?>

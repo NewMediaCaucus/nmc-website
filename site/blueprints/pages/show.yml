@@ -1,0 +1,96 @@
+title: Gallery
+
+sections:
+  content:
+    type: fields
+    fields:
+      category:
+        label: Category
+        type: select
+        required: true
+        options:
+          current: Current
+          previous: Previous
+      date:
+        label: Created Date
+        type: date
+        default: today
+        required: true
+      short_description:
+        label: Short Description
+        type: textarea
+        required: true
+        minlength: 100
+        maxlength: 275
+        buttons:
+          - bold
+          - italic
+          - link
+          - email
+          - code
+          - ul
+          - ol
+      long_description:
+        label: Long Description
+        type: textarea
+        required: true
+        minlength: 100
+        maxlength: 6500
+        buttons:
+          - bold
+          - italic
+          - link
+          - email
+          - code
+          - ul
+          - ol
+      promo_image:
+        label: Square Promo Image
+        type: files
+        required: true
+        max: 1
+        empty: No image yet
+        help: Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
+      promo_image_alt:
+        label: Square Promo Image Alt Text
+        required: true
+        type: textarea
+        buttons: false
+        help: <b>"Alt Text"</b> helps screen-reading tools describe the image we are posting to our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.
+        minlength: 20
+        maxlength: 400
+      footer_image:
+        label: Wide Rectangular Footer Image
+        type: files
+        template: footer
+        required: true
+        max: 1
+        empty: No image yet
+        help: Goes in the site footer. Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
+      footer_image_alt:
+        label: Wide Rectangular Footer Image Alt Text
+        required: true
+        type: textarea
+        buttons: false
+        help: <b>"Alt Text"</b> helps screen-reading tools describe the image we are posting to our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.
+        minlength: 20
+        maxlength: 400
+      footer_image_url:
+        label: Footer Image URL
+        type: url
+        help: "This will link the footer image. Remember http:// or https:// such as http://robray.net"
+      footer_image_caption:
+        label: Footer Image Caption
+        type: textarea
+        required: true
+        minlength: 10
+        maxlength: 275
+        buttons:
+          - bold
+          - italic
+          - link
+          - email
+          - code
+          - ul
+          - ol
+        help: "This text will appear under the footer image. Use it for crediting the artist, linking to their website, or providing more context."

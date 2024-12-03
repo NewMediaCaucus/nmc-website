@@ -1,61 +1,39 @@
-title: Gallery
+title: Header/Footer Gallery
+
+options:
+  access:
+    admin: "*"  # Wildcard permission grants all access to admin role
+  update:
+    editor: false
+  delete: 
+    editor: false
+  rename: 
+    editor: false
+  changeTitle: 
+    editor: false
+  status: 
+    admin: true
+    editor: false
+  url: 
+    editor: false
+  sortable: 
+    editor: false 
+  move: 
+    editor: false
+  duplicate: 
+    editor: false 
 
 sections:
   content:
     type: fields
     fields:
-      category:
-        label: Category
-        type: select
-        required: true
-        options:
-          current: Current
-          previous: Previous
-      date:
-        label: Created Date
-        type: date
-        default: today
-        required: true
-      short_description:
-        label: Short Description
+      title:
+        label: Title
+        type: text
+        access:
+          panel: false
+      description:
+        label: Description
         type: textarea
-        required: true
-        minlength: 100
-        maxlength: 275
-        buttons:
-          - bold
-          - italic
-          - link
-          - email
-          - code
-          - ul
-          - ol
-      long_description:
-        label: Long Description
-        type: textarea
-        required: true
-        minlength: 100
-        maxlength: 6500
-        buttons:
-          - bold
-          - italic
-          - link
-          - email
-          - code
-          - ul
-          - ol
-      files:
-        label: Image
-        type: files
-        required: true
-        max: 1
-        empty: No image yet
-        help: Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
-      alt:
-        label: Image Alt Text
-        required: true
-        type: textarea
-        buttons: false
-        help: <b>"Alt Text"</b> helps screen-reading tools describe the image we are posting to our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.
-        minlength: 20
-        maxlength: 400
+        access:
+          panel: false

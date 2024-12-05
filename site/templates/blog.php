@@ -31,6 +31,7 @@
     <h1><a href="<?= $article->url() ?>"><?= $article->title()->html() ?></a></h1>
     
     <!-- list individual post tags -->
+     <!-- https://forum.getkirby.com/t/list-tags-for-a-page/31301 -->
     <?php $post_tags = $article->tags()->split() ?>
     <?php foreach ($post_tags as $post_tag): ?>
       <a href="<?= url($page->url(), ['params' => ['tag' => $post_tag]]) ?>">

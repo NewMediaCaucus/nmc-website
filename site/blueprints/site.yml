@@ -2,30 +2,22 @@ title: New Media Caucus
 
 sections:
 
+  pages:
+    label: Nested Sections
+    help: Panel user section
+    templates:
+    # order is inhereted from folder numbering
+      - people
+      - blog
+      - opportunities
+      - about
+        
   all:
-    label: Main Pages
+    label: All Pages
+    help: Dev section
     type: pages
     status: all
     layout: list
-
-  opportunities:
-    label: Opportunities
-    type: pages
-    parent: site.find("opportunities")
-    layout: list 
-    templates: opportunity
-    # https://getkirby.com/docs/reference/panel/sections/pages
-    sortBy: date desc
-    help: "Sorted newest at the top."
-    
-  about:
-    label: About Us
-    type: pages
-    parent: site.find("about-us")
-    layout: list 
-    templates: human
-    sortBy: title asc
-    help: "Sorted alphabetically by first name."
 
   initiatives:
     label: Our Initiatives

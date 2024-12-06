@@ -1,0 +1,6 @@
+type: pages
+label: People
+info: "{{ page.date.toDate('d.m.Y') }}"
+template: human
+empty: Nothing here at the moment
+sortBy: date desc

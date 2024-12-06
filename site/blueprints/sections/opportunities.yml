@@ -1,0 +1,6 @@
+type: pages
+label: Opportunities
+info: "{{ page.date.toDate('d.m.Y') }}"
+template: opportunity
+empty: Nothing here at the moment
+sortBy: date desc

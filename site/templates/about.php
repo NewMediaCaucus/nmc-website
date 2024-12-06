@@ -13,7 +13,8 @@
     <p><?= $page->mission()->kirbytext() ?></p>
     <?php
         // Setup filters for each category
-        $humans = $page->children()->listed();
+        // leave /about and grab children of /people
+        $humans = $site->find('people')->children();
         $officers = $humans->filterBy('category', 'officer');
         $board_members = $humans->filterBy('category', 'board');
         $advisory_members = $humans->filterBy('category', 'advisory');

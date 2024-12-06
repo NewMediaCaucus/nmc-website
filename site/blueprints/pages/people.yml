@@ -1,17 +1,17 @@
-title: Opportunities
-icon: 😆
+title: People
+icon: 🧑‍🤝‍🧑
 
 columns:
   left:
     width: 1/2
     sections:
       drafts:
-        extends: sections/opportunities
+        extends: sections/people
         label: Drafts
         status: draft
 
       unlisted:
-        extends: sections/opportunities
+        extends: sections/people
         label: In Review
         status: unlisted
 
@@ -19,6 +19,6 @@ columns:
     width: 1/2
     sections:
       listed:
-        extends: sections/opportunities
+        extends: sections/people
         label: Published
         status: listed

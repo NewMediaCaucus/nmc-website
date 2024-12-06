@@ -1,3 +1,7 @@
+# Branches
+
+Always name feature branch "feature" plus description
+
 # nmc-website
 
 1. [Important File Locations](#important-file-locations)

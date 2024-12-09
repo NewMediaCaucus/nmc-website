@@ -23,10 +23,10 @@
     <?php if($image = $article->image()): ?>
       <div class="opportunity">
         <div class="post-image">
-          <img  
-            src="<?= $image->crop(250,250)->url() ?>" 
-            alt="<?= $page->alt()->value() ?>"
-          >
+          <a href="<?= $article->url() ?>">
+            <!-- grab first image in project folder (alphabetically) -->
+            <img src="<?= $image->crop(468)->url() ?>" alt="<?= $article->alt() ?>">
+          </a>
         </div>
       
       <!-- text section --> 

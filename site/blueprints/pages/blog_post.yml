@@ -28,20 +28,20 @@ columns:
       meta:
         type: fields
         fields:
-          heroImage:
-            type: files
-            max: 1
           date:
             type: date
             time: true
             default: now
           author:
             type: users
+            required: true
+          Image:
+            type: files
+            max: 1
           tags:
             type: tags
+            help: "Click to see available tags" 
             options:
-              # check all blog posts for existing tags and autofill on partial entry
-              type: query
-              query: site.index.pluck("tags", ",", true)
-      files:
-        type: files
+              - Design
+              - Architecture
+              - VR

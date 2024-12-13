@@ -11,6 +11,8 @@ sections:
       - blog
       - opportunities
       - about
+      - initiatives
+      - gallery
         
   all:
     label: All Pages
@@ -18,22 +20,4 @@ sections:
     type: pages
     status: all
     layout: list
-
-  initiatives:
-    label: Our Initiatives
-    type: pages
-    parent: site.find("our-initiatives")
-    layout: list 
-    templates: initiative
-    sortBy: date desc
-    help: "Sorted newest at the top."
-
-  header_footer_gallery:
-    label: Header/Footer Gallery
-    type: pages
-    parent: site.find("header-footer-gallery")
-    layout: list 
-    templates: show
-    sortBy: date desc
-    help: "Sorted newest at the top."
 

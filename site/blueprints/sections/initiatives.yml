@@ -1,0 +1,6 @@
+type: pages
+label: Initiatives
+info: "{{ page.date.toDate('d.m.Y') }}"
+template: initiative
+empty: Nothing here at the moment
+sortBy: date desc

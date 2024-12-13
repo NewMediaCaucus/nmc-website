@@ -1,39 +1,24 @@
 title: Header/Footer Gallery
+icon: 🎨
 
-options:
-  access:
-    admin: "*"  # Wildcard permission grants all access to admin role
-  update:
-    editor: false
-  delete: 
-    editor: false
-  rename: 
-    editor: false
-  changeTitle: 
-    editor: false
-  status: 
-    admin: true
-    editor: false
-  url: 
-    editor: false
-  sortable: 
-    editor: false 
-  move: 
-    editor: false
-  duplicate: 
-    editor: false 
+columns:
+  left:
+    width: 1/2
+    sections:
+      drafts:
+        extends: sections/gallery
+        label: Drafts
+        status: draft
 
-sections:
-  content:
-    type: fields
-    fields:
-      title:
-        label: Title
-        type: text
-        access:
-          panel: false
-      description:
-        label: Description
-        type: textarea
-        access:
-          panel: false
+      unlisted:
+        extends: sections/gallery
+        label: In Review
+        status: unlisted
+
+  right:
+    width: 1/2
+    sections:
+      listed:
+        extends: sections/gallery
+        label: Published
+        status: listed

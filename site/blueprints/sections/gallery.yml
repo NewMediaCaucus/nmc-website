@@ -1,0 +1,6 @@
+type: pages
+label: Header/Footer Gallery
+info: "{{ page.date.toDate('d.m.Y') }}"
+template: show
+empty: Nothing here at the moment
+sortBy: date desc

@@ -83,7 +83,11 @@ The beauty of Docker is only one developer has to set this up and everybody else
 
 ## Building and running prod
 ATTN: This should only be run on a staging or prod server. It won't harm your dev setup, it just won't work.
+
 ```cd /home/nmcdev``` 
+
 ```sudo docker compose -f docker-compose.prod.yml up --build -d```
+
 You will be prompted for the nmcdev password.
+
 Upon successful start you should see two containers running. "certbot" and "nmc-website-prod-container"

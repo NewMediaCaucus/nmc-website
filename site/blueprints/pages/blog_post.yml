@@ -42,6 +42,12 @@ columns:
             type: tags
             help: "Click to see available tags" 
             options:
+              - Art
               - Design
-              - Architecture
               - VR
+              - AI
+              - Biohacking
+              - Wearables
+              - Embedded Computing
+              - Hardware
+              - Software

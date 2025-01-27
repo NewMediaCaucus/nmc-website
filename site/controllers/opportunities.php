@@ -1,37 +1,22 @@
 <?php
 
-return function ($page) {
+return function($page) {
 
-    if (str_contains($page->url(), '/grants')){
-        $x = "grant";
-    } elseif (str_contains($page->url(), '/jobs')){
-        $x = "job";
-    } elseif (str_contains($page->url(), '/papers')){
-        $x = "paper";
-    } elseif (str_contains($page->url(), '/entries')){
-        $x = "entry";
-    } else {
-        $x = "all";
-    }
+// fetch the basic set of pages
+$articles = $page->children()->listed()->flip();
 
-    if ($x != "all"){
+// fetch all tags
+$tags = $articles->pluck('tags', ',', true);
 
-        $opportunities = $page->parent()
-                                ->children()
-                                ->filterBy('category', $x)
-                                ->sortBy('date', 'desc') 
-                                ->paginate(9);
-    } else {
+// add the tag filter
+if($tag = param('tag')) {
+  $articles = $articles->filterBy('tags', $tag, ',');
+}
 
-        $opportunities = $page->children()
-                            ->listed()
-                            ->sortBy('date', 'desc') 
-                            ->paginate(9);
-    }     
+// apply pagination
+$articles   = $articles->paginate(10);
+$pagination = $articles->pagination();
 
-  // pass $opportunities to the template
-  return [
-    'opportunities' => $opportunities
-  ];
+return compact('articles', 'tags', 'tag', 'pagination');
 
 };

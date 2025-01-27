@@ -5,87 +5,75 @@
 <?php snippet('navigation') ?>
 
 <!-- content section -->
+<?php snippet('header') ?>
+
 <main>
-    <!-- grab title from opportunities.txt -->
-    <div class="opportunities-title">
-        <h1><?= $page->title() ?></h1>
-    </div>
-    <div class="opportunities">
 
-    <!-- site/controllers/opportunities.php is defining the $opportunities variable -->
+<!-- section name -->
+<div class="opportunities-title">
+  <h1><?= $page->title() ?></h1>
+</div>
 
-        <?php foreach ($opportunities as $opportunity): ?>
-            <!-- There can be moments when an opp has no image. If so, skip it. -->
-            <?php if($image = $opportunity->image()): ?>
-                <div class="opportunity">
-                    <div class="post-image">
-                        <a href="<?= $opportunity->url() ?>">
-                            <!-- grab first image in project folder (alphabetically) -->
-                            <img src="<?= $image->crop(468)->url() ?>" alt="<?= $opportunity->alt() ?>">
-                        </a>
-                    </div>
-                    <div class="post">
-                        <a href="<?= $opportunity->url() ?>">
-                            <!-- pull from sections defined in each opportunity text file -->
-                            <h2><?= $opportunity->Title() ?></h2>                    
-                        </a>   
-                        <!-- Display category options -->
-                        <?php if ($opportunity->category()->isNotEmpty()): ?>
-                            <?php
-                            $field = $opportunity->blueprint()->field('category');
-                            $value = $opportunity->category()->value();
-                            foreach ($opportunity->category()->split() as $category):
-                                // Determine the category URL part
-                                $categoryUrl = strtolower($value);
-                                if (substr($categoryUrl, -1) === 'y') {
-                                    $categoryUrl = substr($categoryUrl, 0, -1) . 'ies';
-                                } else {
-                                    $categoryUrl .= 's';
-                                }
-                            ?>
-                            <a href="<?= url('opportunities/' . $categoryUrl) ?>" class="category">
-                                <?= $field['options'][$value] ?? $value ?>
-                            </a>
-                            <?php endforeach; ?>
-                        <?php endif ?>
-                        
-                        <!-- Display posted date -->
-                        <div class="posted-date">
-                            Posted <?= $opportunity->date()->toDate('F j, Y') ?>
-                            </div>
-                        <!-- Display short description -->
-                        <p class="description"><?= $opportunity->short_description()->kirbytext() ?></p>
-                        <!-- Read More Button -->
-                        <a href="<?= $opportunity->url() ?>" class="button">
-                            View Post
-                        </a>
-                    </div>
-                </div>
-            <?php endif ?>              
-        <?php endforeach ?> 
-    </div>
-    <ul>
-</ul>
+<div class="opportunities">
 
-<!-- Pagination -->
-<?php if ($opportunities->pagination()->hasPages()): ?>
-<nav class="pagination">
-  <?php if ($opportunities->pagination()->hasNextPage()): ?>
-    <a href="<?= $opportunities->pagination()->nextPageURL() ?>" rel="next">
-      Older Posts
-    </a>
-  <?php endif ?>
+  <!-- each article-->
+  <?php foreach($articles as $article): ?>
 
-  <?php if ($opportunities->pagination()->hasPrevPage()): ?>
-    <a href="<?= $opportunities->pagination()->prevPageURL() ?>" rel="prev">
-      Newer Posts
-    </a>
-  <?php endif ?>
-</nav>
-<?php endif ?>
+    <!-- image section -->
+    <?php if($image = $article->image()): ?>
+      <div class="opportunity">
+        <div class="post-image">
+          <a href="<?= $article->url() ?>">
+            <!-- grab first image in project folder (alphabetically) -->
+            <img src="<?= $image->crop(468)->url() ?>" alt="<?= $article->alt() ?>">
+          </a>
+        </div>
+        <!-- text section --> 
+        <div class="post">
+          <!-- post title -->
+          <a href="<?= $article->url() ?>">
+            <h2><?= $article->Title() ?></h2>                    
+          </a>
+          <!-- list individual post tags -->
+          <!-- https://forum.getkirby.com/t/list-tags-for-a-page/31301 -->
+          <?php $post_tags = $article->tags()->split() ?>
+          <?php foreach ($post_tags as $post_tag): ?>
+            <a class="category" href="<?= url($page->url(), ['params' => ['tag' => $post_tag]]) ?>">
+              <?= $post_tag ?>
+            </a>
+          <?php endforeach ?>
 
-<!-- Submit an opportunity promo -->
-<div class="promo">📣 <a href="https://docs.google.com/forms/d/e/1FAIpQLSczR9Ct3qaWETS72DoIO03LlLTeIWF8sSQxMvnTNwfs0aXAHA/viewform" >Got an Opportunity? Post It!</a> 🦄</div>
+          <!-- Display posted date -->
+          <div class="posted-date">
+          Posted <?= $article->date()->toDate('F j, Y') ?>
+          </div>
+          <!-- Display short description -->
+          <p class="description"><?= $article->short_description()->kirbytext() ?></p>
+          <!-- Read More Button -->
+          <a href="<?= $article->url() ?>" class="button">
+              View Post
+          </a>     
+       
+        </div>
+      </div>
+    <?php endif ?>
+  <?php endforeach ?>
+</div>
+
+
+  <!-- pagination (untested) -->
+  <nav class="pagination">
+    <?php if($pagination->hasPrevPage()): ?>
+    <a href="<?= $pagination->prevPageUrl() ?>">previous posts</a>
+    <?php endif ?>
+
+    <?php if($pagination->hasNextPage()): ?>
+    <a href="<?= $pagination->nextPageUrl() ?>">next posts</a>
+    <?php endif ?>
+  </nav>
+
+  <!-- Submit an opportunity promo -->
+  <div class="promo">📣 <a href="https://docs.google.com/forms/d/e/1FAIpQLSczR9Ct3qaWETS72DoIO03LlLTeIWF8sSQxMvnTNwfs0aXAHA/viewform" >Got an Opportunity? Post It!</a> 🦄</div>
 
 </main>
 

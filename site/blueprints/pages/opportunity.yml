@@ -3,16 +3,16 @@ title: Opportunity
 sections:
   content:
     type: fields
+
     fields:
-      category:
-        label: Category
-        type: select
-        required: true
+      tags:
+        type: tags
+        help: "Click to see available tags" 
         options:
-          grant: Call for Grants
-          job: Call for Jobs
-          paper: Call for Papers
-          entry: Call for Entries
+          - Grants
+          - Jobs
+          - Papers
+          - Entries
       date:
         label: Created Date
         type: date

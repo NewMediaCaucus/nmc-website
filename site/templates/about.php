@@ -161,7 +161,7 @@
     <p><?= $page->alumni()->kirbytext() ?></p>
 
 <!-- Submit an opportunity promo -->
-<div class="promo">🪩 <a href="https://www.newmediacaucus.org/join/" >Become a Member!</a> 🐝</div>
+<div class="promo">🥳 <a href="https://www.newmediacaucus.org/join/" >Become a Member!</a> 🐝</div>
 
 </main>
 

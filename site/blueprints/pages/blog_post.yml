@@ -38,10 +38,17 @@ columns:
           Image:
             type: files
             max: 1
+            help: One image per post, width between 960px and 3840px.
           tags:
             type: tags
             help: "Click to see available tags" 
             options:
+              - Art
               - Design
-              - Architecture
               - VR
+              - AI
+              - Biohacking
+              - Wearables
+              - Embedded Computing
+              - Hardware
+              - Software

@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,24 @@
   </title>
   <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
 
-    <!-- Critical CSS inline -->
-    <style>
-      :root {
-        color-scheme: dark;
-      }
-      html, body {
-        background-color: #282A36;
-        color: #ffffff;
-        visibility: visible;
-        opacity: 1;
-      }
-      .preload * {
-        transition: none !important;
-      }
-    </style>
+  <!-- Critical CSS inline -->
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    html,
+    body {
+      background-color: #282A36;
+      color: #ffffff;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .preload * {
+      transition: none !important;
+    }
+  </style>
 
 
   <!-- kirby is picky about where the CSS file goes -->

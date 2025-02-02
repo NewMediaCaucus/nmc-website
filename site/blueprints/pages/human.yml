@@ -28,8 +28,8 @@ sections:
         type: text
         required: true
         help: "Example: Assistant Professor of Creative Technologies, Virginia Tech, etc"
-      url:
-        label: URL
+      link:
+        label: External Link (bio page, portfolio site, etc.)
         type: url
         help: "Remember http:// or https:// such as http://robray.net"
       bio:

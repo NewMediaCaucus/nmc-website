@@ -60,13 +60,29 @@ sections:
         required: true
         max: 1
         empty: No image yet
-        help: Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
+        help: This square image promotes this gallery in the H/F archive page. Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
       promo_image_alt:
         label: Promo Image Alt Text
         required: true
         type: textarea
         buttons: false
-        help: <b>"Alt Text"</b> helps screen-reading tools describe the image we are posting to our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.
+        help: <b>"Alt Text"</b> helps our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.
+        minlength: 20
+        maxlength: 400
+      header_image:
+        label: Header Image
+        type: files
+        template: footer
+        required: true
+        max: 1
+        empty: No image yet
+        help: Goes in the site header. Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
+      header_image_alt:
+        label:  Header Image Alt Text
+        required: true
+        type: textarea
+        buttons: false
+        help: <b>"Alt Text"</b> helps our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.
         minlength: 20
         maxlength: 400
       footer_image:
@@ -82,10 +98,10 @@ sections:
         required: true
         type: textarea
         buttons: false
-        help: <b>"Alt Text"</b> helps screen-reading tools describe the image we are posting to our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.
+        help: <b>"Alt Text"</b> helps our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.
         minlength: 20
         maxlength: 400
-      footer_image_url:
-        label: Footer Image URL
+      link:
+        label: Link to external website
         type: url
-        help: "This will link the footer image. Remember http:// or https:// such as http://robray.net"
+        help: "Remember http:// or https:// such as http://robray.net"

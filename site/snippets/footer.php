@@ -61,17 +61,17 @@
       </ul>
     </div>
   </nav>
+
   <!-- Add Header/Footer Gallery link -->
   <?php if ($headerfootergalleryPage = $site->find('header-footer-gallery')): ?>
     <div class="header-footer-gallery">
-      <!-- <h3>Header/Footer Gallery</h3> -->
       <?php
       $shows = $headerfootergalleryPage->children();
       $current_shows = $shows->filterBy('category', 'current')->sortBy('date', 'desc')->limit(1);
       ?>
       <?php foreach ($current_shows as $current): ?>
         <div class="gallery-footer">
-          <a href="<?= $current->footer_image_url() ?>" target="_blank" rel="noopener">
+          <a href="<?= $current->url() ?>" target="_blank" rel="noopener">
             <?php if ($promo = $current->footer_image()->toFile()): ?>
               <img class="gallery-footer-image"
                 src="<?= $promo->crop(960, 320)->url() ?>"
@@ -88,6 +88,9 @@
           <div class="gallery-footer-text">
             <div class="gallery-footer-title">
               <?= $current->title()->kirbytext() ?>
+            </div>
+            <div class="gallery-footer-link">
+              <?= $current->link()->kirbytext() ?>
             </div>
             <div class="gallery-footer-artist-name">
               <?= $current->artist_name()->kirbytext() ?>

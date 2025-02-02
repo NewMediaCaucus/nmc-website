@@ -38,8 +38,19 @@
                         <!-- pull from sections defined in each opportunity text file -->
                         <h2><?= $current->Title() ?></h2>
                     </a>
-                    <!-- Display artist name -->
-                    <p class="artist_name"><?= $current->artist_name()->kirbytext() ?></p>
+
+                    <ul class="header-footer-gallery-ul">
+                        <li>
+                            <?php if ($current->link()->isNotEmpty()): ?>
+                                <?= $current->link()->kirbytext() ?></p>
+                            <?php endif ?>
+                        </li>
+
+                        <li class="artist_name">
+                            <?= $current->artist_name()->kirbytext() ?>
+                        </li>
+                    </ul>
+
                     <!-- Display short description -->
                     <p class="description"><?= $current->short_description()->kirbytext() ?></p>
                     <!-- Read More Button -->

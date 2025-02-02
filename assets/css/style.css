@@ -11,7 +11,7 @@
   --background-black: #000;
   --background-blue-hamburger: rgba(40, 42, 54, 0.95);
   --promo-background: rgba(88, 67, 95, 0.2);
-  --button-background: rgba(217, 167, 235, 0.2);
+  --button-background: rgba(157, 116, 173, 0.2);
   --date-background: rgba(255, 255, 255, 0.1);
   --date-text: rgba(255, 255, 255, 0.8);
   --button-hover: #545771;
@@ -142,6 +142,24 @@ a:visited {
 
 a:active {
   color: var(--primary-purple);
+}
+
+.header-footer-gallery-header {
+  margin-bottom: none;
+}
+
+.gallery-header {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-header-image {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  display: block;
 }
 
 .navigation {
@@ -321,6 +339,16 @@ a:active {
   grid-template-columns: 1fr 1fr;
 }
 
+.header-footer-gallery-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-footer-gallery-ul li {
+  margin-bottom: 0.5rem;
+}
+
 .header-footer-gallery h3 {
   padding-left: 12px;
 }
@@ -342,6 +370,10 @@ a:active {
   max-width: 75%;
 }
 
+.gallery-footer-text p {
+  line-height: 1;
+}
+
 .gallery-footer-title p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.2rem;
@@ -349,16 +381,21 @@ a:active {
   margin-bottom: .4rem;
 }
 
-.gallery-footer-artist-name p {
+.gallery-footer-link {
   font-family: "Nunito Sans", sans-serif;
-  font-size: .9rem;
+  font-size: 1.2rem;
   color: var(--white);
-  margin-top: 0;
+  margin-bottom: .4rem;
 }
 
-/* .gallery-footer-text p {
-  font-size: .9rem;
-} */
+.gallery-footer-artist-name p,
+.gallery-footer-link p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: .8rem;
+  color: var(--white);
+  margin-top: 0;
+  margin-bottom: .4rem;
+}
 
 .footer-social {
   grid-area: social;
@@ -712,6 +749,10 @@ a.category:hover {
     margin: 16px 0 2px 0;
   }
 
+  .header-footer-gallery-header {
+    display: none;
+  }
+
   .hamburger-menu {
     display: flex;
   }
@@ -786,11 +827,14 @@ a.category:hover {
     margin-bottom: .4rem;
   }
 
-  .gallery-footer-artist-name p {
+  .gallery-footer-artist-name p,
+  .gallery-footer-link p {
     font-family: "Nunito Sans", sans-serif;
     font-size: .8rem;
     color: var(--white);
     margin-top: 0;
+    margin-bottom: .4rem;
+
   }
 
   .gallery-footer-image {
@@ -935,11 +979,14 @@ a.category:hover {
     margin-bottom: .4rem;
   }
 
-  .gallery-footer-artist-name p {
+  .gallery-footer-artist-name p,
+  .gallery-footer-link p {
     font-family: "Nunito Sans", sans-serif;
-    font-size: .9rem;
+    font-size: .8rem;
     color: var(--white);
     margin-top: 0;
+    margin-bottom: .4rem;
+
   }
 
   .gallery-footer-image {
@@ -1051,6 +1098,11 @@ a.category:hover {
     max-width: 75%;
   }
 
+  .gallery-footer-text p {
+    line-height: 1;
+  }
+
+
   .gallery-footer-title p {
     font-family: "Nunito Sans", sans-serif;
     font-size: 1.2rem;
@@ -1058,11 +1110,14 @@ a.category:hover {
     margin-bottom: .4rem;
   }
 
-  .gallery-footer-artist-name p {
+  .gallery-footer-artist-name p,
+  .gallery-footer-link p {
     font-family: "Nunito Sans", sans-serif;
-    font-size: .9rem;
+    font-size: .8rem;
     color: var(--white);
     margin-top: 0;
+    margin-bottom: .4rem;
+
   }
 
   .gallery-footer-image {

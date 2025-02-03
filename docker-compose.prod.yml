@@ -19,6 +19,8 @@ services:
       - ./id.env
     depends_on:
       - certbot
+    networks:
+      - webnet
 
   certbot:
     image: certbot/certbot
@@ -27,4 +29,9 @@ services:
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
       - ./letsencrypt-logs:/var/log/letsencrypt
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --force-renewal --config-dir /etc/letsencrypt --logs-dir /var/log/letsencrypt; sleep 12h & wait $${!}; done;'"
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --force-renewal --config-dir /etc/letsencrypt --logs-dir /var/log/letsencrypt;  docker exec nmc-website-prod-container apachectl -k graceful; sleep 12h & wait $${!}; done;'"
+    networks:
+      - webnet
+
+  networks:
+    webnet:

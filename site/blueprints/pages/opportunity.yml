@@ -24,7 +24,7 @@ sections:
         required: true
         minlength: 100
         maxlength: 275
-        help: Must be 100-275 words long.
+        help: 100-275 characters.
         buttons:
           - bold
           - italic
@@ -39,7 +39,7 @@ sections:
         required: true
         minlength: 100
         maxlength: 6500
-        help: Must be 100-6500 words long.
+        help: 100-6500 characters.
         buttons:
           - bold
           - italic
@@ -54,13 +54,13 @@ sections:
         required: true
         max: 1
         empty: No image yet
-        help: Width must be between 960px and 3840px. Remember to update alt text when replacing image files. 
+        help: 960-3840 pixel width. Remember to update alt text when replacing image files. 
 
       alt:
         label: Image Alt Text
         required: true
         type: textarea
         buttons: false
-        help: Must be 20-400 words long. Check out these <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for more info.
+        help: 20-400 characters. Check out these <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for more info.
         minlength: 20
         maxlength: 400

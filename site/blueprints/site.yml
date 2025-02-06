@@ -1,23 +1,28 @@
 title: New Media Caucus
 
-sections:
-
-  pages:
-    label: Nested Sections
-    help: Panel user section
-    templates:
-    # order is inhereted from folder numbering
-      - people
-      - blog
-      - opportunities
-      - about
-      - initiatives
-      - gallery
-        
-  all:
-    label: All Pages
-    help: Dev section
-    type: pages
-    status: all
-    layout: list
-
+tabs:
+  tab1:
+    label: Panel Editors
+    icon: edit
+    sections:
+      paneleditors:
+        type: pages
+        label: Sections
+        templates:
+            # order is inhereted from folder numbering
+              - people
+              - blog
+              - opportunities
+              - about
+              - initiatives
+              - gallery
+  tab2:  
+    label: Dev Editors
+    icon: lab
+    sections:
+      deveditors:
+        type: pages
+        label: Dev Editors
+        templates:
+            # order is inhereted from folder numbering
+              - link

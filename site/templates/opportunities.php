@@ -25,7 +25,7 @@
         <div class="post-image">
           <a href="<?= $article->url() ?>">
             <!-- grab first image in project folder (alphabetically) -->
-            <img src="<?= $image->crop(468)->url() ?>" alt="<?= $article->alt() ?>">
+            <img src="<?= $image->crop(960)->url() ?>" alt="<?= $article->alt() ?>">
           </a>
         </div>
         <!-- text section --> 

@@ -30,13 +30,13 @@ Always name feature branch "feature" plus description
 Kirby relies on four main folders: kirby, media, site, and content. In order to keep our repo from getting too big, we'll use .gitignore to exclude the media and content folders (with one or two individual file exceptions). 
 
 The dev team should install: 
-- git-lfs
+- Docker or mamp/xamp
+- Github Desktop (https://desktop.github.com/download/) and Git Large File Storage (https://git-lfs.com/)
+- [git-lfs](https://git-lfs.com/)
   - Mac users can install git-lfs by running
     - brew install git-lfs
     - git lfs install
     - sudo git lfs install --system
-- Docker or mampp/xampp
-- Github Desktop (https://desktop.github.com/download/) and Git Large File Storage (https://git-lfs.com/)
 - Coding IDE (ex: Visual Studio Code)
 - Apache server, php8 (our Docker Compose will do this for you or mampp/xampp)
 - php composer (used to update kirby and install/update plugins into the vendor folder)

@@ -12,7 +12,7 @@ Always name feature branch "feature" plus description
 ## Important File Locations
 
 - Content
-  - This folder is managed under a seperate repo. See `README-content-folder.md` for more information.
+  - This folder is managed under a seperate repo. See `[README-content-folder.md](https://github.com/NewMediaCaucus/nmc-website/blob/dev/README-content-folder.md)` for more information.
 - Kirby
   - Leave this alone unless updating the Kirby CMS
 - Media
@@ -30,6 +30,11 @@ Always name feature branch "feature" plus description
 Kirby relies on four main folders: kirby, media, site, and content. In order to keep our repo from getting too big, we'll use .gitignore to exclude the media and content folders (with one or two individual file exceptions). 
 
 The dev team should install: 
+- git-lfs
+  - Mac users can install git-lfs by running
+    - brew install git-lfs
+    - git lfs install
+    - sudo git lfs install --system
 - Docker or mampp/xampp
 - Github Desktop (https://desktop.github.com/download/) and Git Large File Storage (https://git-lfs.com/)
 - Coding IDE (ex: Visual Studio Code)
@@ -38,11 +43,12 @@ The dev team should install:
 
 Set up local repository:
 - Clone the nmc-website repo at C://xampp/htdocs (win)
-- Clone the nmc-website-content repo. See the README-content-folder.md for how-to.
+- Clone the nmc-website-content repo. See the [README-content-folder.md](https://github.com/NewMediaCaucus/nmc-website/blob/dev/README-content-folder.md) for how-to.
 - Changes focus on site operation and style, not content
 - All changes should have detailed notes
 
-Still needed: solution to back up content and media folders.
+Still needed:
+- Solution to back up content and media folders to offline storage.
 
 ## Further Reading
 

@@ -79,3 +79,4 @@ certs/*
 # ------------------------------------------------    
 composer.phar
  
+site/logs/retour/log.sqlite

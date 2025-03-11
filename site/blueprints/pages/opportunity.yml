@@ -9,10 +9,10 @@ sections:
         type: tags
         help: "Click to see available tags" 
         options:
-          - Grants
-          - Jobs
-          - Papers
-          - Entries
+          - Call for Grants
+          - Call for Jobs
+          - Call for Papers
+          - Call for Entries
       date:
         label: Created Date
         type: date

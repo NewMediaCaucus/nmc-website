@@ -12,7 +12,7 @@ Always name feature branch "feature" plus description
 ## Important File Locations
 
 - Content
-  - This folder is managed under a seperate repo. See `README-content-folder.md` for more information.
+  - This folder is managed under a seperate repo. See `[README-content-folder.md](https://github.com/NewMediaCaucus/nmc-website/blob/dev/README-content-folder.md)` for more information.
 - Kirby
   - Leave this alone unless updating the Kirby CMS
 - Media
@@ -30,23 +30,28 @@ Always name feature branch "feature" plus description
 Kirby relies on four main folders: kirby, media, site, and content. In order to keep our repo from getting too big, we'll use .gitignore to exclude the media and content folders (with one or two individual file exceptions). 
 
 The dev team should install: 
-- Docker or mampp/xampp
+- Docker or mamp/xamp
 - Github Desktop (https://desktop.github.com/download/) and Git Large File Storage (https://git-lfs.com/)
+- [git-lfs](https://git-lfs.com/)
+  - Mac users can install git-lfs by running
+    - brew install git-lfs
+    - git lfs install
+    - sudo git lfs install --system
 - Coding IDE (ex: Visual Studio Code)
 - Apache server, php8 (our Docker Compose will do this for you or mampp/xampp)
 - php composer (used to update kirby and install/update plugins into the vendor folder)
 
 Set up local repository:
 - Clone the nmc-website repo at C://xampp/htdocs (win)
-- Clone the nmc-website-content repo. See the README-content-folder.md for how-to.
+- Clone the nmc-website-content repo. See the [README-content-folder.md](https://github.com/NewMediaCaucus/nmc-website/blob/dev/README-content-folder.md) for how-to.
 - Changes focus on site operation and style, not content
 - All changes should have detailed notes
 
-Still needed: solution to back up content and media folders.
+Still needed:
+- Solution to back up content and media folders to offline storage.
 
 ## Further Reading
 
 1. [Git large file storage info](https://docs.github.com/en/repositories/working-with-files/managing-large-files/collaboration-with-git-large-file-storage)
 2. [Checking out a previous commit](https://docs.github.com/en/desktop/managing-commits/checking-out-a-commit-in-github-desktop)
 3. [Resetting the panel](https://forum.getkirby.com/t/problems-with-panel-access/24815/2)
-

@@ -19,6 +19,15 @@
         width="468px">
     <?php endif ?>
 
+    <p></p>
+    <!-- Display post tags -->
+    <?php $post_tags = $page->tags()->split() ?>
+    <?php foreach ($post_tags as $post_tag): ?>
+      <a class="category" href="<?= url($page->url(), ['params' => ['tag' => $post_tag]]) ?>">
+        <?= $post_tag ?>
+      </a>
+    <?php endforeach ?>
+
     <?= $page->text()->kirbytext() ?>
 
     <a href="<?= url('blog') ?>">Back…</a>

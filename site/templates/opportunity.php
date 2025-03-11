@@ -41,6 +41,14 @@
     <?php endforeach; ?>
 <?php endif ?>
 
+    <!-- Display post tags -->
+    <?php $post_tags = $page->tags()->split() ?>
+    <?php foreach ($post_tags as $post_tag): ?>
+      <a class="category" href="<?= url($page->url(), ['params' => ['tag' => $post_tag]]) ?>">
+        <?= $post_tag ?>
+      </a>
+    <?php endforeach ?>
+
     <!-- Display posted date -->
     <div class="posted-date">
         Posted <?= $page->date()->toDate('F j, Y') ?>

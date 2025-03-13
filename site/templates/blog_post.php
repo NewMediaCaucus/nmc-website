@@ -16,7 +16,7 @@
         <img
           src="<?= $image->crop(960)->url() ?>"
           alt="<?= $page->alt()->value() ?>"
-          width="468px">
+          width="960px">
       <?php endif ?>
 
       <p></p>

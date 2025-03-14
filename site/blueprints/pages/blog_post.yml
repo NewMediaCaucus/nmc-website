@@ -43,13 +43,14 @@ columns:
             type: tags
             help: "Click to see available tags" 
             options:
-              - Art
-              - Design
-              - VR
               - AI
+              - Art
               - Biohacking
-              - Wearables
+              - Design
               - Embedded Computing
+              - Events
               - Hardware
-              - Software
               - News
+              - Software
+              - VR
+              - Wearables

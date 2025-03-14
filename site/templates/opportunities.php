@@ -17,7 +17,7 @@
   <div class="opportunities">
 
     <!-- each article-->
-    <?php foreach ($articles as $article): ?>
+    <?php foreach ($articles->sortBy('date', 'desc') as $article): ?>
 
       <!-- image section -->
       <?php if ($image = $article->image()): ?>

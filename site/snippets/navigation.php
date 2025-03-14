@@ -59,7 +59,9 @@
 </nav>
 
 <div class="logo-img">
-    <img class="logo-img" src="<?= url('assets/icons/logo.png') ?>" alt="" width="150" height="44">
+    <a href="<?= $site->url() ?>">
+        <img class="logo-img" src="<?= url('assets/icons/logo.png') ?>" alt="Home" width="150" height="44">
+    </a>
 </div>
 <a class="logo-subhead" href="<?= site()->url() ?>">new media caucus</a>
 </head>

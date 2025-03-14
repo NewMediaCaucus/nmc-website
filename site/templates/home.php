@@ -18,10 +18,10 @@
   <?php
   // Setup filters for each category. Note: tag filtering is case sensitive.
   $blog = $site->find('blog')->children();
-  $blog_news_list = $blog->filterBy('tags', 'News', ',')->limit(3);
+  $blog_news_list = $blog->filterBy('tags', 'News', ',')->sortBy('date', 'desc')->limit(3);
 
   $opportunities = $site->find('opportunities')->children();
-  $opps_news_list = $opportunities->limit(3);
+  $opps_news_list = $opportunities->sortBy('date', 'desc')->limit(3);
   ?>
 
   <div class="opportunities">

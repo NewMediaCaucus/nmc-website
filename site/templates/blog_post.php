@@ -6,10 +6,9 @@
 
 <!-- content section -->
 <main>
-
+  <br><br>
   <section class="content article">
     <article>
-      <h2><?= $page->title()->html() ?></h2>
 
       <?php if ($image = $page->image()): ?>
         <!-- TODO: What div should go around this image? -->
@@ -19,6 +18,7 @@
           width="960px">
       <?php endif ?>
 
+      <h2><?= $page->title()->html() ?></h2>
       <p></p>
       <!-- Display post tags -->
       <?php $post_tags = $page->tags()->split() ?>

@@ -1,5 +1,5 @@
-title: About Us
-icon: 🦄
+title: Home
+icon: 🏠
 options:
   access:
     admin: "*"  # Wildcard permission grants all access to admin role
@@ -32,13 +32,8 @@ sections:
         type: text
         access:
           panel: false
-      mission:
-        label: Mission Statement
-        type: textarea
-        access:
-          panel: false
-      alumni:
-        label: Alumni
+      welcome:
+        label: Welcome Message
         type: textarea
         access:
           panel: false

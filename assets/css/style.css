@@ -17,6 +17,8 @@
   --button-hover: #545771;
   --button-active: #6a6e8e;
   --white: #fff;
+  --orange: rgba(255, 184, 108, 1);
+  --purple: rgba(189, 147, 249, 1);
 }
 
 /* Prevent white flash */
@@ -51,7 +53,7 @@ h4 {
 h1 {
   font-size: 2.488rem;
   line-height: 1.2;
-  color: var(--white);
+  color: var(--purple);
   margin-bottom: 1rem;
 }
 
@@ -515,6 +517,27 @@ a:active {
 
 .category a:hover,
 a.category:hover {
+  text-decoration: none;
+  background-color: var(--button-hover);
+  transform: scale(1.02);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  text-decoration: none;
+  /* text-transform: lowercase; */
+  /* letter-spacing: 0.03rem; */
+  font-size: 0.70em;
+  font-weight: 500;
+  background-color: var(--button-background);
+  color: var(--white);
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tag a:hover,
+a.tag:hover {
   text-decoration: none;
   background-color: var(--button-hover);
   transform: scale(1.02);

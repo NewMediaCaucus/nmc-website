@@ -10,6 +10,7 @@ tabs:
         label: Sections
         templates:
             # order is inhereted from folder numbering
+              - home
               - people
               - blog
               - opportunities

@@ -8,11 +8,11 @@
 <main>
     <br><br>
     <!-- grab the first/only image in the folder -->
-    <?php if($image = $page->image()): ?>
+    <?php if ($image = $page->image()): ?>
         <!-- TODO: What div should go around this image? -->
-        <img class="post-image" 
-            src="<?= $image->crop(960,960)->url() ?>" 
-            alt="<?= $page->alt()->value() ?>" 
+        <img class="post-image"
+            src="<?= $image->crop(960, 960)->url() ?>"
+            alt="<?= $page->alt()->value() ?>"
             width="960px">
     <?php endif ?>
 
@@ -23,37 +23,37 @@
     <?php endif ?>
 
     <?php if ($page->category()->isNotEmpty()): ?>
-    <?php
-    $field = $page->blueprint()->field('category');
-    $value = $page->category()->value();
-    foreach ($page->category()->split() as $category):
-        // Determine the category URL part
-        $categoryUrl = strtolower($value);
-        if (substr($categoryUrl, -1) === 'y') {
-            $categoryUrl = substr($categoryUrl, 0, -1) . 'ies';
-        } else {
-            $categoryUrl .= 's';
-        }
-    ?>
-        <a href="<?= url('opportunities/' . $categoryUrl) ?>" class="category">
-            <?= $field['options'][$value] ?? $value ?>
-        </a>
-    <?php endforeach; ?>
-<?php endif ?>
+        <?php
+        $field = $page->blueprint()->field('category');
+        $value = $page->category()->value();
+        foreach ($page->category()->split() as $category):
+            // Determine the category URL part
+            $categoryUrl = strtolower($value);
+            if (substr($categoryUrl, -1) === 'y') {
+                $categoryUrl = substr($categoryUrl, 0, -1) . 'ies';
+            } else {
+                $categoryUrl .= 's';
+            }
+        ?>
+            <a href="<?= url('opportunities/' . $categoryUrl) ?>" class="category">
+                <?= $field['options'][$value] ?? $value ?>
+            </a>
+        <?php endforeach; ?>
+    <?php endif ?>
 
     <!-- Display post tags -->
     <?php $post_tags = $page->tags()->split() ?>
     <?php foreach ($post_tags as $post_tag): ?>
-      <a class="category" href="<?= url($page->url(), ['params' => ['tag' => $post_tag]]) ?>">
-        <?= $post_tag ?>
-      </a>
+        <a class="category" href="<?= url('opportunities', ['params' => ['tag' => $post_tag]]) ?>">
+            <?= $post_tag ?>
+        </a>
     <?php endforeach ?>
 
     <!-- Display posted date -->
     <div class="posted-date">
         Posted <?= $page->date()->toDate('F j, Y') ?>
-            </div>
-    
+    </div>
+
     <?php if ($page->long_description()->isNotEmpty()): ?>
         <p><?= $page->long_description()->kirbytext() ?></p>
     <?php endif ?>

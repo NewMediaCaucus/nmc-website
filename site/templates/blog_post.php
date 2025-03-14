@@ -7,33 +7,33 @@
 <!-- content section -->
 <main>
 
-<section class="content article">
-  <article>
-    <h1><?= $page->title()->html() ?></h1>
+  <section class="content article">
+    <article>
+      <h2><?= $page->title()->html() ?></h2>
 
-    <?php if($image = $page->image()): ?>
+      <?php if ($image = $page->image()): ?>
         <!-- TODO: What div should go around this image? -->
-        <img  
-            src="<?= $image->crop(468,468)->url() ?>" 
-            alt="<?= $page->alt()->value() ?>" 
-        width="468px">
-    <?php endif ?>
+        <img
+          src="<?= $image->crop(960)->url() ?>"
+          alt="<?= $page->alt()->value() ?>"
+          width="960px">
+      <?php endif ?>
 
-    <p></p>
-    <!-- Display post tags -->
-    <?php $post_tags = $page->tags()->split() ?>
-    <?php foreach ($post_tags as $post_tag): ?>
-      <a class="category" href="<?= url($page->url(), ['params' => ['tag' => $post_tag]]) ?>">
-        <?= $post_tag ?>
-      </a>
-    <?php endforeach ?>
+      <p></p>
+      <!-- Display post tags -->
+      <?php $post_tags = $page->tags()->split() ?>
+      <?php foreach ($post_tags as $post_tag): ?>
+        <a class="tag" href="<?= url('blog', ['params' => ['tag' => $post_tag]]) ?>">
+          <?= $post_tag ?>
+        </a>
+      <?php endforeach ?>
 
-    <?= $page->text()->kirbytext() ?>
+      <?= $page->text()->kirbytext() ?>
 
-    <a href="<?= url('blog') ?>">Back…</a>
+      <a href="<?= url('blog') ?>">Back…</a>
 
-  </article>
-</section>
+    </article>
+  </section>
 
 </main>
 

@@ -31,7 +31,9 @@ body {
 html {
   /* establish baseline font size, rems refer to this */
   font-size: 100%;
-  font-family: "Atkinson Hyperlegible", sans-serif;
+  /* font-family: "Atkinson Hyperlegible", sans-serif; */
+  font-family: 'Inter', sans-serif;
+  font-variation-settings: 'wght' 400, 'opsz' 32;
   font-optical-sizing: auto;
   font-style: normal;
   min-height: 100%;
@@ -42,13 +44,24 @@ body {
   min-height: 100vh;
 }
 
+
+.inter-semibold {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: semi-bold;
+}
+
 /* Heading styles */
 h1,
 h2,
 h3,
 h4 {
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
+  font-family: 'Inter', sans-serif;
+  font-variation-settings: 'wght' 700, 'opsz' 32;
 }
+
 
 h1 {
   font-size: 2.488rem;
@@ -201,7 +214,9 @@ a:active {
 
 .navigation ul {
   list-style: none;
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
+  font-family: 'Inter', sans-serif;
+  font-variation-settings: 'wght' 500, 'opsz' 32;
   text-transform: capitalize;
   display: flex;
   justify-content: flex-end;
@@ -377,14 +392,18 @@ a:active {
 }
 
 .gallery-footer-title p {
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
+  font-family: 'Inter', sans-serif;
+  font-variation-settings: 'wght' 600, 'opsz' 32;
   font-size: 1.2rem;
   color: var(--white);
   margin-bottom: .4rem;
 }
 
 .gallery-footer-link {
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
+  font-family: 'Inter', sans-serif;
+  font-variation-settings: 'wght' 300, 'opsz' 32;
   font-size: 1.2rem;
   color: var(--white);
   margin-bottom: .4rem;
@@ -392,7 +411,9 @@ a:active {
 
 .gallery-footer-artist-name p,
 .gallery-footer-link p {
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
+  font-family: 'Inter', sans-serif;
+  font-variation-settings: 'wght' 300, 'opsz' 32;
   font-size: .8rem;
   color: var(--white);
   margin-top: 0;
@@ -416,7 +437,9 @@ a:active {
 
 .copyright {
   grid-area: copyright;
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
+  font-family: 'Inter', sans-serif;
+  font-variation-settings: 'wght' 400, 'opsz' 32;
   font-size: .8em;
   color: var(--white);
   text-align: center;
@@ -584,8 +607,10 @@ a.tag:hover {
 }
 
 .blurb {
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 400;
+  /* font-family: "Nunito Sans", sans-serif; */
+  /* font-weight: 400; */
+  font-family: 'Inter', sans-serif;
+  font-variation-settings: 'wght' 400, 'opsz' 32;
   font-size: .9em;
 }
 
@@ -792,7 +817,9 @@ a.tag:hover {
   .navigation ul {
     display: block;
     list-style: none;
-    font-family: "Nunito Sans", sans-serif;
+    /* font-family: "Nunito Sans", sans-serif; */
+    font-family: 'Inter', sans-serif;
+    font-variation-settings: 'wght' 400, 'opsz' 32;
     text-transform: capitalize;
     margin: 0;
     padding: 0;
@@ -844,7 +871,9 @@ a.tag:hover {
   }
 
   .gallery-footer-title p {
-    font-family: "Nunito Sans", sans-serif;
+    /* font-family: "Nunito Sans", sans-serif; */
+    font-family: 'Inter', sans-serif;
+    font-variation-settings: 'wght' 600, 'opsz' 32;
     font-size: 1rem;
     color: var(--white);
     margin-bottom: .4rem;
@@ -852,7 +881,9 @@ a.tag:hover {
 
   .gallery-footer-artist-name p,
   .gallery-footer-link p {
-    font-family: "Nunito Sans", sans-serif;
+    /* font-family: "Nunito Sans", sans-serif; */
+    font-family: 'Inter', sans-serif;
+    font-variation-settings: 'wght' 300, 'opsz' 32;
     font-size: .8rem;
     color: var(--white);
     margin-top: 0;
@@ -936,7 +967,9 @@ a.tag:hover {
   .navigation ul {
     display: block;
     list-style: none;
-    font-family: "Nunito Sans", sans-serif;
+    /* font-family: "Nunito Sans", sans-serif; */
+    font-family: 'Inter', sans-serif;
+    font-variation-settings: 'wght' 400, 'opsz' 32;
     text-transform: capitalize;
     margin: 0;
     padding: 0;
@@ -996,7 +1029,9 @@ a.tag:hover {
   }
 
   .gallery-footer-title p {
-    font-family: "Nunito Sans", sans-serif;
+    /* font-family: "Nunito Sans", sans-serif; */
+    font-family: 'Inter', sans-serif;
+    font-variation-settings: 'wght' 600, 'opsz' 32;
     font-size: 1.2rem;
     color: var(--white);
     margin-bottom: .4rem;
@@ -1004,7 +1039,9 @@ a.tag:hover {
 
   .gallery-footer-artist-name p,
   .gallery-footer-link p {
-    font-family: "Nunito Sans", sans-serif;
+    /* font-family: "Nunito Sans", sans-serif; */
+    font-family: 'Inter', sans-serif;
+    font-variation-settings: 'wght' 400, 'opsz' 32;
     font-size: .8rem;
     color: var(--white);
     margin-top: 0;
@@ -1127,7 +1164,9 @@ a.tag:hover {
 
 
   .gallery-footer-title p {
-    font-family: "Nunito Sans", sans-serif;
+    /* font-family: "Nunito Sans", sans-serif; */
+    font-family: 'Inter', sans-serif;
+    font-variation-settings: 'wght' 600, 'opsz' 32;
     font-size: 1.2rem;
     color: var(--white);
     margin-bottom: .4rem;
@@ -1135,7 +1174,9 @@ a.tag:hover {
 
   .gallery-footer-artist-name p,
   .gallery-footer-link p {
-    font-family: "Nunito Sans", sans-serif;
+    /* font-family: "Nunito Sans", sans-serif; */
+    font-family: 'Inter', sans-serif;
+    font-variation-settings: 'wght' 400, 'opsz' 32;
     font-size: .8rem;
     color: var(--white);
     margin-top: 0;

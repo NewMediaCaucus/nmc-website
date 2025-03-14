@@ -9,7 +9,7 @@
 
   <section class="content article">
     <article>
-      <h1><?= $page->title()->html() ?></h1>
+      <h2><?= $page->title()->html() ?></h2>
 
       <?php if ($image = $page->image()): ?>
         <!-- TODO: What div should go around this image? -->
@@ -23,7 +23,7 @@
       <!-- Display post tags -->
       <?php $post_tags = $page->tags()->split() ?>
       <?php foreach ($post_tags as $post_tag): ?>
-        <a class="category" href="<?= url('blog', ['params' => ['tag' => $post_tag]]) ?>">
+        <a class="tag" href="<?= url('blog', ['params' => ['tag' => $post_tag]]) ?>">
           <?= $post_tag ?>
         </a>
       <?php endforeach ?>

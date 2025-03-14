@@ -7,34 +7,38 @@
 <!-- content section -->
 <main>
   <br><br>
-  <section class="content article">
-    <article>
+  <!-- grab the first/only image in the folder -->
+  <?php if ($image = $page->image()): ?>
+    <!-- TODO: What div should go around this image? -->
+    <img class="post-image"
+      src="<?= $image->crop(960, 960)->url() ?>"
+      alt="<?= $page->alt()->value() ?>"
+      width="960px">
+  <?php endif ?>
 
-      <?php if ($image = $page->image()): ?>
-        <!-- TODO: What div should go around this image? -->
-        <img
-          src="<?= $image->crop(960)->url() ?>"
-          alt="<?= $page->alt()->value() ?>"
-          width="960px">
-      <?php endif ?>
+  <?php if ($page->title()->isNotEmpty()): ?>
+    <h2>
+      <?= $page->title()->html() ?>
+    </h2>
+  <?php endif ?>
 
-      <h2><?= $page->title()->html() ?></h2>
-      <p></p>
-      <!-- Display post tags -->
-      <?php $post_tags = $page->tags()->split() ?>
-      <?php foreach ($post_tags as $post_tag): ?>
-        <a class="tag" href="<?= url('blog', ['params' => ['tag' => $post_tag]]) ?>">
-          <?= $post_tag ?>
-        </a>
-      <?php endforeach ?>
+  <!-- Display post tags -->
+  <?php $post_tags = $page->tags()->split() ?>
+  <?php foreach ($post_tags as $post_tag): ?>
+    <a class="tag" href="<?= url('blog', ['params' => ['tag' => $post_tag]]) ?>">
+      <?= $post_tag ?>
+    </a>
+  <?php endforeach ?>
 
-      <?= $page->text()->kirbytext() ?>
+  <!-- Display posted date -->
+  <div class="posted-date">
+    Posted <?= $page->date()->toDate('F j, Y') ?>
+  </div>
 
-      <a href="<?= url('blog') ?>">Back…</a>
 
-    </article>
-  </section>
+  <?= $page->text()->kirbytext() ?>
 
+  <a href="<?= url('blog') ?>">Back…</a>
 </main>
 
 <!-- bottom section -->

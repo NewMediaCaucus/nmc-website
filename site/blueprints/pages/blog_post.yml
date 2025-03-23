@@ -43,12 +43,15 @@ columns:
             type: tags
             help: "Click to see available tags" 
             options:
-              - Art
-              - Design
-              - VR
-              - AI
-              - Biohacking
-              - Wearables
-              - Embedded Computing
-              - Hardware
-              - Software
+              - awardee
+              - spotlight
+              - HFgallery
+              - announcement
+              - symposium
+              - showcase
+              - meetup
+              - tutorial
+              - interview
+              - exhibition
+              - job
+              - residency

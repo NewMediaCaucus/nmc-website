@@ -6,7 +6,6 @@
 
 <!-- content section -->
 <main>
-  <!-- Grab title text from txt field -->
   <img class="post-image"
     src="assets/icons/404-960.gif"
     alt="Animated 404 error"

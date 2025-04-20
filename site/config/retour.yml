@@ -1,9 +1,0 @@
-redirects:
-  - 
-    from: test
-    to: page://6Uwqi61yAW7usEXn
-    status: 307
-    priority: true
-    comment: ""
-    creator: taylor@taylorhokanson.com
-    modifier: taylor@taylorhokanson.com

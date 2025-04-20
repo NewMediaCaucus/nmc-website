@@ -110,6 +110,16 @@
     <?php endif ?>
   </div>
 
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">
+      <?php if ($privacypolicyPage = $site->find('privacy-policy')): ?>
+        Read our <a href="<?= $privacypolicyPage->url() ?>"><?= $privacypolicyPage->title() ?></a>.
+      <?php endif ?>
+    </div>
+    <div class="footer-bottom-text">
+      Made with <a href="https://getkirby.com/">Kirby</a>.
+    </div>
+  </div>
   <div class="footer-social">
     <div class="social-icon">
       <a href="https://www.facebook.com/groups/newmediacaucus" target="_blank">
@@ -122,10 +132,6 @@
       </a>
     </div>
     <div class="copyright">Copyright © <?= date('Y') ?> New Media Caucus
-      <!-- Add linked privacy policy -->
-      <?php if ($privacypolicyPage = $site->find('privacy-policy')): ?>
-        <a href="<?= $privacypolicyPage->url() ?>"><?= $privacypolicyPage->title() ?></a>
-      <?php endif ?>
     </div>
   </div>
 

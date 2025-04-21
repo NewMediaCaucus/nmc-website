@@ -4,7 +4,7 @@
     <div class="footer-nav-block">
       <ul>
         <h2>
-          <img class="footer-logo" src="<?= url('assets/icons/logo.png') ?>" alt="" width="80">
+          <img class="footer-logo" src="<?= url('assets/icons/logo.png') ?>" alt="" width="160">
         </h2>
         <a class="footer-logo-subhead" href="<?= $site->url() ?>"><?= $site->title() ?></a>
         <!-- Add opportunities page link -->

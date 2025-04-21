@@ -514,8 +514,8 @@ a:active {
   font-size: 1em;
   color: var(--electric-green);
   text-transform: lowercase;
-  letter-spacing: 7px;
-  /* margin-left: 3px; */
+  letter-spacing: 7.1px;
+  margin-left: 3px;
   text-decoration-line: none;
 }
 

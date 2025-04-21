@@ -328,10 +328,12 @@ a:active {
 .footer-logo-subhead {
   grid-area: logo-subhead;
   font-family: "Metrophobic", sans-serif;
-  font-size: .5em;
+  font-size: 1em;
   color: var(--electric-green);
   text-transform: lowercase;
-  letter-spacing: 2.8px;
+  letter-spacing: 7px;
+  /* margin-left: 3px; */
+  text-decoration-line: none;
 }
 
 .footer-logo-subhead:visited {
@@ -509,11 +511,11 @@ a:active {
 .logo-subhead {
   grid-area: logo-subhead;
   font-family: "Metrophobic", sans-serif;
-  font-size: .8em;
+  font-size: 1em;
   color: var(--electric-green);
   text-transform: lowercase;
-  letter-spacing: 2.8px;
-  margin-left: 3px;
+  letter-spacing: 7px;
+  /* margin-left: 3px; */
   text-decoration-line: none;
 }
 

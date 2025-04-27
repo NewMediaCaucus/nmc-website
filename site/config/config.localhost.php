@@ -3,7 +3,10 @@
 return [
   'debug' => true,
   'panel' => [
-    'install' => true 
+    'vue' => [
+      'compiler' => false
+    ],
+    'install' => true
   ],
   'thathoff.git-content.commit' => true,
   'thathoff.git-content.pull' => true, // Set to true so devs get the latest content.

@@ -35,6 +35,7 @@ columns:
           author:
             type: users
             required: true
+            default: true
           Image:
             type: files
             max: 1

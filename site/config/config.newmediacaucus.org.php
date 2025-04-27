@@ -4,7 +4,10 @@ return [
   'debug' => false,
   'url'   => 'https://newmediacaucus.org',
   'panel' => [
-    'install' => true 
+    'vue' => [
+      'compiler' => false
+    ],
+    'install' => true,
   ],
   'thathoff.git-content.pull' => false, // Set to true to enable pulling first. default is false.
   'thathoff.git-content.push' => false, // Pushing with the plugin is not peformant, but it's a good way to test until a cron job can be setup.

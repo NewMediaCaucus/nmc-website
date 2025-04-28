@@ -6,9 +6,9 @@ return [
   'cache' => [
     'pages' => [
       'active' => true,
-      'ignore' => fn ($page) => $page->title()->value() === 'Do not cache me'
+      'ignore' => fn($page) => $page->title()->value() === 'Do not cache me'
     ]
-  ]
+  ],
   'panel' => [
     'vue' => [
       'compiler' => false

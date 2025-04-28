@@ -6,7 +6,10 @@ return [
   'cache' => [
     'pages' => [
       'active' => true,
-      'ignore' => fn($page) => $page->title()->value() === 'Do not cache me'
+      'ignore' => fn($page) => $page->title()->value() === 'Home' ||
+        $page->title()->value() === 'Opportunities' ||
+        $page->title()->value() === 'Blog' ||
+        $page->title()->value() === 'About Us'
     ]
   ],
   'panel' => [

@@ -3,6 +3,12 @@
 return [
   'debug' => true,
   'url'   => 'https://nmcdev.shimmeringtrashpile.com',
+  'cache' => [
+    'pages' => [
+      'active' => true,
+      'ignore' => fn ($page) => $page->title()->value() === 'Do not cache me'
+    ]
+  ]
   'panel' => [
     'vue' => [
       'compiler' => false

@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile.prod
     image: nmc-website-prod
     container_name: nmc-website-prod-container
-    hostname: nmcdev.shimmeringtrashpile.com
+    hostname: newmediacaucus.org
     ports:
       - "80:80"
       - "443:443"

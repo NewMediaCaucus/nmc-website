@@ -76,7 +76,7 @@ sections:
         required: true
         max: 1
         empty: No image yet
-        help: Goes in the site header. Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
+        help: Goes in the site header. This will crop to 80px high. Width will vary by device. Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
       header_image_alt:
         label:  Header Image Alt Text
         required: true
@@ -92,7 +92,7 @@ sections:
         required: true
         max: 1
         empty: No image yet
-        help: Goes in the site footer. Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
+        help: Goes in the site footer. This will crop to 320px high. Width will vary by device. Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
       footer_image_alt:
         label:  Footer Image Alt Text
         required: true

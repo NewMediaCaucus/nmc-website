@@ -7,7 +7,7 @@
         ?>
         <?php foreach ($current_shows as $current): ?>
             <div class="gallery-header">
-                <a href="<?= $headerfootergalleryPage ?>">
+                <a href="<?= $headerfootergalleryPage->url() ?>">
                     <?php if ($promo = $current->header_image()->toFile()): ?>
                         <img class="gallery-header-image"
                             src="<?= $promo->crop(960, 80)->url() ?>"

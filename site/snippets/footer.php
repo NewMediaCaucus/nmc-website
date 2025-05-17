@@ -120,6 +120,11 @@
       Made with <a href="https://getkirby.com/">Kirby</a>.
     </div>
   </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">
+      Found a bug or another weird thing? <a href="https://github.com/NewMediaCaucus/nmc-website/issues/new">Let us know</a>.
+    </div>
+  </div>
   <div class="footer-social">
     <div class="social-icon">
       <a href="https://www.facebook.com/groups/newmediacaucus" target="_blank">

@@ -80,3 +80,8 @@ certs/*
 composer.phar
  
 site/logs/retour/log.sqlite
+
+
+# Loader.io Key File
+# ------------------------------------------------   
+loaderio-82629827e176b079ba6b35685c2605da.txt

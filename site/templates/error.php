@@ -7,7 +7,7 @@
 <!-- content section -->
 <main>
   <img class="post-image"
-    src="assets/icons/404-960.gif"
+    src="../assets/icons/404-960.gif"
     alt="Animated 404 error"
     width="480px">
   <h1>Oops! This page doesn’t exist.</h1>

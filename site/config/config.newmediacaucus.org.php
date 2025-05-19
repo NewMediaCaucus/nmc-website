@@ -24,4 +24,26 @@ return [
   'thathoff.git-content.remote' => 'origin',
   'thathoff.git-content.disableBranchManagement' => true,
   'thathoff.git-content.disable' => false, // Set to true if you want to disable the plugin
+
+  // Add this routes block for redirects
+  'routes' => [
+    [
+      'pattern' => 'about',
+      'action'  => function () {
+        return go('about-us');
+      }
+    ],
+    [
+      'pattern' => 'caa-2025',
+      'action'  => function () {
+        return go('/');
+      }
+    ],
+    [
+      'pattern' => 'resources',
+      'action'  => function () {
+        return go('our-initiatives');
+      }
+    ]
+  ],
 ];

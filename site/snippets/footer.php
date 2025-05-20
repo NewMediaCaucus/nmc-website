@@ -26,15 +26,15 @@
       </ul>
     </div>
     <div class="footer-nav-block">
-      <h2>Latest News</h2>
+      <h2>Latest Updates</h2>
       <ul>
-        <!-- Add opportunities page link -->
-        <?php if ($opportunitiesPage = $site->find('opportunities')): ?>
-          <li><a href="<?= $opportunitiesPage->url() ?>"><?= $opportunitiesPage->title() ?></a></li>
-        <?php endif ?>
         <!-- Add blog page link -->
         <?php if ($blogPage = $site->find('blog')): ?>
           <li><a href="<?= $blogPage->url() ?>"><?= $blogPage->title() ?></a></li>
+        <?php endif ?>
+        <!-- Add opportunities page link -->
+        <?php if ($opportunitiesPage = $site->find('opportunities')): ?>
+          <li><a href="<?= $opportunitiesPage->url() ?>"><?= $opportunitiesPage->title() ?></a></li>
         <?php endif ?>
       </ul>
     </div>

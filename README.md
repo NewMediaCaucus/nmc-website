@@ -48,7 +48,7 @@ Set up local repository:
 - All changes should have detailed notes
 
 Still needed:
-- Solution to back up content and media folders to offline storage.
+- Solution to back up content and media folders to offline storage
 
 ## Further Reading
 

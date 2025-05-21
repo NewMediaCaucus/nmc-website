@@ -16,7 +16,7 @@ return [
     'vue' => [
       'compiler' => false
     ],
-    'install' => true,
+    'install' => false,
   ],
   'thathoff.git-content.pull' => false, // Set to true to enable pulling first. default is false.
   'thathoff.git-content.push' => false, // Pushing with the plugin is not peformant, but it's a good way to test until a cron job can be setup.

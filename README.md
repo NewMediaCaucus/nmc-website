@@ -1,6 +1,6 @@
 # Branches
 
-Always name feature branch "feature" plus description
+Always name feature branch "feature" plus description.
 
 # nmc-website
 

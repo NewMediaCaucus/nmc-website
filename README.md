@@ -1,6 +1,6 @@
 # Branches
 
-Always name feature branch "feature" plus description
+Always name feature branch "feature" plus description.
 
 # nmc-website
 
@@ -43,7 +43,7 @@ The dev team should install:
 
 Set up local repository:
 - Clone the nmc-website repo at C://xampp/htdocs (win)
-- Clone the nmc-website-content repo. See the [README-content-folder.md](https://github.com/NewMediaCaucus/nmc-website/blob/dev/README-content-folder.md) for how-to.
+- Clone the nmc-website-content repo. See the [README-content-folder.md](https://github.com/NewMediaCaucus/nmc-website/blob/dev/README-content-folder.md) for how-to
 - Changes focus on site operation and style, not content
 - All changes should have detailed notes
 

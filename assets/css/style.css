@@ -581,6 +581,7 @@ a.category:hover {
 .tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
+  margin-bottom: 0.25rem;
   text-decoration: none;
   /* text-transform: lowercase; */
   /* letter-spacing: 0.03rem; */

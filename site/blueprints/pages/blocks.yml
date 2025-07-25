@@ -1,0 +1,7 @@
+title: Blocks
+
+columns:
+  main:
+    fields:
+      Blocks:
+        type: blocks

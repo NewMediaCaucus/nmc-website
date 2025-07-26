@@ -11,6 +11,7 @@
         <h1><?= $page->title() ?></h1>
     </div>
     
+    <!-- here's where each block gets rendered on a loop -->
     <?php foreach ($page->Blocks()->toBlocks() as $block): ?>
         <?= $block ?>
     <?php endforeach ?>

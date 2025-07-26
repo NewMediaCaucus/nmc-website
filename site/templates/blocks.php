@@ -11,11 +11,8 @@
         <h1><?= $page->title() ?></h1>
     </div>
     
-    <!-- "Blocks()" below refers to what I named the field in the project blueprint -->
     <?php foreach ($page->Blocks()->toBlocks() as $block): ?>
-      <div id="<?= $block->id() ?>" class="block-<?= $block->type() ?>">
         <?= $block ?>
-      </div>
     <?php endforeach ?>
 
 <!-- Submit an opportunity promo -->

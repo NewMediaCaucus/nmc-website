@@ -17,6 +17,7 @@ The website uses Let's Encrypt SSL certificates managed by Certbot running in a 
 ├── Dockerfile.certbot          # Certbot container definition
 ├── certbot-renew.sh           # Main renewal script
 ├── renewal-hook.sh            # Post-renewal hook script
+├── setup-certbot.sh           # Automated setup script
 ├── docker-compose.prod.yml    # Production Docker Compose config
 ├── letsencrypt-logs/          # Certbot log files
 └── letsencrypt-work/          # Certbot working directory
@@ -59,7 +60,7 @@ sudo docker run --rm \
   -v /etc/letsencrypt:/etc/letsencrypt \
   -v ./letsencrypt-logs:/var/log/letsencrypt \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  --network webnet \
+  --network nmc-website_webnet \
   nmc-website-certbot \
   certbot certonly \
   --webroot \
@@ -148,6 +149,49 @@ sudo chown -R root:root /etc/letsencrypt/
 sudo chmod -R 755 /etc/letsencrypt/
 ```
 
+#### 4. Container Restarting Issues
+
+If the certbot container keeps restarting with "unrecognized arguments" errors:
+
+```bash
+# Check if the image was built correctly
+sudo docker inspect nmc-website-certbot | grep -A 5 -B 5 "Cmd"
+
+# Force rebuild the image
+sudo docker build --no-cache -f Dockerfile.certbot -t nmc-website-certbot .
+
+# Remove and recreate the container
+sudo docker rm -f certbot
+sudo docker run -d \
+  --name certbot \
+  --network nmc-website_webnet \
+  -v /etc/letsencrypt:/etc/letsencrypt \
+  -v ./letsencrypt-logs:/var/log/letsencrypt \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -e DOMAIN=newmediacaucus.org \
+  -e EMAIL=admin@newmediacaucus.org \
+  --restart unless-stopped \
+  nmc-website-certbot
+```
+
+#### 5. Network Issues
+
+If you get "network not found" errors:
+
+```bash
+# Check existing networks
+sudo docker network ls
+
+# Check what network your containers are using
+sudo docker inspect nmc-website-prod-container | grep -A 5 -B 5 "NetworkMode"
+
+# Use the correct network name (usually project_name_webnet)
+sudo docker run -d \
+  --name certbot \
+  --network nmc-website_webnet \
+  # ... rest of your run command
+```
+
 ### Manual Renewal
 
 If automatic renewal isn't working, you can manually renew:
@@ -161,9 +205,9 @@ sudo docker run --rm \
   -v /etc/letsencrypt:/etc/letsencrypt \
   -v ./letsencrypt-logs:/var/log/letsencrypt \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  --network webnet \
+  --network nmc-website_webnet \
   nmc-website-certbot \
-  /scripts/certbot-renew.sh
+  /bin/bash /scripts/certbot-renew.sh
 
 # Restart the certbot container
 sudo docker start certbot
@@ -178,7 +222,10 @@ The Certbot container is built from a custom Dockerfile that:
 - Uses the official certbot/certbot image
 - Installs additional tools (curl, bash)
 - Copies renewal scripts
+- **IMPORTANT**: Overrides the ENTRYPOINT from the base image with `ENTRYPOINT []`
 - Sets up proper permissions
+
+**Key Fix**: The base certbot image has an ENTRYPOINT set to `certbot`, which was causing our CMD to be passed as arguments to certbot instead of being executed directly. The `ENTRYPOINT []` line fixes this issue.
 
 ### certbot-renew.sh
 
@@ -188,6 +235,7 @@ The main renewal script that:
 - Checks if certificates were actually renewed
 - Reloads Apache only when necessary
 - Provides comprehensive logging
+- Runs in a continuous loop with 12-hour intervals
 
 ### renewal-hook.sh
 
@@ -254,6 +302,31 @@ sudo mkdir -p letsencrypt-work/
 # Restart with fresh certificates
 sudo docker compose -f docker-compose.prod.yml up --build -d
 ```
+
+## Testing Your Setup
+
+### Quick Health Check
+
+```bash
+# Check container status
+sudo docker ps
+
+# Check certificate status
+sudo docker exec certbot certbot certificates
+
+# Check renewal logs
+sudo docker logs certbot --tail 20
+
+# Test manual renewal
+sudo docker exec certbot /bin/bash /scripts/certbot-renew.sh
+```
+
+### Expected Results
+
+- **Container Status**: Should show "Up" instead of "Restarting"
+- **Certificates**: Should show valid certificates with expiration dates
+- **Logs**: Should show renewal attempts every 12 hours
+- **Apache**: Should reload after successful renewals
 
 ## Support
 

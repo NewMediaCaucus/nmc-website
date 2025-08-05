@@ -19,5 +19,8 @@ RUN chmod +x /scripts/renewal-hook.sh
 # Set the working directory
 WORKDIR /scripts
 
+# Override the ENTRYPOINT from the base image
+ENTRYPOINT []
+
 # Default command - use bash to run our script
 CMD ["/bin/bash", "/scripts/certbot-renew.sh"] 

@@ -91,3 +91,51 @@ ATTN: This should only be run on a staging or prod server. It won't harm your de
 You will be prompted for the nmcdev password.
 
 Upon successful start you should see two containers running. "certbot" and "nmc-website-prod-container"
+
+## SSL Certificate Management
+
+The production environment includes automatic SSL certificate management using Certbot. For detailed information about SSL certificate setup, renewal, and troubleshooting, see:
+
+**[README-certbot.md](README-certbot.md)**
+
+### Quick Setup
+
+For initial SSL certificate setup, you can use the automated setup script:
+
+```bash
+./setup-certbot.sh
+```
+
+This script will:
+- Check Docker and domain accessibility
+- Create necessary directories
+- Build the Certbot Docker image
+- Start the production environment
+- Verify certificate status
+
+### Manual Setup
+
+If you prefer to set up manually or the automated script fails:
+
+1. **Build the Certbot image:**
+   ```bash
+   docker build -f Dockerfile.certbot -t nmc-website-certbot .
+   ```
+
+2. **Start production environment:**
+   ```bash
+   sudo docker compose -f docker-compose.prod.yml up --build -d
+   ```
+
+3. **Check certificate status:**
+   ```bash
+   sudo docker exec certbot certbot certificates
+   ```
+
+### Monitoring
+
+- **View Certbot logs:** `sudo docker logs certbot`
+- **Check certificate expiration:** `sudo docker exec certbot certbot certificates`
+- **View renewal logs:** `sudo tail -f letsencrypt-logs/letsencrypt.log`
+
+For complete SSL certificate management documentation, refer to **[README-certbot.md](README-certbot.md)**.

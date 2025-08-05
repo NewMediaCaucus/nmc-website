@@ -1,0 +1,23 @@
+FROM certbot/certbot
+
+# Install additional tools we might need
+RUN apk add --no-cache \
+    curl \
+    bash
+
+# Create a directory for our scripts
+RUN mkdir -p /scripts
+
+# Copy our renewal script
+COPY certbot-renew.sh /scripts/
+RUN chmod +x /scripts/certbot-renew.sh
+
+# Copy our renewal hook script
+COPY renewal-hook.sh /scripts/
+RUN chmod +x /scripts/renewal-hook.sh
+
+# Set the working directory
+WORKDIR /scripts
+
+# Default command
+CMD ["/scripts/certbot-renew.sh"] 

@@ -1,9 +1,10 @@
 FROM certbot/certbot
 
 # Install additional tools we might need
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y \
     curl \
-    bash
+    bash \
+    && rm -rf /var/lib/apt/lists/*
 
 # Create a directory for our scripts
 RUN mkdir -p /scripts
@@ -19,5 +20,5 @@ RUN chmod +x /scripts/renewal-hook.sh
 # Set the working directory
 WORKDIR /scripts
 
-# Default command
-CMD ["/scripts/certbot-renew.sh"] 
+# Default command - use bash to run our script
+CMD ["/bin/bash", "/scripts/certbot-renew.sh"] 

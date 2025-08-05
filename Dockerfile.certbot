@@ -1,10 +1,9 @@
 FROM certbot/certbot
 
-# Install additional tools we might need
-RUN apt-get update && apt-get install -y \
+# Install additional tools we might need (Alpine uses apk)
+RUN apk add --no-cache \
     curl \
-    bash \
-    && rm -rf /var/lib/apt/lists/*
+    bash
 
 # Create a directory for our scripts
 RUN mkdir -p /scripts

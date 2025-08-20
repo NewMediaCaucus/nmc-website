@@ -33,6 +33,7 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
       - ./letsencrypt-logs:/var/log/letsencrypt
       - /var/run/docker.sock:/var/run/docker.sock
+      - /home/nmcdev/nmc-website:/var/www/html
     environment:
       - DOMAIN=newmediacaucus.org
       - EMAIL=admin@newmediacaucus.org

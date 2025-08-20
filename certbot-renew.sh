@@ -46,7 +46,7 @@ run_renewal() {
     log "Starting Certbot renewal process..."
     
     # Run certbot renew
-    if certbot renew --force-renewal --config-dir /etc/letsencrypt --logs-dir /var/log/letsencrypt; then
+    if certbot renew --webroot --webroot-path=/var/www/html --force-renewal --config-dir /etc/letsencrypt --logs-dir /var/log/letsencrypt; then
         log "Certbot renewal completed"
         
         # Check if certificates were actually renewed

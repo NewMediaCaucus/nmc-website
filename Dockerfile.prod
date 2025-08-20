@@ -1,5 +1,5 @@
-# Use latest offical ubuntu image
-FROM ubuntu:latest
+# Use a smaller Ubuntu base image
+FROM ubuntu:22.04
 
 # Set timezone
 ENV TZ=Europe/Berlin

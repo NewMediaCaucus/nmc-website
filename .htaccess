@@ -26,6 +26,9 @@ RewriteEngine on
 # except for the .well-known folder, which is used for Let's Encrypt and security.txt
 RewriteRule (^|/)\.(?!well-known\/) index.php [L]
 
+# Ensure .well-known/acme-challenge is accessible
+RewriteRule ^\.well-known/acme-challenge/(.*)$ - [L]
+
 # block all files in the content folder from being accessed directly
 RewriteRule ^content/(.*) index.php [L]
 

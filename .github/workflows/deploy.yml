@@ -20,4 +20,4 @@ jobs:
 
     - name: Pull latest changes and deploy
       run: |
-        ssh -o StrictHostKeyChecking=no nmcdev@nmcdev.shimmeringtrashpile.com 'cd /home/nmcdev/nmc-website && git pull origin main && docker compose -f docker-compose.prod.yml down && docker compose -f docker-compose.prod.yml up -d --build'
+        ssh -o StrictHostKeyChecking=no nmcdev@nmcdev.shimmeringtrashpile.com 'cd /home/nmcdev/nmc-website && git pull origin main && docker compose -f docker-compose.prod.yml down && docker network rm nmc-website_webnet 2>/dev/null || true && docker compose -f docker-compose.prod.yml up -d --build'

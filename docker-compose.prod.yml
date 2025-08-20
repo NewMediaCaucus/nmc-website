@@ -43,3 +43,5 @@ services:
 
 networks:
   webnet:
+    external: true
+    name: nmc-website_webnet

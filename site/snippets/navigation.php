@@ -54,7 +54,8 @@
         <!-- Add submit news link -->
         <?php if ($submitnewsPage = $site->find('submit-news')): ?>
             <li><a href="<?= $submitnewsPage->url() ?>"><?= $submitnewsPage->title() ?></a></li>
-        <?php endif ?>
+            <?php endif ?>
+            <li><a href="https://rr.newmediacaucus.org">Restoration / Regeneration</a></li>
     </ul>
 </nav>
 

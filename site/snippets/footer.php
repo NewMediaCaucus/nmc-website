@@ -7,11 +7,13 @@
           <img class="footer-logo" src="<?= url('assets/icons/logo.png') ?>" alt="" width="160">
         </h2>
         <a class="footer-logo-subhead" href="<?= $site->url() ?>"><?= $site->title() ?></a>
-        <!-- Add opportunities page link -->
+        <!-- Add about us page link -->
         <?php if ($aboutusPage = $site->find('about-us')): ?>
           <li><a href="<?= $aboutusPage->url() ?>"><?= $aboutusPage->title() ?></a></li>
-        <?php endif ?>
-        <!-- Add Media-N link -->
+          <?php endif ?>
+          <!-- Add restoration / regeneration page link -->
+          <li><a href="https://rr.newmediacaucus.org">Restoration / Regeneration</a></li>
+          <!-- Add Media-N link -->
         <?php if ($medianPage = $site->find('media-n-journal')): ?>
           <li><a href="<?= $medianPage->url() ?>"><?= $medianPage->title() ?></a></li>
         <?php endif ?>

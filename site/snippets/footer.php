@@ -10,16 +10,20 @@
         <!-- Add about us page link -->
         <?php if ($aboutusPage = $site->find('about-us')): ?>
           <li><a href="<?= $aboutusPage->url() ?>"><?= $aboutusPage->title() ?></a></li>
-          <?php endif ?>
-          <!-- Add restoration / regeneration page link -->
-          <li><a href="https://rr.newmediacaucus.org">Restoration / Regeneration</a></li>
-          <!-- Add Media-N link -->
+        <?php endif ?>
+        <!-- Add restoration / regeneration page link -->
+        <li><a href="https://rr.newmediacaucus.org">Restoration / Regeneration</a></li>
+        <!-- Add Media-N link -->
         <?php if ($medianPage = $site->find('media-n-journal')): ?>
           <li><a href="<?= $medianPage->url() ?>"><?= $medianPage->title() ?></a></li>
         <?php endif ?>
         <!-- Add Initiatives link -->
         <?php if ($initiativesPage = $site->find('our-initiatives')): ?>
           <li><a href="<?= $initiativesPage->url() ?>"><?= $initiativesPage->title() ?></a></li>
+        <?php endif ?>
+        <!-- Add H/FGallery link -->
+        <?php if ($galleryPage = $site->find('header-footer-gallery')): ?>
+          <li><a href="<?= $galleryPage->url() ?>"><?= $galleryPage->title() ?></a></li>
         <?php endif ?>
         <!-- Add Event Archive link -->
         <?php if ($eventarchivePage = $site->find('event-archive')): ?>

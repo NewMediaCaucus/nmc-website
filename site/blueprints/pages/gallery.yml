@@ -1,6 +1,120 @@
 title: Header/Footer Gallery
 icon: 🎨
 
+sections:
+  content:
+    type: fields
+    fields:
+      host1_name:
+        label: First Host Name
+        type: text
+        required: false
+      host1_title:
+        label: First Host Title
+        type: text
+        required: false
+        help: Curator, Podcast Co-Host, etc.
+      host1_bio:
+        label: First Host Bio
+        type: textarea
+        required: false
+        minlength: 100
+        maxlength: 350
+        help: 100-350 characters.
+        buttons:
+          - bold
+          - italic
+          - link
+          - email
+          - code
+          - ul
+          - ol
+      host1_headshot:
+        label: First Host Headshot Image
+        type: files
+        required: false
+        max: 1
+        empty: No image yet
+        help: 960 minimum, 3840 maximum pixel width. Remember to update alt text when replacing image files. 
+      host1_headshot_alt:
+        label: First Host Headshot Image Alt Text
+        required: true
+        type: textarea
+        buttons: false
+        help: 20-400 characters. Check out these <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for more info.
+        minlength: 20
+        maxlength: 400
+      host2_name:
+        label: Second Host Name
+        type: text
+        required: false
+      host2_title:
+        label: Second Host Title
+        type: text
+        required: false
+        help: Curator, Podcast Co-Host, etc.
+      host2_bio:
+        label: Second Host Bio
+        type: textarea
+        required: false
+        minlength: 100
+        maxlength: 350
+        help: 100-350 characters.
+        buttons:
+          - bold
+          - italic
+          - link
+          - email
+          - code
+          - ul
+          - ol
+      host2_headshot:
+        label: Second Host Headshot Image
+        type: files
+        required: false
+        max: 1
+        empty: No image yet
+        help: 960 minimum, 3840 maximum pixel width. Remember to update alt text when replacing image files. 
+      host2_headshot_alt:
+        label: Second Host Headshot Image Alt Text
+        required: true
+        type: textarea
+        buttons: false
+        help: 20-400 characters. Check out these <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for more info.
+        minlength: 20
+        maxlength: 400
+      other_collaborators_intro:
+        label: Other Collaborators Introduction
+        type: textarea
+        required: false
+        minlength: 40
+        maxlength: 350
+        help: 40-350 characters.
+        buttons:
+          - bold
+          - italic
+          - link
+          - email
+          - code
+          - ul
+          - ol
+      other_collaborators_list:
+        label: Other Collaborators List
+        type: textarea
+        required: false
+        minlength: 40
+        maxlength: 960
+        help: 40-960 characters.
+        buttons:
+          - bold
+          - italic
+          - link
+          - email
+          - code
+          - ul
+          - ol
+
+
 columns:
   left:
     width: 1/2

@@ -5,27 +5,6 @@ columns:
   left:
     width: 1/2
     sections:
-      drafts:
-        extends: sections/gallery
-        label: Drafts
-        status: draft
-
-      unlisted:
-        extends: sections/gallery
-        label: In Review
-        status: unlisted
-
-  right:
-    width: 1/2
-    sections:
-      listed:
-        extends: sections/gallery
-        label: Published
-        status: listed
-        
-  fullwidth:
-    width: 1/1
-    sections:
       hosts_and_collaborators:
         type: fields
         label: Hosts and Collaborators
@@ -139,3 +118,19 @@ columns:
               - ul
               - ol
 
+  right:
+    width: 1/2
+    sections:
+      listed:
+        extends: sections/gallery
+        label: Published
+        status: listed
+      drafts:
+        extends: sections/gallery
+        label: Drafts
+        status: draft
+
+      unlisted:
+        extends: sections/gallery
+        label: In Review
+        status: unlisted

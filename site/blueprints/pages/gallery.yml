@@ -67,23 +67,8 @@ columns:
             help: 20-400 characters. Check out these <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for more info.
             minlength: 20
             maxlength: 400
-          other_collaborators_intro:
-            label: Other Collaborators Introduction
-            type: textarea
-            required: false
-            minlength: 40
-            maxlength: 350
-            help: 40-350 characters.
-            buttons:
-              - bold
-              - italic
-              - link
-              - email
-              - code
-              - ul
-              - ol
-          other_collaborators_list:
-            label: Other Collaborators List
+          guest_curators_list:
+            label: Guest Curators
             type: textarea
             required: false
             minlength: 40
@@ -93,9 +78,18 @@ columns:
               - bold
               - italic
               - link
-              - email
-              - code
-              - ul
+              - ol
+          curatorial_assistants_list:
+            label: Curatorial Assistants
+            type: textarea
+            required: false
+            minlength: 40
+            maxlength: 960
+            help: 40-960 characters.
+            buttons:
+              - bold
+              - italic
+              - link
               - ol
 
   right:

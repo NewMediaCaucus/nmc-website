@@ -757,6 +757,15 @@ a.tag:hover {
   line-height: 2rem;
 }
 
+.about-human .post ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.about-human .post ul li::marker {
+  display: none;
+}
+
 .human {
   grid-auto-flow: row;
   text-decoration: none;

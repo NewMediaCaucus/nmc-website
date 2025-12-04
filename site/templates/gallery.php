@@ -53,21 +53,19 @@
                 <?php endif ?>
             </div>
         </div>
-    </div>
-
-    <div class="about-human">
-        <!-- <div class="post-image">
-                <?= $page->other_collaborators_intro()->kirbytext() ?>
-            </div> -->
-        <div class="post">
-            <?= $page->other_collaborators_intro()->kirbytext() ?>
-            <p><?= $page->other_collaborators_list()->kirbytext() ?></p>
-            <div class="opportunity">
+        <div class="about-human">
+            <div class="post">
+                <h4>Guest Curators</h4>
+                <?= $page->guest_curators_list()->kirbytext() ?>
+            </div>
+        </div>
+        <div class="about-human">
+            <div class="post">
+                <h4>Curatorial Assistants</h4>
+                <?= $page->curatorial_assistants_list()->kirbytext() ?>
             </div>
         </div>
     </div>
-    </div>
-    <br><br>
     <h2>Current Exhibition</h2>
     <div class="opportunities">
         <div class="opportunity">
@@ -116,7 +114,7 @@
         </div>
     </div>
 
-    <h2>Archive</h2>
+    <h2>Exhibition Archive</h2>
     <div class="opportunity">
         <!-- List Previous -->
         <div class="opportunities">

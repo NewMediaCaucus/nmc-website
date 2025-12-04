@@ -6,8 +6,6 @@
 
 <!-- content section -->
 <main>
-    <br><br>
-    <!-- grab title from opportunities.txt -->
     <div class="opportunities-title">
         <h1><?= $page->title() ?></h1>
     </div>
@@ -20,98 +18,102 @@
     ?>
     <!-- List Current -->
     <!-- List First Host, Second Host, Other Collaborators -->
-    <div class="opportunity">
-        <div class="opportunities">
+    <div class="about">
+        <div class="about-human">
             <div class="post-image">
                 <?php if ($promo = $page->host1_headshot()->toFile()): ?>
                     <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host1_headshot_alt() ?>">
                 <?php endif ?>
             </div>
             <div class="post">
-                <p><?= $page->host1_name()->kirbytext() ?></p>
+                <h3><?= $page->host1_name()->html() ?></h3>
                 <p><?= $page->host1_title()->kirbytext() ?></p>
-                <p><?= $page->host1_bio()->kirbytext() ?></p>
+                <?php if ($page->host1_bio_link()->isNotEmpty()): ?>
+                    <a href="<?= $page->host1_bio_link()->url() ?>" class="button">
+                        View Bio
+                    </a>
+                <?php endif ?>
             </div>
         </div>
 
-        <div class="opportunity">
-            <div class="opportunities">
-                <div class="post-image">
-                    <?php if ($promo = $page->host2_headshot()->toFile()): ?>
-                        <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host2_headshot_alt() ?>">
-                    <?php endif ?>
-                </div>
-                <div class="post">
-                    <p><?= $page->host2_name()->kirbytext() ?></p>
+        <div class="about-human">
+            <div class="post-image">
+                <?php if ($promo = $page->host2_headshot()->toFile()): ?>
+                    <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host2_headshot_alt() ?>">
+                <?php endif ?>
+            </div>
+            <div class="post">
+                <h3><?= $page->host2_name()->html() ?></h3>
 
-                    <p><?= $page->host2_title()->kirbytext() ?></p>
-                    <p><?= $page->host2_bio()->kirbytext() ?></p>
-                </div>
+                <p><?= $page->host2_title()->kirbytext() ?></p>
+                <?php if ($page->host2_bio_link()->isNotEmpty()): ?>
+                    <a href="<?= $page->host2_bio_link()->url() ?>" class="button">
+                        View Bio
+                    </a>
+                <?php endif ?>
             </div>
         </div>
+    </div>
 
+    <div class="about-human">
+        <!-- <div class="post-image">
+                <?= $page->other_collaborators_intro()->kirbytext() ?>
+            </div> -->
+        <div class="post">
+            <?= $page->other_collaborators_intro()->kirbytext() ?>
+            <p><?= $page->other_collaborators_list()->kirbytext() ?></p>
+            <div class="opportunity">
+            </div>
+        </div>
+    </div>
+    </div>
+    <br><br>
+    <h2>Current Exhibition</h2>
+    <div class="opportunities">
         <div class="opportunity">
-            <div class="opportunities">
-                <div class="post-image">
-                    <?= $page->other_collaborators_intro()->kirbytext() ?>
-                </div>
-                <div class="post">
-                    <?= $page->other_collaborators_intro()->kirbytext() ?>
-                    <p><?= $page->other_collaborators_list()->kirbytext() ?></p>
-                    <div class="opportunity">
+
+            <?php foreach ($current_shows as $current): ?>
+                <!-- There can be moments when an opp has no image. If so, skip it. -->
+                <!-- <?php if ($image = $current->promo_image()): ?> -->
+                <?php $image = $current->image() ?>
+                <div class="opportunity">
+                    <div class="post-image">
+                        <a href="<?= $current->url() ?>">
+                            <?php if ($promo = $current->promo_image()->toFile()): ?>
+                                <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $current->promo_image_alt() ?>">
+                            <?php endif ?>
+                        </a>
+                    </div>
+                    <div class="post">
+                        <a href="<?= $current->url() ?>">
+                            <!-- pull from sections defined in each opportunity text file -->
+                            <h2><?= $current->Title() ?></h2>
+                        </a>
+
+                        <ul class="header-footer-gallery-ul">
+                            <li>
+                                <?php if ($current->link()->isNotEmpty()): ?>
+                                    <?= $current->link()->kirbytext() ?></p>
+                                <?php endif ?>
+                            </li>
+
+                            <li class="artist_name">
+                                <?= $current->artist_name()->kirbytext() ?>
+                            </li>
+                        </ul>
+
+                        <!-- Display short description -->
+                        <p class="description"><?= $current->short_description()->kirbytext() ?></p>
+                        <!-- Read More Button -->
+                        <a href="<?= $current->url() ?>" class="button">
+                            View Details
+                        </a>
                     </div>
                 </div>
-            </div>
+                <!-- <?php endif ?> -->
+            <?php endforeach ?>
 
-            <h2>Current Exhibition</h2>
-            <div class="opportunity">
-                <div class="opportunities">
-                    <?php foreach ($current_shows as $current): ?>
-                        <!-- There can be moments when an opp has no image. If so, skip it. -->
-                        <!-- <?php if ($image = $current->promo_image()): ?> -->
-                        <?php $image = $current->image() ?>
-                        <div class="opportunity">
-                            <div class="post-image">
-                                <a href="<?= $current->url() ?>">
-                                    <?php if ($promo = $current->promo_image()->toFile()): ?>
-                                        <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $current->promo_image_alt() ?>">
-                                    <?php endif ?>
-                                </a>
-                            </div>
-                            <div class="post">
-                                <a href="<?= $current->url() ?>">
-                                    <!-- pull from sections defined in each opportunity text file -->
-                                    <h2><?= $current->Title() ?></h2>
-                                </a>
-
-                                <ul class="header-footer-gallery-ul">
-                                    <li>
-                                        <?php if ($current->link()->isNotEmpty()): ?>
-                                            <?= $current->link()->kirbytext() ?></p>
-                                        <?php endif ?>
-                                    </li>
-
-                                    <li class="artist_name">
-                                        <?= $current->artist_name()->kirbytext() ?>
-                                    </li>
-                                </ul>
-
-                                <!-- Display short description -->
-                                <p class="description"><?= $current->short_description()->kirbytext() ?></p>
-                                <!-- Read More Button -->
-                                <a href="<?= $current->url() ?>" class="button">
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-                        <!-- <?php endif ?> -->
-                    <?php endforeach ?>
-                </div>
-            </div>
         </div>
-    </div>
-    </div>
-    </div>
     </div>
 
     <h2>Archive</h2>

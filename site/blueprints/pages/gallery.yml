@@ -18,21 +18,11 @@ columns:
             type: text
             required: false
             help: Curator, Podcast Co-Host, etc.
-          host1_bio:
-            label: First Host Bio
-            type: textarea
+          host1_bio_link:
+            label: First Host Bio Link
+            type: url
             required: false
-            minlength: 100
-            maxlength: 350
-            help: 100-350 characters.
-            buttons:
-              - bold
-              - italic
-              - link
-              - email
-              - code
-              - ul
-              - ol
+            help: "Remember http:// or https:// such as http://robray.net"
           host1_headshot:
             label: First Host Headshot Image
             type: files
@@ -57,21 +47,11 @@ columns:
             type: text
             required: false
             help: Curator, Podcast Co-Host, etc.
-          host2_bio:
-            label: Second Host Bio
-            type: textarea
+          host2_bio_link:
+            label: Second Host Bio Link
+            type: url
             required: false
-            minlength: 100
-            maxlength: 350
-            help: 100-350 characters.
-            buttons:
-              - bold
-              - italic
-              - link
-              - email
-              - code
-              - ul
-              - ol
+            help: "Remember http:// or https:// such as http://robray.net"
           host2_headshot:
             label: Second Host Headshot Image
             type: files

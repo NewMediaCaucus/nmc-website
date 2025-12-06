@@ -5,6 +5,161 @@ columns:
   left:
     width: 1/2
     sections:
+      hosts_and_collaborators:
+        type: fields
+        label: Hosts and Collaborators
+        fields:
+          host1_name:
+            label: First Host Name
+            type: text
+            required: false
+          host1_title:
+            label: First Host Title
+            type: text
+            required: false
+            help: Curator, Podcast Co-Host, etc.
+          host1_bio_link:
+            label: First Host Bio Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+          host1_headshot:
+            label: First Host Headshot Image
+            type: files
+            required: false
+            max: 1
+            empty: No image yet
+            help: 960 minimum, 3840 maximum pixel width. Remember to update alt text when replacing image files. 
+          host1_headshot_alt:
+            label: First Host Headshot Image Alt Text
+            required: true
+            type: textarea
+            buttons: false
+            help: 20-400 characters. Check out these <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for more info.
+            minlength: 20
+            maxlength: 400
+          host2_name:
+            label: Second Host Name
+            type: text
+            required: false
+          host2_title:
+            label: Second Host Title
+            type: text
+            required: false
+            help: Curator, Podcast Co-Host, etc.
+          host2_bio_link:
+            label: Second Host Bio Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+          host2_headshot:
+            label: Second Host Headshot Image
+            type: files
+            required: false
+            max: 1
+            empty: No image yet
+            help: 960 minimum, 3840 maximum pixel width. Remember to update alt text when replacing image files. 
+          host2_headshot_alt:
+            label: Second Host Headshot Image Alt Text
+            required: true
+            type: textarea
+            buttons: false
+            help: 20-400 characters. Check out these <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for more info.
+            minlength: 20
+            maxlength: 400
+          guest_curators_list:
+            label: Guest Curators
+            type: textarea
+            required: false
+            minlength: 40
+            maxlength: 960
+            help: 40-960 characters.
+            buttons:
+              - bold
+              - italic
+              - link
+              - ol
+          curatorial_assistants_list:
+            label: Curatorial Assistants
+            type: textarea
+            required: false
+            minlength: 40
+            maxlength: 960
+            help: 40-960 characters.
+            buttons:
+              - bold
+              - italic
+              - link
+              - ol
+      header_footer_presents:
+        type: fields
+        label: Header/Footer Presentation
+        fields:
+          header_footer_presents_promo_image:
+            label: Header/Footer Presents Promo Image
+            type: files
+            required: false
+            max: 1
+            empty: No image yet
+            help: This square image promotes this gallery in the H/F archive page. Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
+          header_footer_presents_promo_image_alt:
+            label: Header/Footer Presents Promo Image Alt Text
+            required: true
+            type: textarea
+            buttons: false
+            help: <b>"Alt Text"</b> helps our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.
+            minlength: 20
+            maxlength: 400
+          header_footer_presents_promo_text:
+            label: Podcast Promo Text
+            type: textarea
+            required: false
+            minlength: 40
+            maxlength: 960
+            help: 40-960 characters.
+            buttons:
+              - bold
+              - italic
+              - link
+              - ol
+          header_footer_presents_apple_podcasts_link:
+            label: Apple Podcasts Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+          header_footer_presents_spotify_link:
+            label: Spotify Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+          header_footer_presents_amazon_music_link:
+            label: Amazon Music Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+          header_footer_presents_youtube_link:
+            label: YouTube Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+          header_footer_presents_overcast_link:
+            label: Overcast Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+          header_footer_presents_pocketcasts_link:
+            label: Pocketcasts Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+
+  right:
+    width: 1/2
+    sections:
+      listed:
+        extends: sections/gallery
+        label: Published
+        status: listed
       drafts:
         extends: sections/gallery
         label: Drafts
@@ -14,11 +169,3 @@ columns:
         extends: sections/gallery
         label: In Review
         status: unlisted
-
-  right:
-    width: 1/2
-    sections:
-      listed:
-        extends: sections/gallery
-        label: Published
-        status: listed

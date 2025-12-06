@@ -6,8 +6,6 @@
 
 <!-- content section -->
 <main>
-    <br><br>
-    <!-- grab title from opportunities.txt -->
     <div class="opportunities-title">
         <h1><?= $page->title() ?></h1>
     </div>
@@ -18,86 +16,213 @@
     $current_shows = $shows->filterBy('category', 'current');
     $previous_shows = $shows->filterBy('category', 'previous');
     ?>
-    <h2>Current</h2>
     <!-- List Current -->
-    <div class="opportunities">
-        <?php foreach ($current_shows as $current): ?>
-            <!-- There can be moments when an opp has no image. If so, skip it. -->
-            <!-- <?php if ($image = $current->promo_image()): ?> -->
-            <?php $image = $current->image() ?>
-            <div class="opportunity">
-                <div class="post-image">
-                    <a href="<?= $current->url() ?>">
-                        <?php if ($promo = $current->promo_image()->toFile()): ?>
-                            <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $current->promo_image_alt() ?>">
+    <!-- List First Host, Second Host, Other Collaborators -->
+    <div class="about">
+        <div class="about-human">
+            <div class="post-image">
+                <?php if ($page->host1_bio_link()->isNotEmpty()): ?>
+                    <?php if ($promo = $page->host1_headshot()->toFile()): ?>
+                        <a href="<?= $page->host1_bio_link()->url() ?>">
+                            <!-- grab first image in project folder (alphabetically) -->
+                            <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host1_headshot_alt() ?>">
+                        </a>
+                    <?php else: ?>
+                        <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host1_headshot_alt() ?>">
+                    <?php endif ?>
+                <?php endif ?>
+            </div>
+            <div class="post">
+                <h3><?= $page->host1_name()->html() ?></h3>
+                <p><?= $page->host1_title()->kirbytext() ?></p>
+                <?php if ($page->host1_bio_link()->isNotEmpty()): ?>
+                    <a href="<?= $page->host1_bio_link()->url() ?>" class="button">
+                        View Bio
+                    </a>
+                <?php endif ?>
+            </div>
+        </div>
+
+        <div class="about-human">
+            <div class="post-image">
+                <?php if ($page->host2_bio_link()->isNotEmpty()): ?>
+                    <?php if ($promo = $page->host2_headshot()->toFile()): ?>
+                        <a href="<?= $page->host2_bio_link()->url() ?>">
+                            <!-- grab first image in project folder (alphabetically) -->
+                            <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host2_headshot_alt() ?>">
+                        </a>
+                    <?php else: ?>
+                        <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host2_headshot_alt() ?>">
+                    <?php endif ?>
+                <?php endif ?>
+            </div>
+            <div class="post">
+                <h3><?= $page->host2_name()->html() ?></h3>
+
+                <p><?= $page->host2_title()->kirbytext() ?></p>
+                <?php if ($page->host2_bio_link()->isNotEmpty()): ?>
+                    <a href="<?= $page->host2_bio_link()->url() ?>" class="button">
+                        View Bio
+                    </a>
+                <?php endif ?>
+            </div>
+        </div>
+    </div>
+    <h2>H/F Gallery Presents</h2>
+    <div class="about">
+        <div class="about-human">
+            <div class="post-image">
+                <?php if ($page->header_footer_presents_apple_podcasts_link()->isNotEmpty()): ?>
+                    <a href="<?= $page->header_footer_presents_apple_podcasts_link()->url() ?>">
+                        <?php if ($promo = $page->header_footer_presents_promo_image()->toFile()): ?>
+                            <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->header_footer_presents_promo_image_alt() ?>">
                         <?php endif ?>
                     </a>
-                </div>
-                <div class="post">
-                    <a href="<?= $current->url() ?>">
-                        <!-- pull from sections defined in each opportunity text file -->
-                        <h2><?= $current->Title() ?></h2>
-                    </a>
+                <?php endif ?>
+            </div>
+            <div class="post">
+                <h4>Our Podcast</h4>
+                <p><?= $page->header_footer_presents_promo_text()->kirbytext() ?></p>
+            </div>
+        </div>
+        <div class="about-human">
+            <div class="post">
+                <h4>Subscribe</h4>
+                <ul>
+                    <li>
+                        <a href="<?= $page->header_footer_presents_apple_podcasts_link()->url() ?>">
+                            Apple Podcasts
+                        </a>
+                    </li>
 
-                    <ul class="header-footer-gallery-ul">
-                        <li>
-                            <?php if ($current->link()->isNotEmpty()): ?>
-                                <?= $current->link()->kirbytext() ?></p>
+                    <li>
+                        <a href="<?= $page->header_footer_presents_spotify_link()->url() ?>">
+                            Spotify
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= $page->header_footer_presents_amazon_music_link()->url() ?>">
+                            Amazon Music
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= $page->header_footer_presents_youtube_link()->url() ?>">
+                            YouTube
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= $page->header_footer_presents_overcast_link()->url() ?>">
+                            Overcast
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= $page->header_footer_presents_pocketcasts_link()->url() ?>">
+                            PocketCasts
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h2>Guest Curators & Curatorial Assistants</h2>
+    <div class="about">
+        <div class="about-human">
+            <div class="post">
+                <h4>Guest Curators</h4>
+                <?= $page->guest_curators_list()->kirbytext() ?>
+            </div>
+        </div>
+        <div class="about-human">
+            <div class="post">
+                <h4>Curatorial Assistants</h4>
+                <?= $page->curatorial_assistants_list()->kirbytext() ?>
+            </div>
+        </div>
+    </div>
+    <h2>Current Exhibition</h2>
+    <div class="opportunities">
+        <div class="opportunity">
+
+            <?php foreach ($current_shows as $current): ?>
+                <!-- There can be moments when an opp has no image. If so, skip it. -->
+                <!-- <?php if ($image = $current->promo_image()): ?> -->
+                <?php $image = $current->image() ?>
+                <div class="opportunity">
+                    <div class="post-image">
+                        <a href="<?= $current->url() ?>">
+                            <?php if ($promo = $current->promo_image()->toFile()): ?>
+                                <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $current->promo_image_alt() ?>">
                             <?php endif ?>
-                        </li>
+                        </a>
+                    </div>
+                    <div class="post">
+                        <a href="<?= $current->url() ?>">
+                            <!-- pull from sections defined in each opportunity text file -->
+                            <h3><?= $current->Title() ?></h3>
+                        </a>
 
-                        <li class="artist_name">
-                            <?= $current->artist_name()->kirbytext() ?>
-                        </li>
-                    </ul>
+                        <ul class="header-footer-gallery-ul">
+                            <li>
+                                <?php if ($current->link()->isNotEmpty()): ?>
+                                    <?= $current->link()->kirbytext() ?></p>
+                                <?php endif ?>
+                            </li>
 
-                    <!-- Display short description -->
-                    <p class="description"><?= $current->short_description()->kirbytext() ?></p>
-                    <!-- Read More Button -->
-                    <a href="<?= $current->url() ?>" class="button">
-                        View Details
-                    </a>
+                            <li class="artist_name">
+                                <?= $current->artist_name()->kirbytext() ?>
+                            </li>
+                        </ul>
+
+                        <!-- Display short description -->
+                        <p class="description"><?= $current->short_description()->kirbytext() ?></p>
+                        <!-- Read More Button -->
+                        <a href="<?= $current->url() ?>" class="button">
+                            View Details
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <!-- <?php endif ?> -->
-        <?php endforeach ?>
+                <!-- <?php endif ?> -->
+            <?php endforeach ?>
+
+        </div>
     </div>
 
-    <h2>Previous</h2>
-    <!-- List Previous -->
-    <div class="opportunities">
-        <?php foreach ($previous_shows as $previous): ?>
-            <!-- There can be moments when an opp has no image. If so, skip it. -->
-            <!-- <?php if ($image = $previous->promo_image()): ?> -->
-            <?php $image = $previous->image() ?>
-            <div class="opportunity">
-                <div class="post-image">
-                    <a href="<?= $previous->url() ?>">
-                        <?php if ($promo = $previous->promo_image()->toFile()): ?>
-                            <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $previous->promo_image_alt() ?>">
-                        <?php endif ?>
-                    </a>
+    <h2>Exhibition Archive</h2>
+    <div class="opportunity">
+        <!-- List Previous -->
+        <div class="opportunities">
+            <?php foreach ($previous_shows as $previous): ?>
+                <!-- There can be moments when an opp has no image. If so, skip it. -->
+                <!-- <?php if ($image = $previous->promo_image()): ?> -->
+                <?php $image = $previous->image() ?>
+                <div class="opportunity">
+                    <div class="post-image">
+                        <a href="<?= $previous->url() ?>">
+                            <?php if ($promo = $previous->promo_image()->toFile()): ?>
+                                <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $previous->promo_image_alt() ?>">
+                            <?php endif ?>
+                        </a>
+                    </div>
+                    <div class="post">
+                        <a href="<?= $previous->url() ?>">
+                            <!-- pull from sections defined in each opportunity text file -->
+                            <h3><?= $previous->Title() ?></h3>
+                        </a>
+                        <!-- Display artist name -->
+                        <p class="artist_name"><?= $previous->artist_name()->kirbytext() ?></p>
+                        <!-- Display short description -->
+                        <!-- Display short description -->
+                        <p class="description"><?= $previous->short_description()->kirbytext() ?></p>
+                        <!-- Read More Button -->
+                        <a href="<?= $previous->url() ?>" class="button">
+                            View Details
+                        </a>
+                    </div>
                 </div>
-                <div class="post">
-                    <a href="<?= $previous->url() ?>">
-                        <!-- pull from sections defined in each opportunity text file -->
-                        <h2><?= $previous->Title() ?></h2>
-                    </a>
-                    <!-- Display artist name -->
-                    <p class="artist_name"><?= $previous->artist_name()->kirbytext() ?></p>
-                    <!-- Display short description -->
-                    <!-- Display short description -->
-                    <p class="description"><?= $previous->short_description()->kirbytext() ?></p>
-                    <!-- Read More Button -->
-                    <a href="<?= $previous->url() ?>" class="button">
-                        View Details
-                    </a>
-                </div>
-            </div>
-            <!-- <?php endif ?> -->
-        <?php endforeach ?>
-    </div>
-    <br><br>
+                <!-- <?php endif ?> -->
+            <?php endforeach ?>
+        </div>
+        <br><br>
 </main>
 
 <!-- bottom section -->

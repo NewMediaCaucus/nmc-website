@@ -91,6 +91,67 @@ columns:
               - italic
               - link
               - ol
+      header_footer_presents:
+        type: fields
+        label: Header/Footer Presentation
+        fields:
+          header_footer_presents_promo_image:
+            label: Header/Footer Presents Promo Image
+            type: files
+            required: false
+            max: 1
+            empty: No image yet
+            help: This square image promotes this gallery in the H/F archive page. Image replacements on Public posts go live immediately. 💡Remember to update the alt text too!
+          header_footer_presents_promo_image_alt:
+            label: Header/Footer Presents Promo Image Alt Text
+            required: true
+            type: textarea
+            buttons: false
+            help: <b>"Alt Text"</b> helps our visually impaired readers. Check out some <a href="https://accessibility.huit.harvard.edu/describe-content-images" target="_blank">best practices</a> for writing them well.
+            minlength: 20
+            maxlength: 400
+          header_footer_presents_promo_text:
+            label: Podcast Promo Text
+            type: textarea
+            required: false
+            minlength: 40
+            maxlength: 960
+            help: 40-960 characters.
+            buttons:
+              - bold
+              - italic
+              - link
+              - ol
+          header_footer_presents_apple_podcasts_link:
+            label: Apple Podcasts Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+          header_footer_presents_spotify_link:
+            label: Spotify Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+          header_footer_presents_amazon_music_link:
+            label: Amazon Music Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+          header_footer_presents_youtube_link:
+            label: YouTube Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+          header_footer_presents_overcast_link:
+            label: Overcast Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
+          header_footer_presents_pocketcasts_link:
+            label: Pocketcasts Link
+            type: url
+            required: false
+            help: "Remember http:// or https:// such as http://robray.net"
 
   right:
     width: 1/2

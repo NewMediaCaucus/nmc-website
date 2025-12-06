@@ -21,8 +21,15 @@
     <div class="about">
         <div class="about-human">
             <div class="post-image">
-                <?php if ($promo = $page->host1_headshot()->toFile()): ?>
-                    <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host1_headshot_alt() ?>">
+                <?php if ($page->host1_bio_link()->isNotEmpty()): ?>
+                    <?php if ($promo = $page->host1_headshot()->toFile()): ?>
+                        <a href="<?= $page->host1_bio_link()->url() ?>">
+                            <!-- grab first image in project folder (alphabetically) -->
+                            <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host1_headshot_alt() ?>">
+                        </a>
+                    <?php else: ?>
+                        <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host1_headshot_alt() ?>">
+                    <?php endif ?>
                 <?php endif ?>
             </div>
             <div class="post">
@@ -38,8 +45,15 @@
 
         <div class="about-human">
             <div class="post-image">
-                <?php if ($promo = $page->host2_headshot()->toFile()): ?>
-                    <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host2_headshot_alt() ?>">
+                <?php if ($page->host2_bio_link()->isNotEmpty()): ?>
+                    <?php if ($promo = $page->host2_headshot()->toFile()): ?>
+                        <a href="<?= $page->host2_bio_link()->url() ?>">
+                            <!-- grab first image in project folder (alphabetically) -->
+                            <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host2_headshot_alt() ?>">
+                        </a>
+                    <?php else: ?>
+                        <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->host2_headshot_alt() ?>">
+                    <?php endif ?>
                 <?php endif ?>
             </div>
             <div class="post">
@@ -53,6 +67,65 @@
                 <?php endif ?>
             </div>
         </div>
+    </div>
+    <h2>H/F Gallery Presents</h2>
+    <div class="about">
+        <div class="about-human">
+            <div class="post-image">
+                <?php if ($page->header_footer_presents_apple_podcasts_link()->isNotEmpty()): ?>
+                    <a href="<?= $page->header_footer_presents_apple_podcasts_link()->url() ?>">
+                        <?php if ($promo = $page->header_footer_presents_promo_image()->toFile()): ?>
+                            <img src="<?= $promo->crop(468)->url() ?>" alt="<?= $page->header_footer_presents_promo_image_alt() ?>">
+                        <?php endif ?>
+                    </a>
+                <?php endif ?>
+            </div>
+            <div class="post">
+                <h4>Our Podcast</h4>
+                <p><?= $page->header_footer_presents_promo_text()->kirbytext() ?></p>
+            </div>
+        </div>
+        <div class="about-human">
+            <div class="post">
+                <h4>Subscribe</h4>
+                <ul>
+                    <li>
+                        <a href="<?= $page->header_footer_presents_apple_podcasts_link()->url() ?>">
+                            Apple Podcasts
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="<?= $page->header_footer_presents_spotify_link()->url() ?>">
+                            Spotify
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= $page->header_footer_presents_amazon_music_link()->url() ?>">
+                            Amazon Music
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= $page->header_footer_presents_youtube_link()->url() ?>">
+                            YouTube
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= $page->header_footer_presents_overcast_link()->url() ?>">
+                            Overcast
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= $page->header_footer_presents_pocketcasts_link()->url() ?>">
+                            PocketCasts
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h2>Guest Curators & Curatorial Assistants</h2>
+    <div class="about">
         <div class="about-human">
             <div class="post">
                 <h4>Guest Curators</h4>
@@ -85,7 +158,7 @@
                     <div class="post">
                         <a href="<?= $current->url() ?>">
                             <!-- pull from sections defined in each opportunity text file -->
-                            <h2><?= $current->Title() ?></h2>
+                            <h3><?= $current->Title() ?></h3>
                         </a>
 
                         <ul class="header-footer-gallery-ul">
@@ -133,7 +206,7 @@
                     <div class="post">
                         <a href="<?= $previous->url() ?>">
                             <!-- pull from sections defined in each opportunity text file -->
-                            <h2><?= $previous->Title() ?></h2>
+                            <h3><?= $previous->Title() ?></h3>
                         </a>
                         <!-- Display artist name -->
                         <p class="artist_name"><?= $previous->artist_name()->kirbytext() ?></p>

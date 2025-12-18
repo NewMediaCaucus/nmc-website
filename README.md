@@ -44,12 +44,15 @@ The dev team should install:
 - php composer (used to update kirby and install/update plugins into the vendor folder)
 
 Set up local repository:
+
 - Clone the nmc-website repo at C://xampp/htdocs (win)
+
 - Clone the nmc-website-content repo. See the [README-content-folder.md](https://github.com/NewMediaCaucus/nmc-website/blob/dev/README-content-folder.md) for how-to
 - Changes focus on site operation and style, not content
 - All changes should have detailed notes
 
 Still needed:
+
 - Solution to back up content and media folders to offline storage
 
 ## Further Reading

@@ -2,7 +2,7 @@
 
 Always name a feature branch "feature" plus description
 
-# nmc-website
+# nmc-website newmediacaucus.org
 
 1. [Important File Locations](#important-file-locations)
 2. [Workflow Proposal](#workflow-proposal)

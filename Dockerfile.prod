@@ -1,5 +1,5 @@
-# Use a smaller Ubuntu base image
-FROM ubuntu:22.04
+# Use a smaller Ubuntu base image (24.04 → PHP 8.3)
+FROM ubuntu:24.04
 
 # Set timezone
 ENV TZ=Europe/Berlin
@@ -40,6 +40,9 @@ RUN a2ensite default-ssl
 
 # Copy virtual host configuration from current path onto existing 000-default.conf
 COPY default.prod.conf /etc/apache2/sites-available/000-default.conf
+
+# Copy custom PHP config (PHP 8.3 on Ubuntu 24.04; volume mount in deploy overrides at runtime)
+COPY custom-php.prod.ini /etc/php/8.3/apache2/conf.d/custom-php.ini
 
 # Remove default content (existing index.html)
 RUN rm /var/www/html/*

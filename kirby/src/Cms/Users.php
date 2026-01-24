@@ -19,6 +19,9 @@ use Kirby\Uuid\HasUuids;
  * @link      https://getkirby.com
  * @copyright Bastian Allgeier
  * @license   https://getkirby.com/license
+ *
+ * @template TUser of \Kirby\Cms\User
+ * @extends \Kirby\Cms\Collection<TUser>
  */
 class Users extends Collection
 {
@@ -39,7 +42,7 @@ class Users extends Collection
 	 * an entire second collection to the
 	 * current collection
 	 *
-	 * @param \Kirby\Cms\Users|\Kirby\Cms\User|string $object
+	 * @param \Kirby\Cms\Users<TUser>|TUser|string $object
 	 * @return $this
 	 * @throws \Kirby\Exception\InvalidArgumentException When no `User` or `Users` object or an ID of an existing user is passed
 	 */
@@ -47,23 +50,25 @@ class Users extends Collection
 	{
 		// add a users collection
 		if ($object instanceof self) {
-			$this->data = array_merge($this->data, $object->data);
+			$this->data = [...$this->data, ...$object->data];
 
-			// add a user by id
+		// add a user by id
 		} elseif (
 			is_string($object) === true &&
 			$user = App::instance()->user($object)
 		) {
 			$this->__set($user->id(), $user);
 
-			// add a user object
+		// add a user object
 		} elseif ($object instanceof User) {
 			$this->__set($object->id(), $object);
 
-			// give a useful error message on invalid input;
-			// silently ignore "empty" values for compatibility with existing setups
+		// give a useful error message on invalid input;
+		// silently ignore "empty" values for compatibility with existing setups
 		} elseif (in_array($object, [null, false, true], true) !== true) {
-			throw new InvalidArgumentException('You must pass a Users or User object or an ID of an existing user to the Users collection');
+			throw new InvalidArgumentException(
+				message: 'You must pass a Users or User object or an ID of an existing user to the Users collection'
+			);
 		}
 
 		return $this;
@@ -105,6 +110,7 @@ class Users extends Collection
 	/**
 	 * Finds a user in the collection by ID or email address
 	 * @internal Use `$users->find()` instead
+	 * @return TUser|null
 	 */
 	public function findByKey(string $key): User|null
 	{

@@ -142,6 +142,11 @@
         <img src="<?= url('assets/icons/ig.png') ?>" alt="Instagram" width="18" height="18">
       </a>
     </div>
+    <div class="social-icon">
+      <a href="https://linktr.ee/newmediacaucus" target="_blank">
+        <img src="<?= url('assets/icons/linktree.png') ?>" alt="Instagram" width="18" height="18">
+      </a>
+    </div>
     <div class="copyright">Copyright © <?= date('Y') ?> New Media Caucus
     </div>
   </div>

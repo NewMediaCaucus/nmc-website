@@ -12,7 +12,7 @@ Always name a feature branch "feature" plus description
 ## Important File Locations
 
 - Content
-  - This folder is managed under a seperate repo. See `[README-content-folder.md](https://github.com/NewMediaCaucus/nmc-website/blob/dev/README-content-folder.md)` for more information.
+  - This folder is managed under a separate repo. See `[README-content-folder.md](https://github.com/NewMediaCaucus/nmc-website/blob/dev/README-content-folder.md)` for more information.
 - Kirby
   - Leave this alone unless updating the Kirby CMS
 - Media

@@ -19,6 +19,11 @@ services:
       - ./id.env
     depends_on:
       - certbot
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     networks:
       - webnet
 
@@ -38,6 +43,11 @@ services:
       - DOMAIN=newmediacaucus.org
       - EMAIL=admin@newmediacaucus.org
     restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     networks:
       - webnet
 

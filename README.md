@@ -6,8 +6,9 @@ Always name a feature branch "feature" plus description
 
 1. [Important File Locations](#important-file-locations)
 2. [Workflow Proposal](#workflow-proposal)
-3. [Further Reading](#further-reading)
-4. [Rolling Back](#rolling-back)
+3. [Production log limits](#production-log-limits)
+4. [Further Reading](#further-reading)
+5. [Rolling Back](#rolling-back)
 
 ## Important File Locations
 
@@ -54,6 +55,21 @@ Set up local repository:
 Still needed:
 
 - Solution to back up content and media folders to offline storage
+
+## Production log limits
+
+Production is configured so container and application logs do not fill disk.
+
+**Docker container logs** (stdout/stderr, i.e. `docker logs`) are limited by the logging driver:
+
+- **docker-compose.prod.yml** and **deploy-prod.sh** use the `json-file` driver with `max-size: 10m` and `max-file: 3` for both the webserver and certbot containers. Docker keeps at most three 10 MB log files per container.
+
+**Application log files** (Apache, PHP, Certbot) in `apache-logs/`, `php-logs/`, and `letsencrypt-logs/` are rotated on the **prod server** using logrotate:
+
+- The config is in **logrotate.prod.conf** (rotate after 10M, keep 5 rotated files, compress, safe for open files).
+- On the prod server, install it once from the repo root:
+  - `sudo cp logrotate.prod.conf /etc/logrotate.d/nmc-website`
+- If the app is not in `/home/nmcdev/nmc-website`, edit the paths at the top of `logrotate.prod.conf`. Logrotate runs via cron (typically daily); no container restart needed.
 
 ## Further Reading
 

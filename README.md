@@ -27,7 +27,7 @@ Always name a feature branch "feature" plus description
  
 ## Workflow Proposal
 
-Kirby relies on four main folders: kirby, media, site, and content. In order to keep our repo from getting too big, we'll use .gitignore to exclude the media and content folders (with one or two individual file exceptions).
+Kirby relies on four main folders: kirby, media, site, and content. To keep our repo from getting too big, we'll use .gitignore to exclude the media and content folders (with one or two individual-file exceptions).
 
 The dev team should install:
 

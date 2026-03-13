@@ -28,6 +28,9 @@ sudo docker run -d \
   --hostname newmediacaucus.org \
   -p 80:80 \
   -p 443:443 \
+  --log-driver json-file \
+  --log-opt max-size=10m \
+  --log-opt max-file=3 \
   -v /home/nmcdev/nmc-website:/var/www/html/ \
   -v ./custom-php.prod.ini:/etc/php/8.3/apache2/conf.d/custom-php.ini \
   -v ./php-logs:/var/log/php-logs \
@@ -61,6 +64,9 @@ fi
 echo "Starting certbot container for automatic renewal..."
 sudo docker run -d \
   --name certbot \
+  --log-driver json-file \
+  --log-opt max-size=10m \
+  --log-opt max-file=3 \
   -v /etc/letsencrypt:/etc/letsencrypt \
   -v ./letsencrypt-logs:/var/log/letsencrypt \
   -v /var/run/docker.sock:/var/run/docker.sock \

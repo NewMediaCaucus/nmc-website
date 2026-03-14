@@ -17,7 +17,7 @@ Always name a feature branch "feature" plus description
 - Kirby
   - Leave this alone unless updating the Kirby CMS
 - Media
-  - Leave this alone too, contents are auto-generated
+  - Leave this alone, too. Contents are auto-generated
 - Site
    - Blueprints
      - Controls how the panel operates

@@ -70,7 +70,7 @@ Production is configured so container and application logs do not fill disk.
 - On the prod server, install it once from the repo root:
   - `sudo cp logrotate.prod.conf /etc/logrotate.d/nmc-website`
 - If the app is not in `/home/nmcdev/nmc-website`, edit the paths at the top of `logrotate.prod.conf`. Logrotate runs via cron (typically daily); no container restart needed.
-
+ 
 ## Further Reading
 
 1. [Git large file storage info](https://docs.github.com/en/repositories/working-with-files/managing-large-files/collaboration-with-git-large-file-storage)

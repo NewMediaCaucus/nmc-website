@@ -60,7 +60,7 @@ Still needed:
 
 Production is configured so container and application logs do not fill disk.
 
-**Docker container logs** (stdout/stderr, i.e. `docker logs`) are limited by the logging driver:
+**Docker container logs** (stdout/stderr, i.e., `docker logs`) are limited by the logging driver:
 
 - **docker-compose.prod.yml** and **deploy-prod.sh** use the `json-file` driver with `max-size: 10m` and `max-file: 3` for both the webserver and certbot containers. Docker keeps at most three 10 MB log files per container.
 

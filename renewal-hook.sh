@@ -1,25 +1,27 @@
 #!/bin/bash
 
-# Certbot renewal hook script for NMC Website
-# This script is called by Certbot after successful certificate renewal
+# Certbot deploy-hook: reload Apache after a successful certificate renewal.
 
 set -e
 
-# Function to log messages
+WEB_CONTAINER="nmc-website-prod-container"
+
 log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Renewal Hook: $1"
 }
 
-# Log the renewal event
 log "Certificate renewal completed successfully"
-
-# Reload Apache to pick up the new certificates
 log "Reloading Apache to apply new certificates..."
-if docker exec nmc-website-prod-container apachectl -k graceful; then
-    log "Apache reloaded successfully"
-else
-    log "Warning: Failed to reload Apache"
-    exit 1
+
+if ! docker ps --format '{{.Names}}' 2>/dev/null | grep -qx "$WEB_CONTAINER"; then
+    log "Warning: $WEB_CONTAINER is not running; cannot reload Apache"
+    exit 0
 fi
 
-log "Renewal hook completed successfully" 
+if docker exec "$WEB_CONTAINER" apachectl -k graceful; then
+    log "Apache reloaded successfully"
+else
+    log "Warning: Failed to reload Apache (new certs are on disk; restart web container if needed)"
+fi
+
+log "Renewal hook completed"

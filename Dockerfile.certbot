@@ -1,9 +1,11 @@
 FROM certbot/certbot
 
 # Install additional tools we might need (Alpine uses apk)
+# docker-cli: required for deploy-hook to reload Apache via docker exec
 RUN apk add --no-cache \
     curl \
-    bash
+    bash \
+    docker-cli
 
 # Create a directory for our scripts
 RUN mkdir -p /scripts

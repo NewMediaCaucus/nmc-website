@@ -26,6 +26,7 @@ echo "Starting webserver container..."
 sudo docker run -d \
   --name nmc-website-prod-container \
   --hostname newmediacaucus.org \
+  --restart unless-stopped \
   -p 80:80 \
   -p 443:443 \
   --log-driver json-file \
@@ -64,6 +65,7 @@ fi
 echo "Starting certbot container for automatic renewal..."
 sudo docker run -d \
   --name certbot \
+  --restart unless-stopped \
   --log-driver json-file \
   --log-opt max-size=10m \
   --log-opt max-file=3 \

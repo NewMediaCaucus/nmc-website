@@ -6,6 +6,7 @@ services:
     image: nmc-website-prod
     container_name: nmc-website-prod-container
     hostname: newmediacaucus.org
+    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"

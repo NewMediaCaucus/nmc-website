@@ -76,20 +76,30 @@ sudo docker start certbot
 
 ## Automatic Renewal
 
-The Certbot container is configured to automatically renew certificates every 12 hours. The renewal process:
+The Certbot container checks for renewal every 12 hours. Renewal uses HTTP-01 (webroot), so **the webserver container must be running and serving port 80** for Let's Encrypt to validate the domain.
 
-1. Checks if certificates need renewal
-2. Renews certificates if necessary
-3. Reloads Apache to apply new certificates
+The renewal process:
+
+1. Checks if certificates are due for renewal (within 30 days of expiry)
+2. Renews certificates when due
+3. Runs a deploy-hook that reloads Apache in the webserver container
 4. Logs all activities
+
+### Requirements for renewal to succeed
+
+- `nmc-website-prod-container` must be **Up** (serves `/.well-known/acme-challenge/` on port 80)
+- Certbot container must have `/var/run/docker.sock` mounted (for Apache reload via deploy-hook)
+- Certbot image must include `docker-cli` (see `Dockerfile.certbot`)
+
+If the webserver is down (e.g. OOM-killed), renewal **will fail** and the certificate can expire even though the certbot container is still running.
 
 ### Renewal Process
 
 The renewal is handled by `certbot-renew.sh` which:
 
-- Runs `certbot renew` with force-renewal flag
-- Checks if certificates were actually renewed
-- Reloads Apache only if certificates were renewed
+- Runs `certbot renew` (only renews when due; no forced renewal on every cycle)
+- Uses `--deploy-hook` to reload Apache when certificates are actually renewed
+- Warns if the webserver container is not running
 - Provides detailed logging
 
 ### Monitoring Renewals
@@ -276,10 +286,28 @@ Certbot logs can grow large over time. Consider implementing log rotation:
 
 If certificates expire:
 
-1. Stop the certbot container
-2. Manually obtain new certificates
-3. Restart the certbot container
-4. Verify the website loads with HTTPS
+1. **Start the webserver** if it is down: `sudo docker start nmc-website-prod-container`
+2. **Rebuild certbot image** (if not yet deployed with docker-cli fix):  
+   `sudo docker build -f Dockerfile.certbot -t nmc-website-certbot .`
+3. **Renew and restart** (do not use `--force-renewal` unless rate limits allow):
+   ```bash
+   sudo docker start nmc-website-prod-container
+   sudo docker run --rm \
+     -v /etc/letsencrypt:/etc/letsencrypt \
+     -v /home/nmcdev/nmc-website:/var/www/html \
+     certbot/certbot renew --webroot --webroot-path=/var/www/html
+   sudo docker restart nmc-website-prod-container
+   ```
+4. Or redeploy: `./deploy-prod.sh`
+5. Verify: `curl -vI https://newmediacaucus.org`
+
+#### Why renewal may have failed (root causes)
+
+1. **Webserver down** — HTTP-01 validation requires port 80. If `nmc-website-prod-container` exited (e.g. OOM exit 137), certbot cannot complete renewal.
+2. **Apache reload never ran** — The deploy-hook uses `docker exec` on the webserver container. The certbot image previously lacked `docker-cli`, so reload could fail even after a successful renewal.
+3. **`--force-renewal` on every cycle** — The old script forced renewal every 12 hours instead of only when due; this was removed.
+
+Check: `sudo dmesg | grep -i 'out of memory'` (OOM), `docker ps -a`, `docker logs certbot`.
 
 ### Complete Reset
 

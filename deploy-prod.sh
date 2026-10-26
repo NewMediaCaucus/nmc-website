@@ -33,7 +33,7 @@ sudo docker run -d \
   --log-opt max-size=10m \
   --log-opt max-file=3 \
   -v /home/nmcdev/nmc-website:/var/www/html/ \
-  -v ./custom-php.prod.ini:/etc/php/8.3/apache2/conf.d/custom-php.ini \
+  -v ./custom-php.prod.ini:/usr/local/etc/php/conf.d/custom-php.ini \
   -v ./php-logs:/var/log/php-logs \
   -v ./apache-logs:/var/log/apache2 \
   -v /etc/letsencrypt:/etc/letsencrypt \
